@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- <html manifest=prueba_j01.fes> -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>FIEL1</title>
+    <link rel="stylesheet" href="jquery.mobile.theme-1.4.5.min.css" /> 
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />  
+    <link rel="stylesheet" href="jquery.mobile.structure-1.4.5.min.css" /> 
+    <link rel="stylesheet" href="agn.css" />
+    <link rel="stylesheet" href="agn.min.css" />  
+    <link rel="shortcut icon" sizes="16x16" href="signature.ico">
+    <link rel="manifest" href="manifest.json" />  
+    <script src="jquery-2.1.4.js"></script>
+    <script src="fiel01.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+    <script src='jsrsasign-latest-all-min.js'></script>
+    <script src='val_comunes.js'></script>
+    <script>
+       $(document).ready( function() {
+                   cargofiel();
+    });
+    </script>
+</head>
+ 
+<body data-plus-as-tab='true'>
+ 
+<div id="pagina" data-role="page" data-theme="d">
+    <div data-role="header" data-position="fixed">
+        <h3 name="nombre" id="nombre" >FIEL</h3>
+    </div><!-- /header -->
+    <div data-role="content">
+    <div data-role="controlgroup">
+    <a href="#ayuda" id="bayuda" data-role="button" data-icon="info" data-url="ayuda" >Ayuda</a>     
+    <a href="#" id="cargafiel" data-role="button" data-icon="forbidden" >Cargar FIEL</a>     
+    <a href="#validafield" id="bo_validafiel" data-role="button" data-icon="forbidden" data-url="validafield">Validar FIEL</a>     
+    <a href="#validaup" id="conectar" data-role="button" data-icon="forbidden" data-url="validaup" >Conectar con AGN</a>     
+    <a href="#firmar" id="firmarb" data-role="button" data-icon="forbidden" data-url="firmar" >Firmar un Aviso de Testamento</a>     
+    <a href="#firmarcc" id="firmarbcc" data-role="button" data-icon="forbidden" data-url="firmarcc" >Firmar un Copia certificada</a>     
+    <a href="#entregad" id="entregadoc" data-role="button" data-icon="forbidden" data-url="entregad" >Entregar documento a AGN</a>     
+    </div>
+    </div><!-- /content -->
+     
+    <div data-role="footer" data-position="fixed">
+        <h4>DGJyEL</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<div id="ayuda" data-role="dialog" data-url="ayuda" data-theme="d">
+  <div data-role="header">
+          <h2>Ayuda</h2entregad>
+  </div>
+  <div data-role="content">
+  <p>Este aplicativo le permite validar la llave privada y publica generada por el SAT</p>
+  <p>Sin que la llave privada y publica viajen por internet</p>
+  <h3>Requisitos:</h3>
+  <p>1. Las llave privada y publica deben estar almacenados en el movil.</p>
+  <p>2. Conocer el password de la llave privada.</p>
+  <h3>Como:</h3>
+  <p><h4>Paso 1.</h4> Carga la fiel dando un click en el boton "Cargar FIEL". Aqui le va solicitar abrir el programa que utilizará para cargar la fiel por default esta la camara , foto, galeria etc..., estos programa no podra utilizar ya que solo muestra archivos con extencion de foto, jpg etc... usted debe de contar en su movil con un aplicativo como el Androzip. Una vez que selecciono el programa para cargar su fiel debe ubicar donde esta su llave privada con extension key posteriormente debe hacer los mismo con su llave publica con extensión cer </p>
+  <p><h4>Paso 2.</h4> Una vez que cargo la FIEL, para validarla hay que dar un click en el boton "Validar Fiel", aqui le solicitara el password y posteriomente dar click en el boton Validar, Aqui espere un momento ya que se tarda alrededor de 1 minuto. Si esta correcto le envia un saludo con el nombre del propietario de la FIEL.
+  </div>
+</div>
+
+<div id="popup" data-role="dialog" data-url="popup" data-theme="d">
+      <div data-role="header">
+          <h1>Cabecera del cuadro de dialogo</h1>
+      </div>
+      <div data-role="content">
+          <h1>Hola <span id="mensaje"></span></h1>
+          <a href="#" data-role="button" data-rel="back">Cerrar</a>
+      </div>
+</div>
+
+<div id="validaup" data-role="dialog" data-url="validaup" data-theme="d">
+      <div data-role="header">
+          <h1>Usuarios y Password AGN</h1>
+      </div>
+      <div data-role="content">
+        <form id='formpr' >
+          <input autofocus type="password" name="wl_usuario" id="wl_usuario" value="" maxlength=20 placeholder="Introduzca el usuario"  />
+          <input type="password" name="wl_password" id="wl_password" value="" maxlength=20 placeholder="Introduzca el password de la llave privada"  />
+          <h3 id="notificationc"></h3>
+          <a href="#" data-role="button" id="validarup" data-position-to='origin' >Validar</a>
+          <a href="#" data-role="button" data-rel="back">Cerrar</a>
+        </form>
+      </div>
+</div>
+
+<div id="validafield" data-role="dialog" data-url="validafield"  data-theme="d">
+      <div data-role="header">
+          <h1>Validación FIEL</h1>
+      </div>
+      <div data-role="content">
+          <input autofocus type="password" name="password" id="password" maxlength=20  value="" placeholder="Introduzca el password de la llave privada"  />
+          <h3 id="notificationf"></h3>
+          <a href="#" data-role="button" id="validar" data-position-to='origin' >Validar</a>
+          <a href="#" data-role="button" data-rel="back">Cerrar</a>
+      </div>
+      <div data-transition='Slide' data-inline='true' data-role="popup" id="procesando" class="ui-content" data-position-to='origin'>
+	<p>Espere procesando</p>
+      </div>
+</div>
+
+<div id="firmar" data-role="dialog" data-url="firmar"  data-theme="d">
+      <div data-role="header">
+          <h1>Avisos de testamento</h1>
+      </div>
+      <div data-role="content">
+           <label for="select-choice-0" class="select">Notario Solicitante:</label>
+            <select name="wl_NotSol" id="wl_NotSol" autofocus placeholder="Notario solicitante">
+           </select>
+           <label for="select-choice-1" class="select">Instrumento Notarial:</label>
+            <select name="wl_InsNot" id="wl_InsNot" placeholder="Instrumento Notarial">
+           </select>
+
+          <a href="#" data-role="button" id="bfirmar_at" data-position-to='origin' >Firmar</a>
+          <a href="#" data-role="button" data-rel="back">Cerrar</a>
+      </div>
+</div>
+
+
+</body>
+   <script type="text/javascript">
+     function procesando() {
+          $('#procesando').popup('open');
+          $('#nombre').text('');
+          x = new fiel();
+          nombre=x.validafiellocal($('#password').val());
+          $('#nombre').text(nombre);
+          $('#procesando').popup('close');
+     }
+
+     function cargofiel() {
+            if (localStorage.getItem("key")!=null && localStorage.getItem("cer")!=null)
+            {
+                        $("#cargafiel").buttonMarkup({icon:"check"});
+            }
+     }
+     function esvalidafiel(x) {
+            if (x==false)
+            {
+                        $("#validafiel").buttonMarkup({icon:"forbidden"}); }
+            else {
+                        $("#validafiel").buttonMarkup({icon:"check"}); }
+     }
+
+          $('#cargafiel').on( 'click',function(event, ui){
+              x = new fiel();
+              x.cargafiellocal();
+              cargofiel();
+          })
+          $('#firmarb').on( 'click',function(event, ui){
+              //if ($('#conectar').attr('data-icon')=='forbidden' || $('#validafield').attr('data-icon')=='forbidden')
+              //{ alert('Para firmar usted debe de estar conectado a AGN y haber validado la FIEL'); 
+              //  return false; }
+              buscanotarias();
+          })
+          $('#wl_NotSol').on( 'change',function(event, ui){
+              buscainstrumentos($('#wl_NotSol').val());
+          })
+          $('#bo_validafiel').on( 'click',function(event, ui){
+              $("#notificationf").text("");
+          })
+          $('#bfirmar_at').on( 'click',function(event, ui){
+              firmar_at();
+          })
+
+          $('#validar').on( 'click',function(event, ui){
+              $('div#validar input[type=button]').button('disable');
+              $('#procesando').popup('open');
+              $("#notificationf").text("");
+              window.setTimeout(function() {
+                 x = new fiel();
+                 nombre=x.validafiellocal($('#password').val());
+                 if (nombre==false) {
+                    $("#bo_validafiel").buttonMarkup({icon:"forbidden"}); 
+                 } else  {
+                    $("#bo_validafiel").buttonMarkup({icon:"check"}); 
+                    $('#nombre').text(nombre);
+                    $("#notificationf").text("Hola "+nombre);
+                 }
+                    $('#procesando').popup('close');
+                    $('#password').focus();
+          },500);
+     })
+   </script>
+</html>

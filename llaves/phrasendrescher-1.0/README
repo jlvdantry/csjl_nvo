@@ -1,0 +1,83 @@
+phrasen|drescher - a passphrase cracker                     document version: 1.0
+--------------------------------------------------------------------------------
+
+  1 About
+  2 Installation
+  3 Run It!
+  4 Troubleshooting
+
+
+
+ 1  About
+ --------
+
+    phrasen|drescher cracks passphrases of RSA or DSA keys as they would be used
+    by ssh(1) for instance.
+
+ 2  Installation
+ ---------------
+
+    ./configure
+    make
+    make install
+
+    The openssl library is required.
+
+ 3  Run It!
+ ----------
+
+    phrasen|drescher has to modes to run as. The Incremental mode does pure
+    brute force of potential pass phrases while in Dictionary mode, phrases are
+    taken from a word list:
+
+
+      Incremental mode:
+
+        phrasendrescher -i 6:8 key-file
+
+        This mode expects an argument that gives the length of words to generate
+        or a range. Generating 8 characters long words would be done by:
+
+          phrasendrescher -i 8 key-file
+
+        And to specify a range. E.g. from 8 characters to 12:
+        
+          phrasendrescher -i 8:12 key-file
+
+        By default, phrasen|drescher uses all printable characters for generating
+        the phrases. However, you can specify your own character map in an
+        environment variable called `PHRASENDRESCHER_MAP'. For example, in order
+        to only do lower case characters:
+
+          export PHRASENDRESCHER_MAP="abcdefghijklmnopqrstuvwxyz"
+          phrasendrescher -i 6:8 key-file
+
+        The character map also implies the order of the characters to be used
+        in phrases. So, if you want to do the increment in reverse order,
+        simply do:
+
+          export PHRASENDRESCHER_MAP="zyxwvutsrqponmlkjihgfedcba"
+          phrasendrescher -i 6:8 key-file
+
+     Dictionary mode:
+
+       Using this mode is straight forward:
+
+         phrasendrescher -d wordlist key-file
+
+
+    phrasen|drescher can read and try multiple keys if you specify a directory
+    instead of a single key file:
+
+      phrasendrescher -d wordlist directory-containing-keys
+
+ 4  Troubleshooting
+ ------------------
+
+   If you encounter any bugs, not listed in this section, please refer to
+   nico@leidecker.info.
+
+--------------------------------------------------------------------------------
+phrasen|drescher 1.0 - a passphrase cracker
+Copyright (C) 2007 Nico Leidecker; nfl@portcullis-security.com
+http://www.portcullis.co.uk - http://www.leidecker.info

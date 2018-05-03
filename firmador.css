@@ -1,0 +1,213 @@
+body {
+    height: 100%;
+    margin: 0px;
+/*    font-size: 1em; */
+}
+
+.fila {
+    font-family: serif;
+    font-size: 2.5vw;
+    fill: white;
+}
+.turno {
+    font-family: serif;
+    font-size: 4.5vw;
+    fill: white;
+}
+.comentario {
+    font-family: serif;
+    font-size: 4.5vw;
+    fill: white;
+}
+
+.llama_rect {
+   fill: #DF1874; 
+   rx  : 15;
+   stroke: #006600;
+}
+.creado {
+   fill: black; 
+   rx  : 15;
+   stroke: #006600;
+}
+
+div.llamado, #svg {
+position:fixed;
+z-index:-1;
+width:50%;
+left:25%;
+top:25%;
+height:50%;
+   stroke: white;
+   linewidth: 5;
+}
+
+div.mensaje, img.mensajelogo {
+position:fixed;
+z-index:-1;
+width:98%;
+top:91%;
+height:8%;
+}
+
+div.centro, img.centrologo {
+position:fixed;
+z-index:-1;
+width:16%;
+left:62%;
+top:28%;
+height:40%;
+}
+
+div.div8, #svg_8 { /*izquierdo 1 */
+position: fixed;
+z-index: -1;
+width: 40%;
+height: 17%;
+left: 1%;
+top: 19%;
+}
+
+div.div7, #svg_7 { /*izquierdo 2 */
+position: fixed;
+z-index: -1;
+width: 40%;
+height: 17%;
+left: 1%;
+top: 37%;
+}
+div.div6, #svg_6 { /*izquierdo 3 */
+position: fixed;
+z-index: -1;
+width: 40%;
+height: 17%;
+left: 1%;
+top: 55%;
+}
+
+div.div5, #svg_5 {   /* izquierdo 4 */
+position:fixed;
+z-index:-1;
+width:40%;
+height:17%;
+top:73%;
+left: 1%
+} 
+
+div.div0, #svg0 {   /* derecho arriba */
+position:fixed;
+z-index:-1;
+width:40%;
+height:20%;
+left:8%;
+top:20%;
+fill: #DF1874;
+}
+
+#svg1 , #div1 {  /* derecho abajo */
+position:fixed;
+z-index:-2;
+width:40%;
+height:20%;
+left:8%;
+top:42%;
+fill: #DF1874;
+}
+
+div.div3, #svg2 {  /* derecho abajo */
+position:fixed;
+z-index:-1;
+width:40%;
+height:20%;
+left:8%;
+top:64%;
+fill: #DF1874;
+}
+
+div.div4, #svg_4 {  /* derecho abajo */
+position:fixed;
+z-index:-1;
+width:40%;
+height:17%;
+left:59%;
+top:73%;
+}
+
+
+div.modulo {  /* numero del modulo */
+    visibility: hidden;
+    display   : none;
+    border    : 0px;
+    margin    : 0px;
+    height    : 0px;
+    width     : 0px;
+}
+div.turnos {  /* cantidad de turnos a desplegar */
+    visibility: hidden;
+    display   : none;
+}
+
+div.desmodulo { /* Descripcion del modulo */
+  position:fixed;
+  z-index:-1;
+  width:98%;
+  height:17%;
+  left:1%;
+  top:1%;
+  color: black;
+  line-height: 2.1;
+/*  backgroundº: #DF1874; */
+    font-family: serif;
+    font-size: 2.5em;
+
+  background: linear-gradient(to top, #DF1874, rgb(252, 248, 248)); 
+  border-radius: 40px 40px 40px 40px; 
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3.5vw;
+}
+
+#wlvideo1
+{
+    position:fixed;
+    z-index:-1;
+    height    : 70%;
+    width     : 40%;
+    left     : 1%;
+    top     : 19%;
+}
+
+#wlvideo
+{
+    height    : 100%;
+    width     : 100%;
+}
+
+
+#wlaudio1
+{
+    visibility: hidden;
+    display   : none;
+    border    : 0px;
+    margin    :0px;
+    height    : 0px;
+    width     : 0px;
+}
+
+
+#log { /* log del tablero */
+    visibility: hidden;
+    display   : none;
+    border    : 0px;
+    margin    :0px;
+    height    : 0px;
+    width     : 0px;
+}
+#titulos1 {
+    height: 15%;
+}
+
+#izquierdo1 {
+    height: 80%;
+}
+

@@ -1,0 +1,310 @@
+Revision: 20
+Author: Usuario
+Date: 10:47:27 a.m., Martes, 23 de Noviembre de 2010
+Message:
+Se agrega la accion para el menu 'Cerrar'
+----
+Modified : /scripts.js
+
+Revision: 19
+Author: Usuario
+Date: 10:46:50 a.m., Martes, 23 de Noviembre de 2010
+Message:
+Se cambia sql para obtener menus, y se corrigen los errores con el menu3
+----
+Modified : /opciones_antn.php
+
+Revision: 18
+Author: Usuario
+Date: 10:45:34 a.m., Martes, 23 de Noviembre de 2010
+Message:
+Se agrega if en javascript para controlar que el frame no se quede colgado
+----
+Modified : /index.php
+
+Revision: 17
+Author: Usuario
+Date: 10:44:33 a.m., Martes, 23 de Noviembre de 2010
+Message:
+Se modifica el estilo de forapi
+----
+Modified : /pupan.css
+
+Revision: 16
+Author: Usuario
+Date: 10:43:56 a.m., Martes, 23 de Noviembre de 2010
+Message:
+Se el estilo del menu
+----
+Modified : /style.css
+
+Revision: 15
+Author: Usuario
+Date: 06:53:54 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se cambia el nombre de base de datos de la conexion, se cambia de "contra" a "forapi"
+----
+Modified : /conneccion.php
+
+Revision: 14
+Author: Usuario
+Date: 06:53:09 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se agrega el nuevo menus tipo 3
+----
+Modified : /opciones_antn.php
+
+Revision: 13
+Author: Usuario
+Date: 06:52:43 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se agrega al control de versiones, js y css para tipo de menu 3
+----
+Added : /scripts.js
+Added : /style.css
+
+Revision: 12
+Author: Usuario
+Date: 06:52:06 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se ajustan colores de etiquetas caption
+----
+Modified : /pupan.css
+
+Revision: 11
+Author: Usuario
+Date: 06:51:26 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se agrega el php logo.php por default en el frame pantallas
+----
+Modified : /index.php
+
+Revision: 10
+Author: Usuario
+Date: 06:50:27 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se aplia el rango de inactividad a una hora
+----
+Modified : /val_inactividad.js
+
+Revision: 9
+Author: Usuario
+Date: 06:49:56 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se controla el mensaje que solicita cerrar la ventana y se eliminana algunos echos que aparecian en la ventana
+----
+Modified : /altaadjuntara.php
+
+Revision: 8
+Author: Usuario
+Date: 06:49:20 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se actualiza la ultima version de contra
+----
+Modified : /eventos_servidor_class.php
+
+Revision: 7
+Author: Usuario
+Date: 06:47:19 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se agrega al control de versiones
+----
+Added : /pendientesPDF.php
+
+Revision: 6
+Author: Usuario
+Date: 06:47:02 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se corrige la fucnion de descargas, se agrega un nuevo valor default (al capturar la cadena "hoy" como valor default, se muestra la fecha actual en el campo)
+----
+Modified : /soldatos.php
+
+Revision: 5
+Author: Usuario
+Date: 06:44:49 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se moficia la ventana de entrada para mostrar las ligar de descarga de internet explorar y acrobat reader
+----
+Modified : /entrada.php
+
+Revision: 4
+Author: Usuario
+Date: 06:43:59 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se agrega al control de versiones
+----
+Added : /logo.php
+
+Revision: 3
+Author: Usuario
+Date: 06:43:10 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se modifica la funciones validaReferencia y se incorpora la funcion validaRelevante
+----
+Modified : /eve_particulares.js
+
+Revision: 2
+Author: Usuario
+Date: 06:41:11 p.m., Lunes, 22 de Noviembre de 2010
+Message:
+Se agragan las etiquetas <actuliza> y <manual> en la funcion querespuesta
+----
+Modified : /broseaing.js
+
+Revision: 1
+Author: Usuario
+Date: 09:55:33 a.m., Lunes, 08 de Noviembre de 2010
+Message:
+
+----
+Added : /AjaxFileUploader.inc.php
+Added : /ContextMenu.js
+Added : /DB.php
+Added : /JsHttpRequest.js
+Added : /JsHttpRequest.php
+Added : /ProcessHandler.class.php
+Added : /WebFX-ContextMenu.css
+Added : /altaadjuntara.php
+Added : /altaautomatica.php
+Added : /broseaing.js
+Added : /cal_fechas.php
+Added : /caping.php
+Added : /caping1.php
+Added : /class.phpmailer.php
+Added : /class.smtp.php
+Added : /class_logmenus.php
+Added : /class_men.php
+Added : /conneccion.php
+Added : /cookies.js
+Added : /cookies1.js
+Added : /corre_cron_siscor.php
+Added : /crea_forapi.sql
+Added : /datepicker.css
+Added : /datepicker.js
+Added : /enca.php
+Added : /entrada.php
+Added : /errores.log
+Added : /eve_particulares.js
+Added : /eventos_servidor.php
+Added : /eventos_servidor_class.php
+Added : /ficheros
+Added : /ficheros/sql.sql
+Added : /filesave.php
+Added : /font
+Added : /font/courier.php
+Added : /font/helvetica.php
+Added : /font/helveticab.php
+Added : /font/helveticabi.php
+Added : /font/helveticai.php
+Added : /fpdf.css
+Added : /fpdf.php
+Added : /http.js
+Added : /ieemu.js
+Added : /images
+Added : /images/xp
+Added : /images/xp/I.png
+Added : /images/xp/L.png
+Added : /images/xp/Lminus.png
+Added : /images/xp/Lplus.png
+Added : /images/xp/T.png
+Added : /images/xp/Thumbs.db
+Added : /images/xp/Tminus.png
+Added : /images/xp/Tplus.png
+Added : /images/xp/file.png
+Added : /images/xp/folder.png
+Added : /images/xp/openfolder.png
+Added : /imageupload.php
+Added : /img
+Added : /img/Thumbs.db
+Added : /img/action_search_20.gif
+Added : /img/add.gif
+Added : /img/bg.gif
+Added : /img/copy.gif
+Added : /img/delete.gif
+Added : /img/fondo.jpg
+Added : /img/fondo_td.jpg
+Added : /img/fondo_tda.jpg
+Added : /img/getadobereader.gif
+Added : /img/i_attach.gif
+Added : /img/i_attach2.gif
+Added : /img/icon_datepicker.gif
+Added : /img/icon_disabled_checkbox_checked.gif
+Added : /img/icon_disabled_checkbox_unchecked.gif
+Added : /img/icon_disabled_radio_checked.gif
+Added : /img/icon_disabled_radio_unchecked.gif
+Added : /img/icon_edit.gif
+Added : /img/icon_enabled_checkbox_checked.gif
+Added : /img/icon_enabled_checkbox_unchecked.gif
+Added : /img/logo1_2007_color.JPG
+Added : /img/logo1_2007_negro.JPG
+Added : /img/logo1v_2007_color.JPG
+Added : /img/logo1v_2007_negro.JPG
+Added : /img/logo2_2007_color.JPG
+Added : /img/logo2_2007_negro.JPG
+Added : /img/logo3_2007.JPG
+Added : /img/logo4_2007.JPG
+Added : /img/nota.gif
+Added : /impTramitePDF.php
+Added : /impTramitePDFconsulta.php
+Added : /index.php
+Added : /index_ant.php
+Added : /liberar.php
+Added : /man_menus.php
+Added : /mangrupos.php
+Added : /mangrupos_ana.php
+Added : /manmen.php
+Added : /manopciones.php
+Added : /manusuarios.php
+Added : /md5.js
+Added : /mensajes.php
+Added : /menu4.js
+Added : /menudata.php
+Added : /meses_espanol.php
+Added : /metadata.php
+Added : /nuevo_menus.php
+Added : /opciones.php
+Added : /opciones_antn.php
+Added : /opciones_antnx.php
+Added : /pidefecha.php
+Added : /pidetexto.php
+Added : /poslib.js
+Added : /print_estilo_hospedaje.css
+Added : /print_xtree.css
+Added : /prueba_menudata.php
+Added : /pupan.css
+Added : /reingenieria.php
+Added : /reingenieria_class.php
+Added : /reingenieria_o.php
+Added : /scrollbutton.js
+Added : /scrolling_table_body.js
+Added : /seg_cambiopass.php
+Added : /seguridad_class.php
+Added : /siscor_cron_class.php
+Added : /soldatos.php
+Added : /soldatos_ant.php
+Added : /sortable.js
+Added : /sortable_otro.js
+Added : /subeclb.php
+Added : /t_upload_loader.php
+Added : /temp
+Added : /tracap.php
+Added : /upload_ficheros
+Added : /uploader.js
+Added : /utility.js
+Added : /val_comunes.js
+Added : /val_inactividad.js
+Added : /val_inactividad_js.php
+Added : /val_particulares.js
+Added : /val_pwd_js.php
+Added : /validacampos.php
+Added : /validacampos_pr.php
+Added : /validaframe.php
+Added : /viewpref.php
+Added : /visibility.php
+Added : /winclassic.css
+Added : /xloadtree.js
+Added : /xmlhttp.php
+Added : /xmlhttp_class.php
+Added : /xtree.css
+Added : /xtree.js
+

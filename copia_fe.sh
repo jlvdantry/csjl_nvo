@@ -1,0 +1,13 @@
+cp jquery.mobile.theme-1.4.5.min.css fe/.
+cp jquery.mobile-1.4.5.min.css fe/.
+cp jquery.mobile.structure-1.4.5.min.css fe/.
+cp agn.css fe/.
+cp agn.min.css fe/.
+cp signature.ico fe/.
+cp manifest.json fe/.
+cp jquery-2.1.4.js fe/.
+cp fiel.js fe/.
+cp jquery.mobile-1.4.5.min.js fe/.
+cp jsrsasign-latest-all-min.js fe/.
+cp val_comunes.js fe/.
+cp prueba_j.html fe/.

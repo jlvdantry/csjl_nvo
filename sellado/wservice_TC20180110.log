@@ -1,0 +1,169 @@
+2018-01-10 17:57:29:000000  entro en locateSecurityHeader 
+2018-01-10 17:57:29:000000  headers 
+2018-01-10 17:57:29:000000  headers iguales 
+2018-01-10 17:57:29:000000  foreach secnodes 
+2018-01-10 17:57:29:000000  encontro actor 
+2018-01-10 17:57:29:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 17:57:29:000000  entro proceso 
+2018-01-10 17:57:29:000000  no esta vacio secNode 
+2018-01-10 17:57:29:000000  node->localName=UsernameToken 
+2018-01-10 17:57:29:000000  entro a usenametoken 
+2018-01-10 17:57:29:000000  user=jlv passwordiSFFmrlSBQGYrsKITjTjomgSEok= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=D+NTB6FXa0VlVqizJVsd1BQPXgwHxZby9rSCF54DZQg= Created=2018-01-10T23:57:29Z 
+2018-01-10 17:57:29:000000  node->localName=Timestamp 
+2018-01-10 17:57:29:000000  paso el while 
+2018-01-10 18:04:40:000000  entro en locateSecurityHeader 
+2018-01-10 18:04:40:000000  headers 
+2018-01-10 18:04:40:000000  headers iguales 
+2018-01-10 18:04:40:000000  foreach secnodes 
+2018-01-10 18:04:40:000000  encontro actor 
+2018-01-10 18:04:40:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 18:04:40:000000  entro proceso 
+2018-01-10 18:04:40:000000  no esta vacio secNode 
+2018-01-10 18:04:40:000000  node->localName=UsernameToken 
+2018-01-10 18:04:40:000000  entro a usenametoken 
+2018-01-10 18:04:40:000000  user=jlv passwordVwNhiCGxw7flewn1powf8sxhWpo= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=8ak5PfNCOnLKxf0Yn51kTeijyv4YQyZjAtAGti3GCrM= Created=2018-01-11T00:04:40Z 
+2018-01-10 18:04:40:000000  node->localName=Timestamp 
+2018-01-10 18:04:40:000000  paso el while 
+2018-01-10 19:28:17:000000  entro en locateSecurityHeader 
+2018-01-10 19:28:17:000000  headers 
+2018-01-10 19:28:17:000000  headers iguales 
+2018-01-10 19:28:17:000000  foreach secnodes 
+2018-01-10 19:28:17:000000  encontro actor 
+2018-01-10 19:28:17:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 19:28:17:000000  entro proceso 
+2018-01-10 19:28:17:000000  no esta vacio secNode 
+2018-01-10 19:28:17:000000  node->localName=UsernameToken 
+2018-01-10 19:28:17:000000  entro a usenametoken 
+2018-01-10 19:28:17:000000  user=jlv passwordfmAgyZXV422Rbjehv+GV4dYlASE= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=RZ3VVbhoYWj66qOjrGaM4ZUBnMFklwfC/Ng3EJJ/HO4= Created=2018-01-11T01:28:17Z 
+2018-01-10 19:28:17:000000  node->localName=Timestamp 
+2018-01-10 19:28:17:000000  paso el while 
+2018-01-10 21:07:18:000000  entro en locateSecurityHeader 
+2018-01-10 21:07:18:000000  headers 
+2018-01-10 21:07:18:000000  headers iguales 
+2018-01-10 21:07:18:000000  foreach secnodes 
+2018-01-10 21:07:18:000000  encontro actor 
+2018-01-10 21:07:18:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 21:07:18:000000  entro proceso 
+2018-01-10 21:07:18:000000  no esta vacio secNode 
+2018-01-10 21:07:18:000000  node->localName=UsernameToken 
+2018-01-10 21:07:18:000000  entro a usenametoken 
+2018-01-10 21:07:18:000000  user=jlv password32QG8XY76De7ZiaFOIenx/iZWJ0= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=kxmYpwK/+z02ZFSKLA7SOZ63RkRD6Ojc2asAyKbFWuo= Created=2018-01-11T03:07:18Z 
+2018-01-10 21:07:18:000000  node->localName=Timestamp 
+2018-01-10 21:07:18:000000  paso el while 
+2018-01-10 21:22:29:000000  entro en locateSecurityHeader 
+2018-01-10 21:22:29:000000  headers 
+2018-01-10 21:22:29:000000  headers iguales 
+2018-01-10 21:22:29:000000  foreach secnodes 
+2018-01-10 21:22:29:000000  encontro actor 
+2018-01-10 21:22:29:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 21:22:29:000000  entro proceso 
+2018-01-10 21:22:29:000000  no esta vacio secNode 
+2018-01-10 21:22:29:000000  node->localName=UsernameToken 
+2018-01-10 21:22:29:000000  entro a usenametoken 
+2018-01-10 21:22:29:000000  user=jlv passwordrx3MdxTpjupKJjzO6KU95AyL4lw= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=arXTANW7FnXiF+BogIjMOwmBfRUuIBFS01GZ1EsBX2o= Created=2018-01-11T03:22:29Z 
+2018-01-10 21:22:29:000000  node->localName=Timestamp 
+2018-01-10 21:22:29:000000  paso el while 
+2018-01-10 21:23:06:000000  entro en locateSecurityHeader 
+2018-01-10 21:23:06:000000  headers 
+2018-01-10 21:23:06:000000  headers iguales 
+2018-01-10 21:23:06:000000  foreach secnodes 
+2018-01-10 21:23:06:000000  encontro actor 
+2018-01-10 21:23:06:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 21:23:06:000000  entro proceso 
+2018-01-10 21:23:06:000000  no esta vacio secNode 
+2018-01-10 21:23:06:000000  node->localName=UsernameToken 
+2018-01-10 21:23:06:000000  entro a usenametoken 
+2018-01-10 21:23:06:000000  user=jlv passwordZRa9pAvIDpxGBFluScJ2Ti9tHOU= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=N3VWP/Kqs3X1xapmkM3HjLwEHELM8WklL1Y4ps9tffY= Created=2018-01-11T03:23:06Z 
+2018-01-10 21:23:06:000000  node->localName=Timestamp 
+2018-01-10 21:23:06:000000  paso el while 
+2018-01-10 21:59:03:000000  entro en locateSecurityHeader 
+2018-01-10 21:59:03:000000  headers 
+2018-01-10 21:59:03:000000  headers iguales 
+2018-01-10 21:59:03:000000  foreach secnodes 
+2018-01-10 21:59:03:000000  encontro actor 
+2018-01-10 21:59:03:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 21:59:03:000000  entro proceso 
+2018-01-10 21:59:03:000000  no esta vacio secNode 
+2018-01-10 21:59:03:000000  node->localName=UsernameToken 
+2018-01-10 21:59:03:000000  entro a usenametoken 
+2018-01-10 21:59:03:000000  user=jlv passwordO2Oil/ETCGvGUQwAJEnbCp4/Qdc= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=eWUSA3cuJlPapV6ayKEtkckYHdJbqXqLPVDsIFw9ZHU= Created=2018-01-11T03:59:03Z 
+2018-01-10 21:59:03:000000  node->localName=Timestamp 
+2018-01-10 21:59:03:000000  paso el while 
+2018-01-10 21:59:45:000000  entro en locateSecurityHeader 
+2018-01-10 21:59:45:000000  headers 
+2018-01-10 21:59:45:000000  headers iguales 
+2018-01-10 21:59:45:000000  foreach secnodes 
+2018-01-10 21:59:45:000000  encontro actor 
+2018-01-10 21:59:45:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 21:59:45:000000  entro proceso 
+2018-01-10 21:59:45:000000  no esta vacio secNode 
+2018-01-10 21:59:45:000000  node->localName=UsernameToken 
+2018-01-10 21:59:45:000000  entro a usenametoken 
+2018-01-10 21:59:45:000000  user=jlv passwordhfd4IDirADRdEpRzWe2lf3Fr4jc= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=vTRS1SkKror5vdr6qqMkx7PNelxvcEe879Jsqvshm+c= Created=2018-01-11T03:59:45Z 
+2018-01-10 21:59:45:000000  node->localName=Timestamp 
+2018-01-10 21:59:45:000000  paso el while 
+2018-01-10 22:03:40:000000  entro en locateSecurityHeader 
+2018-01-10 22:03:40:000000  headers 
+2018-01-10 22:03:40:000000  headers iguales 
+2018-01-10 22:03:40:000000  foreach secnodes 
+2018-01-10 22:03:40:000000  encontro actor 
+2018-01-10 22:03:40:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 22:03:40:000000  entro proceso 
+2018-01-10 22:03:40:000000  no esta vacio secNode 
+2018-01-10 22:03:40:000000  node->localName=UsernameToken 
+2018-01-10 22:03:40:000000  entro a usenametoken 
+2018-01-10 22:03:40:000000  user=jlv passwordcFtpb9sa8VJvhl23PgZ/siSHzfI= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=3vfWdxtm0miW7XNeSwx9FVp2pX2RJJRVvICwqOT7QmY= Created=2018-01-11T04:03:40Z 
+2018-01-10 22:03:40:000000  node->localName=Timestamp 
+2018-01-10 22:03:40:000000  paso el while 
+2018-01-10 22:13:35:000000  entro en locateSecurityHeader 
+2018-01-10 22:13:35:000000  headers 
+2018-01-10 22:13:35:000000  headers iguales 
+2018-01-10 22:13:35:000000  foreach secnodes 
+2018-01-10 22:13:35:000000  encontro actor 
+2018-01-10 22:13:35:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 22:13:35:000000  entro proceso 
+2018-01-10 22:13:35:000000  no esta vacio secNode 
+2018-01-10 22:13:35:000000  node->localName=UsernameToken 
+2018-01-10 22:13:35:000000  entro a usenametoken 
+2018-01-10 22:13:35:000000  user=jlv passwordfuD6n7q8Ag1hlTPZ3/dRj70mD1k= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=3BGwkKpYw0zlD2511JbqugAC9Fe/gugEe6XIDuK3bkw= Created=2018-01-11T04:13:35Z 
+2018-01-10 22:13:35:000000  node->localName=Timestamp 
+2018-01-10 22:13:35:000000  paso el while 
+2018-01-10 22:14:20:000000  entro en locateSecurityHeader 
+2018-01-10 22:14:20:000000  headers 
+2018-01-10 22:14:20:000000  headers iguales 
+2018-01-10 22:14:20:000000  foreach secnodes 
+2018-01-10 22:14:20:000000  encontro actor 
+2018-01-10 22:14:20:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 22:14:20:000000  entro proceso 
+2018-01-10 22:14:20:000000  no esta vacio secNode 
+2018-01-10 22:14:20:000000  node->localName=UsernameToken 
+2018-01-10 22:14:20:000000  entro a usenametoken 
+2018-01-10 22:14:20:000000  user=jlv passwordMRbFdDoA/cHGfrPmM/SXRRP4OTY= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=Ke77GyxecGDbz7SEHzc8S9Ivwk394bcblgSmZF9g5w4= Created=2018-01-11T04:14:20Z 
+2018-01-10 22:14:20:000000  node->localName=Timestamp 
+2018-01-10 22:14:20:000000  paso el while 
+2018-01-10 22:32:42:000000  entro en locateSecurityHeader 
+2018-01-10 22:32:42:000000  headers 
+2018-01-10 22:32:42:000000  headers iguales 
+2018-01-10 22:32:42:000000  foreach secnodes 
+2018-01-10 22:32:42:000000  encontro actor 
+2018-01-10 22:32:42:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 22:32:42:000000  entro proceso 
+2018-01-10 22:32:42:000000  no esta vacio secNode 
+2018-01-10 22:32:42:000000  node->localName=UsernameToken 
+2018-01-10 22:32:42:000000  entro a usenametoken 
+2018-01-10 22:32:42:000000  user=jlv passwordo0GofRKrhntd0G040eFGH8c0jgg= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=C0a4BRlx5EJh0SWOnW4xtbgTNnnSfuD0+9HjmXU14AU= Created=2018-01-11T04:32:42Z 
+2018-01-10 22:32:42:000000  node->localName=Timestamp 
+2018-01-10 22:32:42:000000  paso el while 
+2018-01-10 22:44:50:000000  entro en locateSecurityHeader 
+2018-01-10 22:44:50:000000  headers 
+2018-01-10 22:44:50:000000  headers iguales 
+2018-01-10 22:44:50:000000  foreach secnodes 
+2018-01-10 22:44:50:000000  encontro actor 
+2018-01-10 22:44:50:000000  locateSecurityHeader regresohttp://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd this->secNode= 
+2018-01-10 22:44:50:000000  entro proceso 
+2018-01-10 22:44:50:000000  no esta vacio secNode 
+2018-01-10 22:44:50:000000  node->localName=UsernameToken 
+2018-01-10 22:44:50:000000  entro a usenametoken 
+2018-01-10 22:44:50:000000  user=jlv passwordDyJxGx4QxEioU+171bkVAOXc0l0= type=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest Nonce=rQfIhmpKu710GQ3HxR/hprA/RqeinksdXuRo4cn4lic= Created=2018-01-11T04:44:50Z 
+2018-01-10 22:44:50:000000  node->localName=Timestamp 
+2018-01-10 22:44:50:000000  paso el while 

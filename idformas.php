@@ -1,0 +1,47 @@
+<?php
+      $repor=array(
+                          "37" => "2321"    // Autorizacion definitiva
+                        , "38" => "2322"    // Solicitud de Autorizacion definitiva
+                        , "21" => "2249"
+                        , "24" => "2292"    // aviso de testamento
+                        , "34" => "2270"    // busqueda por indice
+                        , "14" => "2271"    // Calificaciones
+                        , "18" => "2272"    // instrumentos notariales
+                        , "27" => "2273"    // Copia certificada sociedad en convivencia
+                        , "15" => "2274"    // Copia certificada
+                        , "19" => "2275"    // Copias directaS
+                        , "22" => "2290"    // Guardas notariales
+                        , "26" => "2276"    // Informe sociedad en convivencia
+                        , "17" => "2277"    // Informe de juzgados
+                        , "32" => "2278"    // informe de tutela cautelar
+                        , "16" => "2279"    // informe de notarios
+                        , "28" => "2280"    // Modificciones sociedad en convivencia
+                        , "20" => "2281"    // Notas marginales
+                        , "23" => "2283"    // Razon de cierre
+                        , "25" => "2284"    // Registo sociedad en convivencia
+                        , "30" => "2285"    // Registo sello y firma de notario
+                        , "31" => "2286"    // Registro  de tutela cautelar
+                        , "35" => "2287"    // Remision testamento olografico
+                        , "29" => "2288"    // Terminacion sociedad en convivencia
+                        , "33" => "2289"    // Testamento extranjero
+                        , "40" => "2365"    // Testamento extranjero
+                        , "41" => "2366"    // Testamento extranjero
+                        , "42" => "2367"    // Testamento extranjero
+                        , "44" => "2467"    // Testamento extranjero
+                        , "45" => "2467"    // Testamento extranjero
+                        , "46" => "2467"    // Testamento extranjero
+                        , "47" => "2467"    // Testamento extranjero
+                        , "48" => "2467"    // Testamento extranjero
+                        , "49" => "2467"    // Testamento extranjero
+                        , "51" => "2467"    // Testamento extranjero
+                        , "74" => "2538"    // Testamento extranjero
+                        , "73" => "2536"    // Testamento extranjero
+                        , "72" => "2540"    // Testamento extranjero
+                        , "75" => "2541"    // Testamento extranjero
+                        , "77" => "2545"    // Testamento extranjero
+                        , "78" => "2551"    // Testamento extranjero
+                        , "86" => "2545"    // Testamento extranjero
+                        , "997" => "1154"    // Testamento extranjero
+                        , "79" => "2563"    // Testamento extranjero
+                        );
+?>

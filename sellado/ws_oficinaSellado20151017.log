@@ -1,0 +1,911 @@
+2015-10-17 11:04:37:000000  payload: 
+2015-10-17 11:04:37:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">b+r18ZAtg06U3kbs5w/DWgqgBws=</wsse:Password><wsse:Nonce>x4+yvVI3UFLl77NlE/uUJwmlQ5OLnBn6Gx1sM0tASQk=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:04:37Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:04:37Z</wsu:Created><wsu:Expires>2015-10-17T17:04:37Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:04:37:000000  cargo xml 
+2015-10-17 11:04:37:000000  entro en AuthenticateUser usuario:jlv password:b+r18ZAtg06U3kbs5w/DWgqgBws= type= 
+2015-10-17 11:04:37:000000  password=b+r18ZAtg06U3kbs5w/DWgqgBws= base64_encode=b+r18ZAtg06U3kbs5w/DWgqgBws= 
+2015-10-17 11:04:37:000000  usuario autentidado 
+2015-10-17 11:04:37:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:04:37:000000  paso connecion 
+2015-10-17 11:04:37:000000  entro a validafiel 
+2015-10-17 11:04:37:000000  paso la lectura de la llave publica 
+2015-10-17 11:04:37:000000  leyo la llave privada 
+2015-10-17 11:04:50:000000  payload: 
+2015-10-17 11:04:51:000000  payload: 
+2015-10-17 11:04:57:000000  payload: 
+2015-10-17 11:06:10:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">ILmGK2EYSfAFyXNHiJUSfXdeYYA=</wsse:Password><wsse:Nonce>WQ4WkCFD8Thjc1N/OtGx5nwVIvuuyVEh8aKba/TBPMg=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:06:09Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:06:09Z</wsu:Created><wsu:Expires>2015-10-17T17:06:09Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:06:10:000000  cargo xml 
+2015-10-17 11:06:10:000000  entro en AuthenticateUser usuario:jlv password:ILmGK2EYSfAFyXNHiJUSfXdeYYA= type= 
+2015-10-17 11:06:10:000000  password=ILmGK2EYSfAFyXNHiJUSfXdeYYA= base64_encode=ILmGK2EYSfAFyXNHiJUSfXdeYYA= 
+2015-10-17 11:06:10:000000  usuario autentidado 
+2015-10-17 11:06:10:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:06:10:000000  paso connecion 
+2015-10-17 11:06:10:000000  entro a validafiel 
+2015-10-17 11:06:10:000000  paso la lectura de la llave publica 
+2015-10-17 11:06:10:000000  leyo la llave privada 
+2015-10-17 11:07:21:000000  payload: 
+2015-10-17 11:07:22:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">nDYuVbeUChwJaBZwYrlgusftsvY=</wsse:Password><wsse:Nonce>4IyAoUSouLTzP/4+z2/cWYp09b6koYv7a0r8LzdOOD8=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:07:22Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:07:22Z</wsu:Created><wsu:Expires>2015-10-17T17:07:22Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:07:22:000000  cargo xml 
+2015-10-17 11:07:22:000000  entro en AuthenticateUser usuario:jlv password:nDYuVbeUChwJaBZwYrlgusftsvY= type= 
+2015-10-17 11:07:22:000000  password=nDYuVbeUChwJaBZwYrlgusftsvY= base64_encode=nDYuVbeUChwJaBZwYrlgusftsvY= 
+2015-10-17 11:07:22:000000  usuario autentidado 
+2015-10-17 11:07:22:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:07:22:000000  paso connecion 
+2015-10-17 11:07:22:000000  entro a validafiel 
+2015-10-17 11:07:22:000000  paso la lectura de la llave publica 
+2015-10-17 11:07:22:000000  leyo la llave privada 
+2015-10-17 11:08:00:000000  payload: 
+2015-10-17 11:08:00:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">XUz/TmK/u6oW+t1wJawIKHZJ3u8=</wsse:Password><wsse:Nonce>IerT16WtrMgjlqg7c1wevHOhsm/cubE7Kz/jr1uQO0g=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:08:00Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:08:00Z</wsu:Created><wsu:Expires>2015-10-17T17:08:00Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:08:00:000000  cargo xml 
+2015-10-17 11:08:00:000000  entro en AuthenticateUser usuario:jlv password:XUz/TmK/u6oW+t1wJawIKHZJ3u8= type= 
+2015-10-17 11:08:00:000000  password=XUz/TmK/u6oW+t1wJawIKHZJ3u8= base64_encode=XUz/TmK/u6oW+t1wJawIKHZJ3u8= 
+2015-10-17 11:08:00:000000  usuario autentidado 
+2015-10-17 11:08:00:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:08:00:000000  paso connecion 
+2015-10-17 11:08:00:000000  entro a validafiel 
+2015-10-17 11:08:00:000000  paso la lectura de la llave publica 
+2015-10-17 11:08:00:000000  leyo la llave privada 
+2015-10-17 11:10:09:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">2qSup1X730+uSXdgA1JSppw3w9U=</wsse:Password><wsse:Nonce>TXseeW0sew8P4LPdNSkAqYOFaOSpHh+sXkj+lCEka9I=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:10:09Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:10:09Z</wsu:Created><wsu:Expires>2015-10-17T17:10:09Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:10:09:000000  cargo xml 
+2015-10-17 11:10:09:000000  entro en AuthenticateUser usuario:jlv password:2qSup1X730+uSXdgA1JSppw3w9U= type= 
+2015-10-17 11:10:09:000000  password=2qSup1X730+uSXdgA1JSppw3w9U= base64_encode=2qSup1X730+uSXdgA1JSppw3w9U= 
+2015-10-17 11:10:09:000000  usuario autentidado 
+2015-10-17 11:10:09:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:10:09:000000  paso connecion 
+2015-10-17 11:10:09:000000  entro a validafiel publica= 
+2015-10-17 11:10:09:000000  paso la lectura de la llave publica 
+2015-10-17 11:10:09:000000  leyo la llave privada 
+2015-10-17 11:15:58:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">EkcUX8ah+jjiZPVv6y6+3KjP/aY=</wsse:Password><wsse:Nonce>Ksa0GqTJRswjlx9ZdIiwORVTG1jfeKRvmuq9X799ew8=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:15:58Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:15:58Z</wsu:Created><wsu:Expires>2015-10-17T17:15:58Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:15:58:000000  cargo xml 
+2015-10-17 11:15:58:000000  entro en AuthenticateUser usuario:jlv password:EkcUX8ah+jjiZPVv6y6+3KjP/aY= type= 
+2015-10-17 11:15:58:000000  password=EkcUX8ah+jjiZPVv6y6+3KjP/aY= base64_encode=EkcUX8ah+jjiZPVv6y6+3KjP/aY= 
+2015-10-17 11:15:58:000000  usuario autentidado 
+2015-10-17 11:15:58:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:15:58:000000  paso connecion 
+2015-10-17 11:15:58:000000  entro a validafiel../upload_ficheros/43428.key publica=../upload_ficheros/43427.key 
+2015-10-17 11:15:58:000000  paso la lectura de la llave publica-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnEit99AVb2biUFHMOJxpsAgbi
+pSRV9Q+74DB/0EDcIzyyph27NYwJetu5GIhXCrfLTHSvU1OJKSqRhdSWc8lLLeB2
+lMAgsTyrX6uRSbz0NqYkFsy1voSqas12PltHjp//yAqBiPopiwl+aQKbVkpmiDBu
+3zvnwStSQDUiBOfsCwIDAQAB
+-----END PUBLIC KEY-----
+ 
+2015-10-17 11:15:58:000000  leyo la llave privadaResource id #33 
+2015-10-17 11:17:04:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">NScHi2P9QQwsJjZzh17H33+ty10=</wsse:Password><wsse:Nonce>EE5FQOg65IlAo279uZjvzQvnyYLGIeQXeN+IpwAdy88=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:17:04Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:17:04Z</wsu:Created><wsu:Expires>2015-10-17T17:17:04Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:17:04:000000  cargo xml 
+2015-10-17 11:17:04:000000  entro en AuthenticateUser usuario:jlv password:NScHi2P9QQwsJjZzh17H33+ty10= type= 
+2015-10-17 11:17:04:000000  password=NScHi2P9QQwsJjZzh17H33+ty10= base64_encode=NScHi2P9QQwsJjZzh17H33+ty10= 
+2015-10-17 11:17:04:000000  usuario autentidado 
+2015-10-17 11:17:04:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43427.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:17:04:000000  paso connecion 
+2015-10-17 11:17:04:000000  entro a validafiel../upload_ficheros/43428.key publica=../upload_ficheros/43427.key 
+2015-10-17 11:17:04:000000  paso la lectura de la llave publica-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnEit99AVb2biUFHMOJxpsAgbi
+pSRV9Q+74DB/0EDcIzyyph27NYwJetu5GIhXCrfLTHSvU1OJKSqRhdSWc8lLLeB2
+lMAgsTyrX6uRSbz0NqYkFsy1voSqas12PltHjp//yAqBiPopiwl+aQKbVkpmiDBu
+3zvnwStSQDUiBOfsCwIDAQAB
+-----END PUBLIC KEY-----
+ 
+2015-10-17 11:17:04:000000  leyo la llave privadaResource id #33 
+2015-10-17 11:17:04:000000  resultado del chequeo 
+2015-10-17 11:17:28:000000  payload: 
+2015-10-17 11:17:28:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">lQfZVcdZ52CL9RH4xtuBWJZjiFA=</wsse:Password><wsse:Nonce>U472S5RmyFt79cyfhyVz3+ME5B0FDwiDZ2jDaSH9ZAc=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:17:28Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:17:28Z</wsu:Created><wsu:Expires>2015-10-17T17:17:28Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43429.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:17:28:000000  cargo xml 
+2015-10-17 11:17:28:000000  entro en AuthenticateUser usuario:jlv password:lQfZVcdZ52CL9RH4xtuBWJZjiFA= type= 
+2015-10-17 11:17:28:000000  password=lQfZVcdZ52CL9RH4xtuBWJZjiFA= base64_encode=lQfZVcdZ52CL9RH4xtuBWJZjiFA= 
+2015-10-17 11:17:28:000000  usuario autentidado 
+2015-10-17 11:17:28:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43429.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:17:28:000000  paso connecion 
+2015-10-17 11:17:28:000000  entro a validafiel../upload_ficheros/43428.key publica=../upload_ficheros/43429.cer 
+2015-10-17 11:17:28:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 11:17:28:000000  leyo la llave privadaResource id #33 
+2015-10-17 11:17:28:000000  resultado del chequeo1 
+2015-10-17 11:18:17:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">w+hPseN2FsOokWB+7ckwq8OMNkQ=</wsse:Password><wsse:Nonce>QQsZtr2cl0Mva8YfXORrfa9CfQW995zXTX64nx9vn4o=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:18:17Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:18:17Z</wsu:Created><wsu:Expires>2015-10-17T17:18:17Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43429.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry2</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:18:17:000000  cargo xml 
+2015-10-17 11:18:17:000000  entro en AuthenticateUser usuario:jlv password:w+hPseN2FsOokWB+7ckwq8OMNkQ= type= 
+2015-10-17 11:18:17:000000  password=w+hPseN2FsOokWB+7ckwq8OMNkQ= base64_encode=w+hPseN2FsOokWB+7ckwq8OMNkQ= 
+2015-10-17 11:18:17:000000  usuario autentidado 
+2015-10-17 11:18:18:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43429.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry2</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:18:18:000000  paso connecion 
+2015-10-17 11:18:18:000000  entro a validafiel../upload_ficheros/43428.key publica=../upload_ficheros/43429.cer 
+2015-10-17 11:18:18:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 11:18:18:000000  leyo la llave privadaResource id #33 
+2015-10-17 11:18:18:000000  resultado del chequeo1 
+2015-10-17 11:20:50:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">0DpVDMHO1u0bPXqOCcIAc5eceew=</wsse:Password><wsse:Nonce>MjDONmg+g6nrS1iYZWfjAFPnaizexOdKOEswPS8T0Ps=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:20:50Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:20:50Z</wsu:Created><wsu:Expires>2015-10-17T17:20:50Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43430.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry2</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:20:50:000000  cargo xml 
+2015-10-17 11:20:50:000000  entro en AuthenticateUser usuario:jlv password:0DpVDMHO1u0bPXqOCcIAc5eceew= type= 
+2015-10-17 11:20:50:000000  password=0DpVDMHO1u0bPXqOCcIAc5eceew= base64_encode=0DpVDMHO1u0bPXqOCcIAc5eceew= 
+2015-10-17 11:20:50:000000  usuario autentidado 
+2015-10-17 11:20:50:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43430.key</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry2</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:20:50:000000  paso connecion 
+2015-10-17 11:20:50:000000  entro a validafiel../upload_ficheros/43428.key publica=../upload_ficheros/43430.key 
+2015-10-17 11:20:50:000000  paso la lectura de la llave publica-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnEit99AVb2biUFHMOJxpsAgbi
+pSRV9Q+74DB/0EDcIzyyph27NYwJetu5GIhXCrfLTHSvU1OJKSqRhdSWc8lLLeB2
+lMAgsTyrX6uRSbz0NqYkFsy1voSqas12PltHjp//yAqBiPopiwl+aQKbVkpmiDBu
+3zvnwStSQDUiBOfsCwIDAQAB
+-----END PUBLIC KEY-----
+ 
+2015-10-17 11:20:50:000000  leyo la llave privadaResource id #33 
+2015-10-17 11:20:50:000000  resultado del chequeo 
+2015-10-17 11:21:15:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">seNTjuLfJ0RU1pzy9fIkqHtQ4u4=</wsse:Password><wsse:Nonce>hHRIHB/OfYq5sPBxr8ozU03uxGFiEyHK9V2aJyn+f2g=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:21:15Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:21:15Z</wsu:Created><wsu:Expires>2015-10-17T17:21:15Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43431.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry2</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:21:15:000000  cargo xml 
+2015-10-17 11:21:15:000000  entro en AuthenticateUser usuario:jlv password:seNTjuLfJ0RU1pzy9fIkqHtQ4u4= type= 
+2015-10-17 11:21:15:000000  password=seNTjuLfJ0RU1pzy9fIkqHtQ4u4= base64_encode=seNTjuLfJ0RU1pzy9fIkqHtQ4u4= 
+2015-10-17 11:21:15:000000  usuario autentidado 
+2015-10-17 11:21:15:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43431.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry2</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:21:15:000000  paso connecion 
+2015-10-17 11:21:15:000000  entro a validafiel../upload_ficheros/43428.key publica=../upload_ficheros/43431.cer 
+2015-10-17 11:21:15:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 11:21:15:000000  leyo la llave privadaResource id #33 
+2015-10-17 11:21:15:000000  resultado del chequeo1 
+2015-10-17 11:21:57:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">nCsXTGdE6xrYznYJ9DES1QmPrjg=</wsse:Password><wsse:Nonce>f4MubXPfJzL2601tq6j9re5kvCBZ1FXVDTTw9LoQaxI=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:21:57Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:21:57Z</wsu:Created><wsu:Expires>2015-10-17T17:21:57Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43431.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry2</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:21:57:000000  cargo xml 
+2015-10-17 11:21:57:000000  entro en AuthenticateUser usuario:jlv password:nCsXTGdE6xrYznYJ9DES1QmPrjg= type= 
+2015-10-17 11:21:57:000000  password=nCsXTGdE6xrYznYJ9DES1QmPrjg= base64_encode=nCsXTGdE6xrYznYJ9DES1QmPrjg= 
+2015-10-17 11:21:57:000000  usuario autentidado 
+2015-10-17 11:21:57:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43431.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">dantry2</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:21:57:000000  paso connecion 
+2015-10-17 11:21:57:000000  entro a validafiel../upload_ficheros/43428.key publica=../upload_ficheros/43431.cer 
+2015-10-17 11:21:57:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 11:21:57:000000  leyo la llave privadaResource id #33 
+2015-10-17 11:21:57:000000  resultado del chequeo1 
+2015-10-17 11:21:57:000000  entro en checarsello 
+2015-10-17 11:22:04:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">ibTnQIEYOB8v3H/A3xJHPZhxf58=</wsse:Password><wsse:Nonce>4pMxKrGkqRBfAVeqDBeqzEY67+yuevbv1VRj2OgZ2rg=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T16:22:03Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T16:22:03Z</wsu:Created><wsu:Expires>2015-10-17T17:22:03Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43431.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">sales</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:22:04:000000  cargo xml 
+2015-10-17 11:22:04:000000  entro en AuthenticateUser usuario:jlv password:ibTnQIEYOB8v3H/A3xJHPZhxf58= type= 
+2015-10-17 11:22:04:000000  password=ibTnQIEYOB8v3H/A3xJHPZhxf58= base64_encode=ibTnQIEYOB8v3H/A3xJHPZhxf58= 
+2015-10-17 11:22:04:000000  usuario autentidado 
+2015-10-17 11:22:04:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43431.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43428.key</privada><password xsi:type="xsd:string">sales</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 11:22:04:000000  paso connecion 
+2015-10-17 11:22:04:000000  entro a validafiel../upload_ficheros/43428.key publica=../upload_ficheros/43431.cer 
+2015-10-17 11:22:04:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 11:22:04:000000  leyo la llave privadaResource id #33 
+2015-10-17 11:22:04:000000  resultado del chequeo1 
+2015-10-17 11:22:04:000000  entro en checarsello 
+2015-10-17 15:58:59:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">tkulnaDFx6HIqqG3hoJ4fp/wkZw=</wsse:Password><wsse:Nonce>hrsTedd+R63MogO7QgJkl/VN6ygGsTcZArshEuXMrQw=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T20:58:59Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T20:58:59Z</wsu:Created><wsu:Expires>2015-10-17T21:58:59Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43433.key</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 15:58:59:000000  cargo xml 
+2015-10-17 15:58:59:000000  entro en AuthenticateUser usuario:jlv password:tkulnaDFx6HIqqG3hoJ4fp/wkZw= type= 
+2015-10-17 15:58:59:000000  password=tkulnaDFx6HIqqG3hoJ4fp/wkZw= base64_encode=tkulnaDFx6HIqqG3hoJ4fp/wkZw= 
+2015-10-17 15:58:59:000000  usuario autentidado 
+2015-10-17 15:58:59:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43433.key</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 15:58:59:000000  paso connecion 
+2015-10-17 15:58:59:000000  entro a validafiel../upload_ficheros/43433.key publica=../upload_ficheros/43432.cer 
+2015-10-17 15:58:59:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 15:58:59:000000  leyo la llave privadaResource id #33 
+2015-10-17 15:58:59:000000  resultado del chequeo1 
+2015-10-17 15:58:59:000000  entro en checarsello 
+2015-10-17 15:59:19:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">Yt5n2WBpwsoamPjHSKOov6DPOb8=</wsse:Password><wsse:Nonce>K4v2jwtyYJ3+f3bLh4l+Gt3UGzDltnLFXJ1vhpA7lJo=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T20:59:19Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T20:59:19Z</wsu:Created><wsu:Expires>2015-10-17T21:59:19Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43434.key</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 15:59:19:000000  cargo xml 
+2015-10-17 15:59:19:000000  entro en AuthenticateUser usuario:jlv password:Yt5n2WBpwsoamPjHSKOov6DPOb8= type= 
+2015-10-17 15:59:19:000000  password=Yt5n2WBpwsoamPjHSKOov6DPOb8= base64_encode=Yt5n2WBpwsoamPjHSKOov6DPOb8= 
+2015-10-17 15:59:19:000000  usuario autentidado 
+2015-10-17 15:59:19:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43434.key</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 15:59:19:000000  paso connecion 
+2015-10-17 15:59:19:000000  entro a validafiel../upload_ficheros/43434.key publica=../upload_ficheros/43432.cer 
+2015-10-17 15:59:19:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 15:59:19:000000  leyo la llave privada 
+2015-10-17 15:59:19:000000  resultado del chequeo 
+2015-10-17 15:59:19:000000  entro en checarsello 
+2015-10-17 16:00:28:000000  payload: 
+2015-10-17 16:00:29:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">GX0c1i6Hsox/ipJgeaV6OQwtPBg=</wsse:Password><wsse:Nonce>dBUZubhlWYO61wkkqB0koxRG3hlDP9oI3IhCwrY0vbk=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:00:29Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:00:29Z</wsu:Created><wsu:Expires>2015-10-17T22:00:29Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43436.key</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:00:29:000000  cargo xml 
+2015-10-17 16:00:29:000000  entro en AuthenticateUser usuario:jlv password:GX0c1i6Hsox/ipJgeaV6OQwtPBg= type= 
+2015-10-17 16:00:29:000000  password=GX0c1i6Hsox/ipJgeaV6OQwtPBg= base64_encode=GX0c1i6Hsox/ipJgeaV6OQwtPBg= 
+2015-10-17 16:00:29:000000  usuario autentidado 
+2015-10-17 16:00:29:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43436.key</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:00:29:000000  paso connecion 
+2015-10-17 16:00:29:000000  entro a validafiel../upload_ficheros/43436.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:00:29:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:00:29:000000  leyo la llave privada 
+2015-10-17 16:00:29:000000  resultado del chequeo 
+2015-10-17 16:00:29:000000  entro en checarsello 
+2015-10-17 16:00:54:000000  payload: 
+2015-10-17 16:00:54:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">TfjnaAzNdiNkLAc0xcRHkhDhbIY=</wsse:Password><wsse:Nonce>evvRgvH5/YkEdCymJGrtLrU6LkxqHruPT07d32acDPc=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:00:54Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:00:54Z</wsu:Created><wsu:Expires>2015-10-17T22:00:54Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43437.cer</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:00:54:000000  cargo xml 
+2015-10-17 16:00:54:000000  entro en AuthenticateUser usuario:jlv password:TfjnaAzNdiNkLAc0xcRHkhDhbIY= type= 
+2015-10-17 16:00:54:000000  password=TfjnaAzNdiNkLAc0xcRHkhDhbIY= base64_encode=TfjnaAzNdiNkLAc0xcRHkhDhbIY= 
+2015-10-17 16:00:54:000000  usuario autentidado 
+2015-10-17 16:00:54:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43437.cer</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:00:54:000000  paso connecion 
+2015-10-17 16:00:54:000000  entro a validafiel../upload_ficheros/43437.cer publica=../upload_ficheros/43432.cer 
+2015-10-17 16:00:54:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:00:54:000000  leyo la llave privada 
+2015-10-17 16:00:54:000000  resultado del chequeo 
+2015-10-17 16:00:54:000000  entro en checarsello 
+2015-10-17 16:01:30:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">CBZ404vP9YYPjGc7nbraBltwbqA=</wsse:Password><wsse:Nonce>WzzHmbUMhjszB/KFOk+BfQx/GHSIyodgw9QpqtJsiMA=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:01:30Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:01:30Z</wsu:Created><wsu:Expires>2015-10-17T22:01:30Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43438.key</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:01:30:000000  cargo xml 
+2015-10-17 16:01:30:000000  entro en AuthenticateUser usuario:jlv password:CBZ404vP9YYPjGc7nbraBltwbqA= type= 
+2015-10-17 16:01:30:000000  password=CBZ404vP9YYPjGc7nbraBltwbqA= base64_encode=CBZ404vP9YYPjGc7nbraBltwbqA= 
+2015-10-17 16:01:30:000000  usuario autentidado 
+2015-10-17 16:01:30:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43438.key</privada><password xsi:type="xsd:string">ssssdsdf</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:01:30:000000  paso connecion 
+2015-10-17 16:01:30:000000  entro a validafiel../upload_ficheros/43438.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:01:30:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:01:30:000000  leyo la llave privada 
+2015-10-17 16:01:30:000000  resultado del chequeo 
+2015-10-17 16:01:30:000000  entro en checarsello 
+2015-10-17 16:05:51:000000  payload: 
+2015-10-17 16:05:51:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">UXA+9xPcUA/KyHfjS6UA1mWefzg=</wsse:Password><wsse:Nonce>JGin8F2XoafikrUcyKHbSep5gk7y/LKE69UR84k9eTM=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:05:51Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:05:51Z</wsu:Created><wsu:Expires>2015-10-17T22:05:51Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">jlvdantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:05:51:000000  cargo xml 
+2015-10-17 16:05:51:000000  entro en AuthenticateUser usuario:jlv password:UXA+9xPcUA/KyHfjS6UA1mWefzg= type= 
+2015-10-17 16:05:51:000000  password=UXA+9xPcUA/KyHfjS6UA1mWefzg= base64_encode=UXA+9xPcUA/KyHfjS6UA1mWefzg= 
+2015-10-17 16:05:51:000000  usuario autentidado 
+2015-10-17 16:05:51:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">jlvdantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:05:51:000000  paso connecion 
+2015-10-17 16:05:51:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:05:51:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:05:51:000000  leyo la llave privada 
+2015-10-17 16:05:51:000000  resultado del chequeo 
+2015-10-17 16:05:51:000000  entro en checarsello 
+2015-10-17 16:05:57:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">rsVQX02+PWgcOCesJlkVM+fNiY4=</wsse:Password><wsse:Nonce>e0U3pNAiixZoJbzkaeTbRTu9IJep2beQlXe0jJorSdY=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:05:57Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:05:57Z</wsu:Created><wsu:Expires>2015-10-17T22:05:57Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:05:57:000000  cargo xml 
+2015-10-17 16:05:57:000000  entro en AuthenticateUser usuario:jlv password:rsVQX02+PWgcOCesJlkVM+fNiY4= type= 
+2015-10-17 16:05:57:000000  password=rsVQX02+PWgcOCesJlkVM+fNiY4= base64_encode=rsVQX02+PWgcOCesJlkVM+fNiY4= 
+2015-10-17 16:05:57:000000  usuario autentidado 
+2015-10-17 16:05:57:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:05:57:000000  paso connecion 
+2015-10-17 16:05:57:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:05:57:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:05:57:000000  leyo la llave privada 
+2015-10-17 16:05:57:000000  resultado del chequeo 
+2015-10-17 16:05:57:000000  entro en checarsello 
+2015-10-17 16:06:04:000000  payload: 
+2015-10-17 16:06:04:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">+b8Fscz5uMaLQAmIpcl411M99pE=</wsse:Password><wsse:Nonce>MCBtjRNZRSGwUZ+ktQ5WqwG0GiUnPU3REeJ9OOsChKE=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:06:04Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:06:04Z</wsu:Created><wsu:Expires>2015-10-17T22:06:04Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">888aDantryR</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:06:04:000000  cargo xml 
+2015-10-17 16:06:04:000000  entro en AuthenticateUser usuario:jlv password:+b8Fscz5uMaLQAmIpcl411M99pE= type= 
+2015-10-17 16:06:04:000000  password=+b8Fscz5uMaLQAmIpcl411M99pE= base64_encode=+b8Fscz5uMaLQAmIpcl411M99pE= 
+2015-10-17 16:06:04:000000  usuario autentidado 
+2015-10-17 16:06:04:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">888aDantryR</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:06:04:000000  paso connecion 
+2015-10-17 16:06:04:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:06:04:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:06:04:000000  leyo la llave privada 
+2015-10-17 16:06:04:000000  resultado del chequeo 
+2015-10-17 16:06:04:000000  entro en checarsello 
+2015-10-17 16:07:43:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">P2rgsgWrmrH8CcjSfPagbQfehv4=</wsse:Password><wsse:Nonce>n9+AToRDhumNeWNRRltdvyEOPaIBvYqMNL8E0vouqVA=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:07:43Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:07:43Z</wsu:Created><wsu:Expires>2015-10-17T22:07:43Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">8574</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:07:43:000000  cargo xml 
+2015-10-17 16:07:43:000000  entro en AuthenticateUser usuario:jlv password:P2rgsgWrmrH8CcjSfPagbQfehv4= type= 
+2015-10-17 16:07:43:000000  password=P2rgsgWrmrH8CcjSfPagbQfehv4= base64_encode=P2rgsgWrmrH8CcjSfPagbQfehv4= 
+2015-10-17 16:07:43:000000  usuario autentidado 
+2015-10-17 16:07:43:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">8574</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:07:43:000000  paso connecion 
+2015-10-17 16:07:43:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:07:43:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:07:43:000000  leyo la llave privada 
+2015-10-17 16:07:43:000000  resultado del chequeo 
+2015-10-17 16:07:43:000000  entro en checarsello 
+2015-10-17 16:14:44:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">eyhrpZhIJR6019c16P9j5BGlmJM=</wsse:Password><wsse:Nonce>hpPLVGkFnk5f1AiSsG9yV/ropsDTUqV7cizVA5HpRDE=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:14:44Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:14:44Z</wsu:Created><wsu:Expires>2015-10-17T22:14:44Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">888aDantryR</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:14:44:000000  cargo xml 
+2015-10-17 16:14:44:000000  entro en AuthenticateUser usuario:jlv password:eyhrpZhIJR6019c16P9j5BGlmJM= type= 
+2015-10-17 16:14:44:000000  password=eyhrpZhIJR6019c16P9j5BGlmJM= base64_encode=eyhrpZhIJR6019c16P9j5BGlmJM= 
+2015-10-17 16:14:44:000000  usuario autentidado 
+2015-10-17 16:14:44:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">888aDantryR</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:14:44:000000  paso connecion 
+2015-10-17 16:14:44:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:14:44:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:14:44:000000  leyo la llave privada 
+2015-10-17 16:14:44:000000  resultado del chequeo 
+2015-10-17 16:14:44:000000  entro en checarsello 
+2015-10-17 16:41:58:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">alz9uYG6THJ8Phh1HLDZK8rFldY=</wsse:Password><wsse:Nonce>8iAAFKUEQiMRRyWHQ7Bam4vurVw5cy3rCA8weL7gmd0=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:41:58Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:41:58Z</wsu:Created><wsu:Expires>2015-10-17T22:41:58Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">11630268</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:41:58:000000  cargo xml 
+2015-10-17 16:41:58:000000  entro en AuthenticateUser usuario:jlv password:alz9uYG6THJ8Phh1HLDZK8rFldY= type= 
+2015-10-17 16:41:58:000000  password=alz9uYG6THJ8Phh1HLDZK8rFldY= base64_encode=alz9uYG6THJ8Phh1HLDZK8rFldY= 
+2015-10-17 16:41:58:000000  usuario autentidado 
+2015-10-17 16:41:58:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">11630268</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:41:58:000000  paso connecion 
+2015-10-17 16:41:58:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:41:58:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:41:58:000000  leyo la llave privada 
+2015-10-17 16:41:58:000000  resultado del chequeo 
+2015-10-17 16:41:58:000000  entro en checarsello 
+2015-10-17 16:42:06:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">rQZk97U2Vo+lOCw4l8/jul1L3Xk=</wsse:Password><wsse:Nonce>uE54xR5YV49E/UojTPeDpkJ0UJVzmntNcj0AoCscIvI=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:42:06Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:42:06Z</wsu:Created><wsu:Expires>2015-10-17T22:42:06Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">12345678</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:42:06:000000  cargo xml 
+2015-10-17 16:42:06:000000  entro en AuthenticateUser usuario:jlv password:rQZk97U2Vo+lOCw4l8/jul1L3Xk= type= 
+2015-10-17 16:42:06:000000  password=rQZk97U2Vo+lOCw4l8/jul1L3Xk= base64_encode=rQZk97U2Vo+lOCw4l8/jul1L3Xk= 
+2015-10-17 16:42:06:000000  usuario autentidado 
+2015-10-17 16:42:06:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">12345678</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:42:06:000000  paso connecion 
+2015-10-17 16:42:06:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:42:06:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:42:06:000000  leyo la llave privada 
+2015-10-17 16:42:06:000000  resultado del chequeo 
+2015-10-17 16:42:06:000000  entro en checarsello 
+2015-10-17 16:45:49:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">269x1vZXHEaLHL2jqNi3je5B0AU=</wsse:Password><wsse:Nonce>3CW4soXYMjZU7a9qYDUGDu2qry6Ioe/loDJbFPybDyo=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:45:49Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:45:49Z</wsu:Created><wsu:Expires>2015-10-17T22:45:49Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">85748574</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:45:49:000000  cargo xml 
+2015-10-17 16:45:49:000000  entro en AuthenticateUser usuario:jlv password:269x1vZXHEaLHL2jqNi3je5B0AU= type= 
+2015-10-17 16:45:49:000000  password=269x1vZXHEaLHL2jqNi3je5B0AU= base64_encode=269x1vZXHEaLHL2jqNi3je5B0AU= 
+2015-10-17 16:45:49:000000  usuario autentidado 
+2015-10-17 16:45:49:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">85748574</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:45:49:000000  paso connecion 
+2015-10-17 16:45:49:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:45:49:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:45:49:000000  leyo la llave privada 
+2015-10-17 16:45:49:000000  resultado del chequeo 
+2015-10-17 16:45:49:000000  entro en checarsello 
+2015-10-17 16:45:58:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">QhbnSXaa7gohlKiZJkly3kdtZlg=</wsse:Password><wsse:Nonce>K+lbzpbM1ko3cIHb84oOUwPn3iME2j3l1S3cUcV0jFw=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:45:58Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:45:58Z</wsu:Created><wsu:Expires>2015-10-17T22:45:58Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">888aDantryR</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:45:58:000000  cargo xml 
+2015-10-17 16:45:58:000000  entro en AuthenticateUser usuario:jlv password:QhbnSXaa7gohlKiZJkly3kdtZlg= type= 
+2015-10-17 16:45:58:000000  password=QhbnSXaa7gohlKiZJkly3kdtZlg= base64_encode=QhbnSXaa7gohlKiZJkly3kdtZlg= 
+2015-10-17 16:45:58:000000  usuario autentidado 
+2015-10-17 16:45:58:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">888aDantryR</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:45:58:000000  paso connecion 
+2015-10-17 16:45:58:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:45:58:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:45:58:000000  leyo la llave privada 
+2015-10-17 16:45:58:000000  resultado del chequeo 
+2015-10-17 16:45:58:000000  entro en checarsello 
+2015-10-17 16:46:03:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">JAzJf67zhltcKV5OyC+D3naoDzM=</wsse:Password><wsse:Nonce>Q1ZdWitz/VzbMYSR+BQQHR+ED8uAJutdIhEfPDrwXug=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:46:03Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:46:03Z</wsu:Created><wsu:Expires>2015-10-17T22:46:03Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">jlvjlv</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:46:03:000000  cargo xml 
+2015-10-17 16:46:03:000000  entro en AuthenticateUser usuario:jlv password:JAzJf67zhltcKV5OyC+D3naoDzM= type= 
+2015-10-17 16:46:03:000000  password=JAzJf67zhltcKV5OyC+D3naoDzM= base64_encode=JAzJf67zhltcKV5OyC+D3naoDzM= 
+2015-10-17 16:46:03:000000  usuario autentidado 
+2015-10-17 16:46:03:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">jlvjlv</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:46:03:000000  paso connecion 
+2015-10-17 16:46:03:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:46:03:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:46:03:000000  leyo la llave privada 
+2015-10-17 16:46:03:000000  resultado del chequeo 
+2015-10-17 16:46:03:000000  entro en checarsello 
+2015-10-17 16:46:10:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">j+aJqkJ8aEGHgu6X+LZsQVm5JL4=</wsse:Password><wsse:Nonce>1tttxFTZ9/5w8mAhkooZANiojYGto9nrz4dFVBQYfRE=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T21:46:10Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T21:46:10Z</wsu:Created><wsu:Expires>2015-10-17T22:46:10Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">25142514</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:46:10:000000  cargo xml 
+2015-10-17 16:46:10:000000  entro en AuthenticateUser usuario:jlv password:j+aJqkJ8aEGHgu6X+LZsQVm5JL4= type= 
+2015-10-17 16:46:10:000000  password=j+aJqkJ8aEGHgu6X+LZsQVm5JL4= base64_encode=j+aJqkJ8aEGHgu6X+LZsQVm5JL4= 
+2015-10-17 16:46:10:000000  usuario autentidado 
+2015-10-17 16:46:10:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">25142514</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 16:46:10:000000  paso connecion 
+2015-10-17 16:46:10:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 16:46:10:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 16:46:10:000000  leyo la llave privada 
+2015-10-17 16:46:10:000000  resultado del chequeo 
+2015-10-17 16:46:10:000000  entro en checarsello 
+2015-10-17 17:20:33:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">mDMil8AJOaAXyVXDkiv+Q/9aWKY=</wsse:Password><wsse:Nonce>oOUcALLqMHyC8fjXBax/bEYXh0bCntuVvxetdd1iRJ8=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T22:20:33Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T22:20:33Z</wsu:Created><wsu:Expires>2015-10-17T23:20:33Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">jlvdantr</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:20:33:000000  cargo xml 
+2015-10-17 17:20:33:000000  entro en AuthenticateUser usuario:jlv password:mDMil8AJOaAXyVXDkiv+Q/9aWKY= type= 
+2015-10-17 17:20:33:000000  password=mDMil8AJOaAXyVXDkiv+Q/9aWKY= base64_encode=mDMil8AJOaAXyVXDkiv+Q/9aWKY= 
+2015-10-17 17:20:33:000000  usuario autentidado 
+2015-10-17 17:20:33:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">jlvdantr</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:20:33:000000  paso connecion 
+2015-10-17 17:20:33:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 17:20:33:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 17:20:33:000000  leyo la llave privada 
+2015-10-17 17:20:33:000000  resultado del chequeo 
+2015-10-17 17:20:33:000000  entro en checarsello 
+2015-10-17 17:20:41:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">h280+tLTEtEfcDbxggEYMLcI9KU=</wsse:Password><wsse:Nonce>JiTro6elbALUSXa931AA+uUbH6DeYH9HtqSOJg8WcYE=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T22:20:41Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T22:20:41Z</wsu:Created><wsu:Expires>2015-10-17T23:20:41Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">12345678</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:20:41:000000  cargo xml 
+2015-10-17 17:20:41:000000  entro en AuthenticateUser usuario:jlv password:h280+tLTEtEfcDbxggEYMLcI9KU= type= 
+2015-10-17 17:20:41:000000  password=h280+tLTEtEfcDbxggEYMLcI9KU= base64_encode=h280+tLTEtEfcDbxggEYMLcI9KU= 
+2015-10-17 17:20:41:000000  usuario autentidado 
+2015-10-17 17:20:41:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">12345678</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:20:41:000000  paso connecion 
+2015-10-17 17:20:41:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 17:20:41:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 17:20:41:000000  leyo la llave privada 
+2015-10-17 17:20:41:000000  resultado del chequeo 
+2015-10-17 17:20:41:000000  entro en checarsello 
+2015-10-17 17:20:48:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">4C1d2OnB6yh6YnBYchuGi1p9cvw=</wsse:Password><wsse:Nonce>2DrhG/WKvZpfSpsCbWp823Boy1JIRkN8xRyPZ/h+SLw=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T22:20:48Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T22:20:48Z</wsu:Created><wsu:Expires>2015-10-17T23:20:48Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">85748574</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:20:48:000000  cargo xml 
+2015-10-17 17:20:48:000000  entro en AuthenticateUser usuario:jlv password:4C1d2OnB6yh6YnBYchuGi1p9cvw= type= 
+2015-10-17 17:20:48:000000  password=4C1d2OnB6yh6YnBYchuGi1p9cvw= base64_encode=4C1d2OnB6yh6YnBYchuGi1p9cvw= 
+2015-10-17 17:20:48:000000  usuario autentidado 
+2015-10-17 17:20:48:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43432.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43439.key</privada><password xsi:type="xsd:string">85748574</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:20:48:000000  paso connecion 
+2015-10-17 17:20:48:000000  entro a validafiel../upload_ficheros/43439.key publica=../upload_ficheros/43432.cer 
+2015-10-17 17:20:48:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfTANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDA5MTgxMDIx
+WhcNMTYxMDA4MTgxMDIxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEApxIrffQFW9m4lBRzDicabAIG4qUkVfUPu+Awf9BA3CM8sqYd
+uzWMCXrbuRiIVwq3y0x0r1NTiSkqkYXUlnPJSy3gdpTAILE8q1+rkUm89DamJBbM
+tb6EqmrNdj5bR46f/8gKgYj6KYsJfmkCm1ZKZogwbt8758ErUkA1IgTn7AsCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQDGCpY0C7lmg7oBkk+vBkHPGXi+Qfjgr+y+XLC/
+KaLvDItPtU3k3daLFRTmKV42FtXWc474NIobNBnoDrf921ekzZ3pNnVpErhe+PMt
+5DBEc/9mQfi4WVL5hf7cGLFx7BaqqvJKrSDi16xeaW9YVE1tOjtqfbUtIq7eaKzu
+xMUZSw==
+-----END CERTIFICATE-----
+ 
+2015-10-17 17:20:48:000000  leyo la llave privada 
+2015-10-17 17:20:48:000000  resultado del chequeo 
+2015-10-17 17:20:48:000000  entro en checarsello 
+2015-10-17 17:22:55:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">1P8F36J5zGe9wAk3eNbCIIZfufQ=</wsse:Password><wsse:Nonce>2rCZQbx4QKjSPGWuKh2JotnYSD5MWI/uHhzBMROxAZk=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T22:22:55Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T22:22:55Z</wsu:Created><wsu:Expires>2015-10-17T23:22:55Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43440.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43441.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:22:55:000000  cargo xml 
+2015-10-17 17:22:55:000000  entro en AuthenticateUser usuario:jlv password:1P8F36J5zGe9wAk3eNbCIIZfufQ= type= 
+2015-10-17 17:22:55:000000  password=1P8F36J5zGe9wAk3eNbCIIZfufQ= base64_encode=1P8F36J5zGe9wAk3eNbCIIZfufQ= 
+2015-10-17 17:22:55:000000  usuario autentidado 
+2015-10-17 17:22:55:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43440.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43441.key</privada><password xsi:type="xsd:string">dantry</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:22:55:000000  paso connecion 
+2015-10-17 17:22:55:000000  entro a validafiel../upload_ficheros/43441.key publica=../upload_ficheros/43440.cer 
+2015-10-17 17:22:55:000000  paso la lectura de la llave publica0Ç‹0Çƒ†000010000003022669590	*ÜHÜ˜ 0Çä1806U/A.C. del Servicio de Administraci√≥n Tributaria1/0-U
+&Servicio de Administraci√≥n Tributaria1806U/Administraci√≥n de Seguridad de la Informaci√≥n10	*ÜHÜ˜	acods@sat.gob.mx1&0$U	Av. Hidalgo 77, Col. Guerrero10U0630010	UMX10UDistrito Federal10UCuauht√©moc10U-SAT970701NN31503	*ÜHÜ˜	&Responsable: Claudia Covarrubias Ochoa0140108155111Z180108155151Z0Å‘1"0 UJOSE LUIS VASQUEZ BARBOSA1"0 U)JOSE LUIS VASQUEZ BARBOSA1"0 U
+JOSE LUIS VASQUEZ BARBOSA10	UMX1$0"	*ÜHÜ˜	jlvdantry@hotmail.com10U-VABL590324V2510UVABL590324HDFSRS060Åü0	*ÜHÜ˜ Åç 0ÅâÅÅ êÛ4U¥A¸˝Íüãä&l"ººØ<À;+Hå92÷=ÇC
+Cˇ’ü÷4∂ô∆Ê#ÁN_ÔÓ%ªí@û€
+<¶ı"—]ØsT›<Ù÷ŒjAıäL8Ò¥O†–ÓÏˆãºA‚Z≈§Ûpˇx}·Á–¶]Öi¬>ˆz¨q
+ë©ı+Î £q0o0Uˇ0 0Uÿ0	`ÜHÜ¯B†0U%0++0 U0Åjlvdantry@hotmail.com0	*ÜHÜ˜ Ç À$D)Äc 6X„«Ú+◊D>ßpIj◊~≈ﬂ ≥£øŒ(#Õ9›”ÍÖ˜˛\fEîÛ"ñ€W±ŸCàÁ_k	ﬁ∞≠l÷~Ig;fì\vÑìßpU†•2Ãú„(ﬁÀ°cÙ"Ûqª•ÌRã…∞fı“Mj$›¬hÁ
+Gó∫[◊ﬂ‹@m*¿TæPt
+eòü¶à Fã˘èÍ?|Y·4I2∆MwKë¯^	pÇﬁÕnÊA∞%&{1?Ì∏Ö0˜|A^¡XEUÄË_èì∂±˜&_$á™ØèHçFá&∫˝§k¥ª>?U»∂¸+.ªl…KÊIøÌó¸n§Ødò'2› 
+2015-10-17 17:22:55:000000  leyo la llave privada 
+2015-10-17 17:22:55:000000  resultado del chequeo 
+2015-10-17 17:22:55:000000  entro en checarsello 
+2015-10-17 17:23:02:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">4kw6qFIVrTLd/f/dw6ujkyzQxtk=</wsse:Password><wsse:Nonce>+4IVb1aIeMZ8BWbdBeVnOF3cuUP94yfN/HBaNxO7x4w=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T22:23:02Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T22:23:02Z</wsu:Created><wsu:Expires>2015-10-17T23:23:02Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43440.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43441.key</privada><password xsi:type="xsd:string">dantryda</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:23:02:000000  cargo xml 
+2015-10-17 17:23:02:000000  entro en AuthenticateUser usuario:jlv password:4kw6qFIVrTLd/f/dw6ujkyzQxtk= type= 
+2015-10-17 17:23:02:000000  password=4kw6qFIVrTLd/f/dw6ujkyzQxtk= base64_encode=4kw6qFIVrTLd/f/dw6ujkyzQxtk= 
+2015-10-17 17:23:02:000000  usuario autentidado 
+2015-10-17 17:23:02:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43440.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43441.key</privada><password xsi:type="xsd:string">dantryda</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:23:02:000000  paso connecion 
+2015-10-17 17:23:02:000000  entro a validafiel../upload_ficheros/43441.key publica=../upload_ficheros/43440.cer 
+2015-10-17 17:23:02:000000  paso la lectura de la llave publica0Ç‹0Çƒ†000010000003022669590	*ÜHÜ˜ 0Çä1806U/A.C. del Servicio de Administraci√≥n Tributaria1/0-U
+&Servicio de Administraci√≥n Tributaria1806U/Administraci√≥n de Seguridad de la Informaci√≥n10	*ÜHÜ˜	acods@sat.gob.mx1&0$U	Av. Hidalgo 77, Col. Guerrero10U0630010	UMX10UDistrito Federal10UCuauht√©moc10U-SAT970701NN31503	*ÜHÜ˜	&Responsable: Claudia Covarrubias Ochoa0140108155111Z180108155151Z0Å‘1"0 UJOSE LUIS VASQUEZ BARBOSA1"0 U)JOSE LUIS VASQUEZ BARBOSA1"0 U
+JOSE LUIS VASQUEZ BARBOSA10	UMX1$0"	*ÜHÜ˜	jlvdantry@hotmail.com10U-VABL590324V2510UVABL590324HDFSRS060Åü0	*ÜHÜ˜ Åç 0ÅâÅÅ êÛ4U¥A¸˝Íüãä&l"ººØ<À;+Hå92÷=ÇC
+Cˇ’ü÷4∂ô∆Ê#ÁN_ÔÓ%ªí@û€
+<¶ı"—]ØsT›<Ù÷ŒjAıäL8Ò¥O†–ÓÏˆãºA‚Z≈§Ûpˇx}·Á–¶]Öi¬>ˆz¨q
+ë©ı+Î £q0o0Uˇ0 0Uÿ0	`ÜHÜ¯B†0U%0++0 U0Åjlvdantry@hotmail.com0	*ÜHÜ˜ Ç À$D)Äc 6X„«Ú+◊D>ßpIj◊~≈ﬂ ≥£øŒ(#Õ9›”ÍÖ˜˛\fEîÛ"ñ€W±ŸCàÁ_k	ﬁ∞≠l÷~Ig;fì\vÑìßpU†•2Ãú„(ﬁÀ°cÙ"Ûqª•ÌRã…∞fı“Mj$›¬hÁ
+Gó∫[◊ﬂ‹@m*¿TæPt
+eòü¶à Fã˘èÍ?|Y·4I2∆MwKë¯^	pÇﬁÕnÊA∞%&{1?Ì∏Ö0˜|A^¡XEUÄË_èì∂±˜&_$á™ØèHçFá&∫˝§k¥ª>?U»∂¸+.ªl…KÊIøÌó¸n§Ødò'2› 
+2015-10-17 17:23:02:000000  leyo la llave privada 
+2015-10-17 17:23:02:000000  resultado del chequeo 
+2015-10-17 17:23:02:000000  entro en checarsello 
+2015-10-17 17:27:07:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">cl8xgMYsxAEcMdf/PY6iC5s344M=</wsse:Password><wsse:Nonce>5t85xbvPHcpyhSjKoZUUhctyqYKHLwA4OwKEthatpSE=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2015-10-17T22:27:07Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2015-10-17T22:27:07Z</wsu:Created><wsu:Expires>2015-10-17T23:27:07Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43442.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43443.key</privada><password xsi:type="xsd:string">dantryda</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:27:07:000000  cargo xml 
+2015-10-17 17:27:07:000000  entro en AuthenticateUser usuario:jlv password:cl8xgMYsxAEcMdf/PY6iC5s344M= type= 
+2015-10-17 17:27:07:000000  password=cl8xgMYsxAEcMdf/PY6iC5s344M= base64_encode=cl8xgMYsxAEcMdf/PY6iC5s344M= 
+2015-10-17 17:27:07:000000  usuario autentidado 
+2015-10-17 17:27:07:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:validafiel><pregunta xsi:type="ns1:validafiel"><publica xsi:type="xsd:string">../upload_ficheros/43442.cer</publica><privada xsi:type="xsd:string">../upload_ficheros/43443.key</privada><password xsi:type="xsd:string">dantryda</password></pregunta></ns1:validafiel></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2015-10-17 17:27:07:000000  paso connecion 
+2015-10-17 17:27:07:000000  entro a validafiel../upload_ficheros/43443.key publica=../upload_ficheros/43442.cer 
+2015-10-17 17:27:07:000000  paso la lectura de la llave publica-----BEGIN CERTIFICATE-----
+MIIB4DCCAUkCCQCOlB0wMHGKfjANBgkqhkiG9w0BAQUFADBcMQswCQYDVQQGEwJt
+eDELMAkGA1UEBxMCZGYxGjAYBgNVBAMTEWpvc2UgbHVpcyB2YXNxdWV6MSQwIgYJ
+KoZIhvcNAQkBFhVqbHZkYW50cnlAaG90bWFpbC5jb20wHhcNMTUxMDE3MjIyNDQx
+WhcNMTYxMDE2MjIyNDQxWjANMQswCQYDVQQGEwJNWDCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEAqyqYgbjKXgfVJ7x6M6HWkHm/0ZINlWa54PA/7bETiDclePBb
+V9VOtiDBsuoyZq050vUitxOCaMXRPB18XSnP6Y9+ODDjd8epCIGhzzcBW/rGbgOu
+oCSY5kwihMjSZLfykMiIVfvdZibw4HhLVrAda6C5oAU/ldKZqoWPfmmqRIUCAwEA
+ATANBgkqhkiG9w0BAQUFAAOBgQCT1+hLw3pHfr/mFq8uFdPgrsWlArTjpwaYfu42
+jhJUPjaxy32QFTs4GH1GqaTBwLrGeMAWomDOSIQeWZE8a4iYORRNNxjsKFP4ZyEZ
+ZtCWPGYTOG1krYgoFVcQmenzGZLrAQO9esLL7apKUyng9P8q0IyeER3APLwIndkp
+QuPAZA==
+-----END CERTIFICATE-----
+ 
+2015-10-17 17:27:07:000000  leyo la llave privadaResource id #33 
+2015-10-17 17:27:07:000000  resultado del chequeo1 
+2015-10-17 17:27:07:000000  entro en checarsello 

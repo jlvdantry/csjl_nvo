@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:element name="Certificacion">
+  <xs:annotation>
+    <xs:documentation>
+       Estandar para la expresion de certificaciones digitales.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+
+
+      <xs:sequence>
+        <xs:element name="Cobros" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cobro" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="PuntoDeRecaudacion" use="required" >
+                    <xs:annotation>
+                      <xs:documentation>
+                        Nombre el lugar donde se pago el cobro.
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:whiteSpace value="collapse"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="20"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="FechaDeCobro" use="required" >
+                    <xs:annotation>
+                      <xs:documentation>
+                        Fecha en que se realizo el cobro formato de la fecha AAAA-MM-DD donde AAAA=ano MM=mes DD=dia.
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:date">
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+
+                  <xs:attribute name="Caja"  use="optional">
+                    <xs:annotation>
+                      <xs:documentation>
+                        Caja en que se realizo el cobro.
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:int">
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+
+                  <xs:attribute name="Partida"  >
+                    <xs:annotation>
+                      <xs:documentation>
+                        No de partida que se le asigno al pago cuando se efectuo.
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:int">
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+
+                  <xs:attribute name="Periodos" >
+                    <xs:annotation>
+                      <xs:documentation>
+                        Periodo que se pagaron formato AAAABB-AAAABB or AAAA-AAAA.
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="13"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+
+                  <xs:attribute name="LineaDeCaptura"  >
+                    <xs:annotation>
+                      <xs:documentation>
+                        Linea de captura con la que se efectuo el pago .
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="20"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+
+                  <xs:attribute name="TotalDelCobro" use="required" >
+                    <xs:annotation>
+                      <xs:documentation>
+                        total pagado.
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+
+
+  <xs:attribute name="NoFirma" use="required" >
+    <xs:annotation>
+      <xs:documentation>
+        Numero consecutivo de las firmas digitales emitidas por la Secretari de Finanzas.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:whiteSpace value="collapse"/>
+        <xs:minLength value="1"/>
+        <xs:maxLength value="20"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
+<xs:attribute name="certificado" use="required" >
+<xs:annotation>
+<xs:documentation>
+Certificado digital de la Secretaria de finanzas
+</xs:documentation>
+</xs:annotation>
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:attribute>
+
+<xs:attribute name="FolioCertificado" use="required" >
+<xs:annotation>
+<xs:documentation>
+Folio de la certificacion digital.
+</xs:documentation>
+</xs:annotation>
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+<xs:minLength value="1"/>
+<xs:maxLength value="20"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:attribute>
+
+<xs:attribute name="sello" use="required">
+<xs:annotation>
+<xs:documentation>
+Atributo requerido para contener el sello digital de la certificacion digita, El sello debera ser expresado como una cadena de texto en formato Base 64.
+</xs:documentation>
+</xs:annotation>
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:attribute>
+
+<xs:attribute name="Concepto" use="required" >
+<xs:annotation>
+<xs:documentation>
+Contiene descripcion del concepto de los cobros que se estan certificando
+</xs:documentation>
+</xs:annotation>
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+<xs:minLength value="1"/>
+<xs:maxLength value="50"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:attribute>
+
+<xs:attribute name="NombreDelContribuyente" use="required" >
+<xs:annotation>
+<xs:documentation>
+Nombre del contribuyente o de la cuenta.
+</xs:documentation>
+</xs:annotation>
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+<xs:minLength value="1"/>
+<xs:maxLength value="80"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:attribute>
+
+<xs:attribute name="LineaDeCaptura" use="required" >
+<xs:annotation>
+<xs:documentation>
+Linea de captura con al que se esta pagando la certificacion digital.
+</xs:documentation>
+</xs:annotation>
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+<xs:minLength value="1"/>
+<xs:maxLength value="20"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:attribute>
+ 
+<xs:attribute name="Cuenta" use="optional" >
+<xs:annotation>
+<xs:documentation>
+Cuenta con de los cobros que se estan certificando.
+</xs:documentation>
+</xs:annotation>
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+<xs:minLength value="1"/>
+<xs:maxLength value="20"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:attribute>
+
+<xs:attribute name="FechaEmision" use="required" >
+<xs:annotation>
+<xs:documentation>
+Atributo requerido para la expresion la fecha y hora de expedicion de la certificacion fiscal. Se expresa en la forma aaaa-mm-ddThh:mm:ss, de acuerdo con la especificacion ISO 8601.
+</xs:documentation>
+</xs:annotation>
+<xs:simpleType>
+<xs:restriction base="xs:dateTime">
+<xs:whiteSpace value="collapse"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:attribute>
+
+
+</xs:complexType>
+</xs:element>
+</xs:schema>

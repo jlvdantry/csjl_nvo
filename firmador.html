@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mi primera pána</title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="jquery.mobile.theme-1.4.5.min.css" />
+    <script src="jquery-2.1.4.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+ 
+<body>
+ 
+<div id="pagina" data-role="page">
+ 
+    <div data-role="header" data-position="fixed">
+        <h1>Firmador de documento de AGN</h1>
+    </div><!-- /header -->
+ 
+<div data-role="content">
+    <input type="text" name="nombre" id="nombre" value="" placeholder="Introduce tu nombre"  />
+    <a href="#popup" id="aceptar" data-role="button" data-icon="check" data-url="popup" >Aceptar</a>     
+    </div><!-- /content -->
+     
+    <div data-role="footer" data-position="fixed">
+        <h4>Derechos reservados</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<div id="popup" data-role="dialog" data-url="popup" >
+      <div data-role="header">
+          <h1>Cabecera del cuadro de dialogo</h1>
+      </div>
+      <div data-role="content">
+          <h1>Hola <span id="mensaje"></span></h1>
+          <a href="#" data-role="button" data-rel="back">Cerrar</a>
+      </div>
+  </div>
+</body>
+</html>
+   <script type="text/javascript">
+          $('#popup').on( 'pagebeforeshow',function(event, ui){
+          $('#mensaje').text($('#nombre').val());
+     });
+   </script>

@@ -1,0 +1,499 @@
+body
+{
+	background-color:#EEEEEE;
+	background:url("img/bg.gif");
+	color: black;
+}
+
+.visible
+{
+    visibility: visible;
+}
+
+.hidden
+{
+    visibility: hidden;
+    display   : none;
+    border    : 0x;
+    margin    :0x;
+    height    : 0x;
+    width     : 0x;
+}
+
+input.img
+{
+        background:transparent;
+        width:16pt;
+        height:16pt;
+}
+
+.captcha
+{
+        text-align: center;
+        border: s;
+        font-weight:bold;
+        font-family:Modern;
+        border-color: red;
+}
+
+input,text,select,textarea
+	{
+	    color:#0A1B34;
+	    background:#C6D8E4;
+	    font-family: TAHOMA,VERDANA,ARIAL;
+	    font-size:12PT;
+	}
+	
+input.foco
+	{
+       background:#0A1B34;
+       font-family: TAHOMA,VERDANA,ARIAL;
+       font-size:12PT;
+       color: #C6D8E4;
+       border    : 3x;
+	}
+select.foco
+        {
+       /*background:#0A1B34;*/
+       font-family: TAHOMA,VERDANA,ARIAL;
+       font-size:12PT;
+       color: #0A1B34;
+       border    : 3x;
+        }
+
+textarea.foco
+	{
+       background:#0A1B34;
+       font-family: TAHOMA,VERDANA,ARIAL;
+       font-size:12PT;
+       color: white;
+       border    : 3x;
+	}
+input.button,Button
+{
+    background: transparent;
+    border-bottom: medium none;
+    border-left: medium none;
+    border-right: medium none;
+    border-top: medium none;
+    color: #003399;
+    cursor: pointer;
+    text-align: left;
+}
+
+table
+{
+	width: 100%;
+	border: 0px;
+}
+
+caption
+{
+	font-family: tahoma,verdana,arial;
+        font-size:14PT;
+	color: #D4DDE7;
+	background: transparent url('img\fondo.jpg') repeat;
+	text-align :center ;
+	padding: 0px;
+	border-right: 1px solid #2A5688;
+	border-bottom: 1px solid #2A5688;
+}
+
+th
+{
+	font-family: tahoma,verdana,arial;
+        font-size:14PT;
+	color: #0A1B34;
+	background-color:#A0B0C2;
+	text-align: center;
+	border-bottom: 1px solid #0A1B34  ;
+	border-right: 1px solid #0A1B34  ;
+}
+th.tableon
+{
+	font-family: tahoma,verdana,arial;
+        font-size:10PT;
+	color: #0A1B34;
+	background-color:#A0B0C2;
+	text-align: center;
+	border-bottom: 1px solid #0A1B34  ;
+	border-right: 1px solid #0A1B34  ;
+}
+
+th.tableoff
+{
+	font-family: tahoma,verdana,arial;
+        font-size:10PT;
+	color: #0A1B34;
+	background-color:#A0B0C2;
+	text-align: center;
+	border-bottom: 1px solid #0A1B34  ;
+	border-right: 1px solid #0A1B34  ;
+}
+
+td
+{
+	font-family: tahoma,verdana,arial;
+        font-size:12PT;
+	color:#0A1B34;
+	background-color:#EAF2F7;
+	padding: 1px;
+	border-bottom: 1px solid #0A1B34  ;
+	border-right: 1px solid #0A1B34  ;
+        z-index: 0;
+}
+
+td.botones
+{
+    background: transparent;
+    border-bottom: medium none;
+    border-left: medium none;
+    border-right: medium none;
+    border-top: medium none;
+    color: #0A1B34;
+    cursor: pointer; 
+    font: 7pt Verdana, sans-serif;
+    height: 15px;
+    text-align: center;
+}
+
+input.lee
+{
+       background:#F8F8F8;
+       font-family: TAHOMA,VERDANA,ARIAL;
+       font-size:12PT;
+       color: black 
+}
+
+textarea.lee
+{
+       background:#F8F8F8;
+       font-family: TAHOMA,VERDANA,ARIAL;
+       font-size:12PT;
+       color: black 
+}
+
+select.lee
+{
+       background:#F8F8F8;
+       font-family: TAHOMA,VERDANA,ARIAL;
+       font-size:12PT;
+       color: black
+}
+
+td.cambiado
+{
+	color: white;
+	background-color:#FF6F0E;
+	border-bottom: solid thin #013D6A; 
+	border-right: solid thin #013D6A; 
+	outline-style: solid;
+}
+
+td.incorrecto
+{
+       background:#FF0000;
+       font-family: TAHOMA,VERDANA,ARIAL;
+       font-size:12PT;
+       color: white
+}
+
+td.correcto
+{
+	color: #EEEEEE;
+	background-color:#BFCED9;
+	font-family: TAHOMA,VERDANA,ARIAL;
+	font-size:12PT;
+}
+
+td.foco
+{
+	color: white;
+	background-color:#0A1B34;
+	font-family: TAHOMA,VERDANA,ARIAL;
+	font-size:12PT;
+}
+
+// +----------------------+
+// | Scrolling Table Body |  (C) 2005 by Derek Anderson   [ http://kered.org | public at kered dot org ]
+// +----------------------+
+
+div.scrolling_table_body {
+	border: 1px solid black;
+	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 0px;
+}
+
+span.scrolling_table_body {
+	padding: 0px;
+}
+table.scrolling_table_body {
+}
+table.scrolling_table_body td {
+	padding: 1px; 
+	padding-left: 6px; padding-right: 6px;
+}
+thead.scrolling_table_body {}
+thead.scrolling_table_body tr {
+	background: white;
+}
+
+tbody.scrolling_table_body {}
+tbody.scrolling_table_body tr {
+	background: white;
+}
+
+div.titulo
+{
+	font: caption;
+	color: #003366;
+	background-color:#C0D9D9;
+	text-align: center;
+        left: 30%;
+}
+
+a
+{
+	font-family: tahoma,verdana,arial;
+    font-size:12PT;
+    color:#0042C5;
+    cursor: pointer;
+}
+
+td.todofoco
+{
+       color: white;
+       background:#0A1B34;
+       font-family: TAHOMA,VERDANA,ARIAL;
+       font-size:12PT;
+}
+
+input.img
+{
+	background:transparent;
+	width:16pt;
+  	height:16pt;
+}
+input.image
+{
+	width:20pt;
+  	height:20pt;
+}
+.menok
+{
+	font-family: tahoma,verdana,arial;
+        font-size:12PT;
+	color: green;
+	background: none transparent scroll repeat 0% 0%;
+	text-align: center;
+	border: 0px;
+}
+.menerror
+{
+	font-family: tahoma,verdana,arial;
+        font-size:12PT;
+	color: red;
+	background: none transparent scroll repeat 0% 0%;
+	text-align: center;
+	border: 0px;
+}
+
+td.htmltable
+{
+	font-family: tahoma,verdana,arial;
+        font-size:12PT;
+	color: #D4DDE7;
+	background: url('img/fondo_tda.jpg');
+        background-repeat: repeat ;
+	text-align : center ;
+	height:20px;
+	border-right: 1px solid #2A5688;
+	border-bottom: 1px solid #2A5688;
+}
+
+div.fecha
+{
+	background:transparent ;
+	background-repeat: repeat;
+	color: #D4DDE7;
+	text-align : center ;
+}
+
+input.enca
+{
+	background: transparent;
+	color: #D4DDE7;
+	border-style: none;
+	text-align : center ;
+	border-color: transparent;
+}
+
+td.enca
+{
+	background: url('img/fondo_tda.jpg') ;
+	background-repeat: repeat;
+	color: #D4DDE7;
+	text-align : center ;
+	border-color: transparent;
+}
+
+table.topmenu
+{ 
+          z-index: 0;
+}
+.datePicker {
+	border:		1spx solid WindowText;
+	background:	Window;
+	width:		170px;
+	padding:	0px;
+	cursor:		default;
+	-moz-user-focus: normal;
+}
+
+
+.datePicker td {
+	font:			smallcaption;
+	font:			small-caption;
+	text-align:		center;
+	color:			#0A1B34;
+	cursor:			default;
+	font-weight:	normal !important;
+	-moz-user-select:	none;
+	padding:		0;
+}
+
+.datePicker td.red {
+	color:			red;
+}
+
+.datePicker .header {
+	background:		ActiveCaption;
+	padding:		0px;
+	border-bottom:	1px solid WindowText;
+}
+
+.datePicker .headerTable {
+	width:			100%;
+	height:			35px;
+	background:		url("img\fondo.jpg");
+
+}
+
+.datePicker .footer {
+	padding: 0px;
+}
+
+.datePicker .footerTable {
+	width:		100%;
+	height:30px;
+	background:	#A0B0C2;
+}
+
+.datePicker .grid {
+	padding:	0px;
+	background:url("img\bg.gif");
+}
+.datePicker .gridTable {
+	width:	100%;
+}
+
+.datePicker .gridTable td {
+	width:	14.3%;
+}
+
+.datePicker .gridTable .daysRow td {
+	font-weight:	bold !important;
+	border-bottom:	1px solid ThreeDDarkShadow;
+}
+
+.datePicker .grid .gridTable .upperLine {
+	width:		100%;
+	height:		2px;
+	overflow:	hidden;
+	background:	transparent;
+}
+
+.datePicker td.today {
+	font-weight:	bold !important;
+}
+
+.datePicker td.selected {
+	background:		#A0B0C2;
+	color:			HighlightText !important;
+}
+
+.datePicker td.labelContainer {
+	width:	100%;
+}
+
+.datePicker td .topLabel {
+	color:			#D4DDE7;
+	display:		block;
+	font-weight:	bold !important;
+	width:			100%;
+	text-decoration:	none;
+
+}
+
+.datePicker td.filler {
+	width:			100%;
+}
+
+.datePicker button {
+	border-width:	1px;
+	font:			Caption;
+	font-weight:	normal !important;
+	display:		block;
+}
+
+.datePicker .previousButton {
+	background:	buttonface url("img/arrow.left.gif") no-repeat center center;
+}
+
+.datePicker .nextButton {
+	background:	buttonface url("img/arrow.rigth.gif") no-repeat center center;
+}
+.datePicker .previousButton,
+.datePicker .nextButton {
+	width:			14px;
+	height:			14px;
+}
+
+.datePicker .todayButton,
+.datePicker .noneButton {
+	width:	50px;
+	color:#0A1B34;
+	background:#C6D8E4;
+	font-family: tahoma,verdana,arial;
+	font-size:8pt
+}
+
+
+.datePicker .labelPopup {
+	position:	absolute;
+	min-width:	130px;
+	background:  #0A1B34;
+	border:		1px solid WindowText;
+	padding:	0px;
+}
+
+.datePicker .labelPopup a {
+	width:				100%;
+	display:			block;
+	color:				#667482;
+	text-decoration:	none;
+	white-space:		nowrap;
+}
+
+.datePicker .labelPopup a:hover {
+	color: #0A1B34;
+	background:#D6E1EB;
+}
+
+.datePicker .labelPopup a.selected {
+	font-weight:	bold;
+	color: #D6E1EB;
+}
+

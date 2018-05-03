@@ -1,0 +1,27 @@
+2018-01-12 20:50:54:000000  payload: 
+2018-01-12 20:50:54:000000  payload:<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" SOAP-ENV:mustUnderstand="1"><wsse:UsernameToken><wsse:Username>jlv</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">I996xURr5OnyYK9IGa9aAf6/nMw=</wsse:Password><wsse:Nonce>UT16z1zDGAVO3y10noMmpob5zp2uQVhV2mo2L7ZxmoE=</wsse:Nonce><wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2018-01-13T02:50:54Z</wsu:Created></wsse:UsernameToken><wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2018-01-13T02:50:54Z</wsu:Created><wsu:Expires>2018-01-13T03:50:54Z</wsu:Expires></wsu:Timestamp></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:generacadena><pregunta xsi:type="ns1:generacadena"><xml xsi:type="xsd:string">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;AvisoDeTestamento xmlns:vuat="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/vuat.xsd" certificado="local" sello="local" folioCertificado="local" tramite="Aviso de testmento" lineaDeCaptura="temporal" fechaEmision="2018-01-13T02:50:54"&gt;&lt;Testador nacionalidad="mexicana"/&gt;&lt;Instrumento/&gt;&lt;Padres/&gt;&lt;Domicilio/&gt;&lt;/AvisoDeTestamento&gt;
+</xml></pregunta></ns1:generacadena></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2018-01-12 20:50:54:000000  cargo xml 
+2018-01-12 20:50:54:000000  entro en AuthenticateUser usuario:jlv password:I996xURr5OnyYK9IGa9aAf6/nMw= type= 
+2018-01-12 20:50:54:000000  password=I996xURr5OnyYK9IGa9aAf6/nMw= base64_encode=I996xURr5OnyYK9IGa9aAf6/nMw= 
+2018-01-12 20:50:54:000000  usuario autentidado 
+2018-01-12 20:50:54:000000  row=<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/ws_oficinaSellado.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns1:generacadena><pregunta xsi:type="ns1:generacadena"><xml xsi:type="xsd:string">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;AvisoDeTestamento xmlns:vuat="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/vuat.xsd" certificado="local" sello="local" folioCertificado="local" tramite="Aviso de testmento" lineaDeCaptura="temporal" fechaEmision="2018-01-13T02:50:54"&gt;&lt;Testador nacionalidad="mexicana"/&gt;&lt;Instrumento/&gt;&lt;Padres/&gt;&lt;Domicilio/&gt;&lt;/AvisoDeTestamento&gt;
+</xml></pregunta></ns1:generacadena></SOAP-ENV:Body></SOAP-ENV:Envelope>
+ 
+2018-01-12 20:50:54:000000  paso connecion 
+2018-01-12 20:50:54:000000  entro en generacadena=<?xml version="1.0" encoding="UTF-8"?>
+<AvisoDeTestamento xmlns:vuat="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/vuat.xsd" certificado="local" sello="local" folioCertificado="local" tramite="Aviso de testmento" lineaDeCaptura="temporal" fechaEmision="2018-01-13T02:50:54"><Testador nacionalidad="mexicana"/><Instrumento/><Padres/><Domicilio/></AvisoDeTestamento>
+ 
+2018-01-12 20:50:54:000000  paso new 
+2018-01-12 20:50:54:000000  entro en getDOMDocument xml=<?xml version="1.0" encoding="UTF-8"?>
+<AvisoDeTestamento xmlns:vuat="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado http://10.250.103.116/htdocs/contra/csjl_nvo/csjl_nvo/sellado/vuat.xsd" certificado="local" sello="local" folioCertificado="local" tramite="Aviso de testmento" lineaDeCaptura="temporal" fechaEmision="2018-01-13T02:50:54"><Testador nacionalidad="mexicana"/><Instrumento/><Padres/><Domicilio/></AvisoDeTestamento>
+ 
+2018-01-12 20:50:54:000000  entro en getDOMDocument xml=vuat_XSL_cadena.xsl 
+2018-01-12 20:50:54:000000  entro en path=./vuat_XSL_cadena.xsl-LIBXML_OPTIONS=16398-path=./vuat_XSL_cadena.xsl 
+2018-01-12 20:50:54:000000  paso load= 
+2018-01-12 20:50:54:000000  paso transform 

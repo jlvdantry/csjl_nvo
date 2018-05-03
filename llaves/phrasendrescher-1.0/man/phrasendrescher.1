@@ -1,0 +1,85 @@
+.TH PHRASENDRESCHER 1 "Version 1.0"
+
+.SH NAME
+.B phrasendrescher
+cracks passphrases of RSA or DSA keys.
+
+.SH SYNOPSIS
+.B phrasendrescher
+[options] ( file | directory )
+
+.SH DESCRIPTION
+.B phrasendrescher
+cracks passphrases of RSA or DSA keys as they would be used by ssh(1) for instance.
+This can be done with pure brute force or dictionary based.
+
+.SH OPTIONS
+.PP
+.TP
+.I -h
+print help message
+.TP
+.I -i from[:to]
+incremental mode beginning with word length `from' and going to `to'
+.TP
+.I -d file
+run dictionary based with words from `file'
+.TP
+.I -r rule
+use rules to rewrite dictionary words
+.PP
+.TP
+.B Rewriting rules:
+.TP
+.I A
+Rewrite word with only upper case characters
+.TP
+.I F
+Rewrite word with first character as upper case
+.TP
+.I L
+Rewrite word with last character as upper case
+.TP
+.I a
+Rewrite word with only lower case characters
+.TP
+.I f
+Rewrite word with first character as lower case
+.TP
+.I l
+Rewrite word with last character as lower case
+.TP
+.I w
+first letter of each word to lower case
+.TP
+.I D
+Prepend each digit (0-9) to the word
+.TP
+.I d
+Append each digit (0-9) to the word
+.TP
+.I e
+enleet the word 
+.TP
+.I x
+apply all rules to a word
+
+.SH ENVIRONMENT VARIABLES
+.PP
+.TP
+.I PHRASENDRESCHER_MAP
+the characters for the incremental mode are taken from a character list. A customized
+list can be specified in the environment variable.
+
+.SH AUTHOR
+.PP
+.TP
+Nico Leidecker <nfl@portcullis-security.com>
+http://www.portcullis.co.uk   -   http://www.leidecker.info
+
+.SG SEE ALSO
+.PP
+.TP
+.B ssh(1)
+, 
+.B openssl(1)

@@ -1,0 +1,142 @@
+<xsl:stylesheet 
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                xmlns:vuat="http://187.141.34.31/dgjyel"
+                xmlns:vuccyt="http://187.141.34.31/dgjyel"
+                xmlns:vuccytd="http://187.141.34.31/dgjyel"
+                xmlns:vunom="http://187.141.34.31/dgjyel"
+                     version="2.0">
+    <xsl:output encoding="UTF-8"
+                indent="no"
+                method="text"
+                version="1.0" />
+    <xsl:template match="/">
+        |
+        <xsl:apply-templates select="/vuat:AvistoDeTestamento" />
+        ||
+    </xsl:template>
+    <xsl:template match="vuat:testador">
+        <!-- Iniciamos el tratamiento de los atributos del aviso de testamento -->
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@fecha" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@nombre" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@apellidoPaterno" />
+        </xsl:call-template>
+        <xsl:call-template name="Opcional">
+            <xsl:with-param name="valor"
+                            select="./@apellidoMaterno" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@nacionalidad" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@lugarDeNacimiento" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@fechaDeNacimiento" />
+        </xsl:call-template>
+
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@estadoCivil" />
+        </xsl:call-template>
+
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@lineaDeCaptura" />
+        </xsl:call-template>
+        <!--  -->
+        <xsl:apply-templates select="./vuat:Instrumento" />
+        <xsl:apply-templates select="./vuat:Domicilio" />
+        <xsl:apply-templates select="./vuat:Padres" />
+    </xsl:template>
+    <!-- Manejador de nodos tipo Receptor -->
+    <xsl:template match="vuat:Instrumento">
+        <!-- Iniciamos el tratamiento de los atributos del Receptor -->
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@tipodeTestamento" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@escritura" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@volumen" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@fechaDeEscritura" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="./@fechaDeOtorgamiento" />
+        </xsl:call-template>
+    </xsl:template>
+
+    <xsl:template match="vuat:Padres">
+        <!-- Iniciamos el tratamiento de los atributos del Receptor -->
+        <xsl:call-template name="Opcional">
+            <xsl:with-param name="valor"
+                            select="./@nombrePadre" />
+        </xsl:call-template>
+        <xsl:call-template name="Opcional">
+            <xsl:with-param name="valor"
+                            select="./@paternoPadre" />
+        </xsl:call-template>
+        <xsl:call-template name="Opcional">
+            <xsl:with-param name="valor"
+                            select="./@maternoPadre" />
+        </xsl:call-template>
+
+        <xsl:call-template name="Opcional">
+            <xsl:with-param name="valor"
+                            select="./@nombreMadre" />
+        </xsl:call-template>
+        <xsl:call-template name="Opcional">
+            <xsl:with-param name="valor"
+                            select="./@paternoMadre" />
+        </xsl:call-template>
+        <xsl:call-template name="Opcional">
+            <xsl:with-param name="valor"
+                            select="./@maternoMadre" />
+        </xsl:call-template>
+
+    </xsl:template>
+
+    <!-- Manejador de nodos tipo Domicilio -->
+    <xsl:template name="Domicilio">
+        <xsl:param name="Nodo" />
+        <!-- Iniciamos el tratamiento de los atributos del Domicilio -->
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="$Nodo/@calleYNumero" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="$Nodo/@colonia" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="$Nodo/@delegacionMunicipio" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="$Nodo/@entidad" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+            <xsl:with-param name="valor"
+                            select="$Nodo/@codigoPostal" />
+        </xsl:call-template>
+    </xsl:template>
+</xsl:stylesheet>

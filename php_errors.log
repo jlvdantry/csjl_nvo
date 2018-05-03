@@ -1,0 +1,148 @@
+[03-May-2018 14:19:05 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function pg_connect() in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php:20
+Stack trace:
+#0 /var/www/html/solin.com/public_html/csjl_nvo/entrada.php(3): include()
+#1 {main}
+  thrown in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php on line 20
+[03-May-2018 14:22:53 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function pg_connect() in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php:20
+Stack trace:
+#0 /var/www/html/solin.com/public_html/csjl_nvo/entrada.php(3): include()
+#1 {main}
+  thrown in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php on line 20
+[03-May-2018 14:25:18 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function pg_connect() in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php:20
+Stack trace:
+#0 /var/www/html/solin.com/public_html/csjl_nvo/entrada.php(3): include()
+#1 {main}
+  thrown in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php on line 20
+[03-May-2018 14:25:59 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function pg_connect() in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php:20
+Stack trace:
+#0 /var/www/html/solin.com/public_html/csjl_nvo/entrada.php(3): include()
+#1 {main}
+  thrown in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php on line 20
+[03-May-2018 14:26:12 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function pg_connect() in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php:20
+Stack trace:
+#0 /var/www/html/solin.com/public_html/csjl_nvo/entrada.php(3): include()
+#1 {main}
+  thrown in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php on line 20
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: parametro1 in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 424
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: usuario in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: password in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined variable: Row in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1613
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 14:46:24 America/Chicago] PHP Notice:  Use of undefined constant movtos - assumed 'movtos' in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1706
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: parametro1 in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 424
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: usuario in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: password in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined variable: Row in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1613
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 14:47:07 America/Chicago] PHP Notice:  Use of undefined constant movtos - assumed 'movtos' in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1706
+[03-May-2018 14:47:55 America/Chicago] PHP Notice:  Undefined index: parametro1 in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 424
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: usuario in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: password in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined variable: Row in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1613
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 14:47:56 America/Chicago] PHP Notice:  Use of undefined constant movtos - assumed 'movtos' in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1706
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: parametro1 in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 424
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: usuario in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: password in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined variable: Row in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1613
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 15:53:50 America/Chicago] PHP Notice:  Use of undefined constant movtos - assumed 'movtos' in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1706
+[03-May-2018 15:53:58 America/Chicago] PHP Notice:  Undefined offset: 0 in /var/www/html/solin.com/public_html/csjl_nvo/seguridad_class.php on line 184
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: parametro1 in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 424
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: usuario in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: password in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined variable: Row in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1613
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 15:54:23 America/Chicago] PHP Notice:  Use of undefined constant movtos - assumed 'movtos' in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1706
+[03-May-2018 15:54:30 America/Chicago] PHP Notice:  Undefined offset: 0 in /var/www/html/solin.com/public_html/csjl_nvo/seguridad_class.php on line 184
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: parametro1 in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 424
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: usuario in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: esFiltroDe in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1412
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Only variables should be passed by reference in /var/www/html/solin.com/public_html/csjl_nvo/menudata.php on line 461
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: tiene_pk_serial in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1468
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: password in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1502
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined variable: wlonChange in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1195
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1202
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined variable: Row in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1613
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Undefined index: esadmon in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1695
+[03-May-2018 15:55:25 America/Chicago] PHP Notice:  Use of undefined constant movtos - assumed 'movtos' in /var/www/html/solin.com/public_html/csjl_nvo/soldatos.php on line 1706
+[03-May-2018 15:55:32 America/Chicago] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /var/www/html/solin.com/public_html/csjl_nvo/seguridad_class.php on line 184
+[03-May-2018 15:56:02 America/Chicago] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /var/www/html/solin.com/public_html/csjl_nvo/seguridad_class.php on line 184
+[03-May-2018 15:56:46 America/Chicago] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/html/solin.com/public_html/csjl_nvo/seguridad_class.php on line 186
+[03-May-2018 15:56:46 America/Chicago] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php on line 3
+[03-May-2018 15:56:46 America/Chicago] PHP Notice:  Undefined variable: opcion in /var/www/html/solin.com/public_html/csjl_nvo/seguridad_class.php on line 192
+[03-May-2018 16:03:13 America/Chicago] PHP Notice:  A session had already been started - ignoring session_start() in /var/www/html/solin.com/public_html/csjl_nvo/seguridad_class.php on line 186
+[03-May-2018 16:03:13 America/Chicago] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /var/www/html/solin.com/public_html/csjl_nvo/conneccion.php on line 9

@@ -1,0 +1,10 @@
+2018-04-18 15:16:21  entro en llamaturnows Array id=4a4kp3at0eb1196hd0pn00fd97
+2018-04-18 15:16:21  cliente socket errno111 errstr=Connection refused id=4a4kp3at0eb1196hd0pn00fd97
+2018-04-18 15:16:21  cliente socket se fue por falso id=4a4kp3at0eb1196hd0pn00fd97
+2018-04-18 15:16:21  paso WebsocketClient conectado id=4a4kp3at0eb1196hd0pn00fd97
+2018-04-18 15:16:21  paso llamaturnows va a regresar falso id=4a4kp3at0eb1196hd0pn00fd97
+2018-04-18 15:20:28  entro en llamaturnows Array id=4a4kp3at0eb1196hd0pn00fd97
+2018-04-18 15:20:28  cliente socket errno0 errstr= id=4a4kp3at0eb1196hd0pn00fd97
+2018-04-18 15:20:28  cliente socket se fue por cierto id=4a4kp3at0eb1196hd0pn00fd97
+2018-04-18 15:20:28  paso WebsocketClient conectado1 id=4a4kp3at0eb1196hd0pn00fd97
+2018-04-18 15:20:28  termino llamaturnoArray id=4a4kp3at0eb1196hd0pn00fd97

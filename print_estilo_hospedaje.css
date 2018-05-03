@@ -1,0 +1,223 @@
+BODY { 
+   font: 8pt Verdana, Geneva, Arial, Helvetica, sans-serif; 
+   margin: 0 0 0 0px; 
+   text-align: center; 
+    background-color: #ffffff; 
+}  
+
+input,text,textarea,select
+	{
+		color:navy ;
+		background-color:#C0D9D9;;
+	    FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+	    FONT-SIZE:8PT
+	}
+	
+select:active
+{
+       background:#4020c0;
+       FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+       FONT-SIZE:18PT;
+       outline: red solid thick;
+       COLOR: white
+}	
+div.titulos
+{
+	font: caption;
+	color: #003366;
+	background-color:#C0D9D9	 	;
+	text-align: left;
+
+}
+
+
+div.fecha
+{
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	color: #003366;
+	background-color:#C0D9D9	 	;
+	text-align: right;
+	font-style: arial;
+}
+	
+input.
+	{
+		color: #DDDDDD;
+		background-color:#DDDDDD;
+	    FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+	    FONT-SIZE:8PT
+	}
+input.foco
+	{
+       background:#4020c0;
+       FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+       FONT-SIZE:8PT;
+		border: red solid thin;       
+		outline-style: solid;
+		outline-color: red;
+       COLOR: white
+	}
+	
+INPUT.button,Button
+{
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    COLOR: #003399;
+    CURSOR: hand;
+    FONT: 7pt Verdana, sans-serif;
+    TEXT-ALIGN: left
+}
+
+
+table
+{
+	width: 100%;
+	border:0;
+	cellspacing:0;
+	cellpadding:0;
+	align:center;
+}
+
+caption
+{
+	font-family: tahoma,verdana,arial;
+    font-size:12PT;
+	color: #003366;
+	background-color:#C0D9D9	 	;
+	text-align: center;
+	font-style: arial;
+	padding: 1px;
+	border: 1px solid white;
+	border-bottom: 2px solid #777777  ;
+	border-right: 2px solid #777777  ;
+}
+
+th
+{
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	color: #003366;
+	background-color:#C0D9D9	 	;
+	text-align: center;
+	font-style: arial;
+	border: 1px solid white;
+	border-bottom: 2px solid #777777  ;
+	border-right: 2px solid #777777  ;	
+}
+
+
+
+td
+{
+	font-family: tahoma,verdana,arial;
+    font-size:7PT;
+    font-weight: bold;
+}
+
+td.grupo
+{
+	font-family: verdana;
+    font-size:9PT;
+    font-weight: bold;
+	background-color : green;
+	padding: 1px;
+	font-style: verdana;	
+	border: 1px solid black;
+	text-align: center ;
+}
+
+
+
+input.lee
+{
+       background:#BBBBB;
+       FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+       FONT-SIZE:8PT;
+       COLOR: black 
+}
+
+td.cambiado
+{
+       background:#4020c0;
+       FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+       FONT-SIZE:8PT;
+       COLOR: white
+}
+
+td.incorrecto
+{
+       background:#FF0000;
+       FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+       FONT-SIZE:8PT;
+       COLOR: white
+}
+
+td.correcto
+{
+       background:#00FF00;
+       FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+       FONT-SIZE:8PT;
+       COLOR: black
+}
+
+td.foco
+{
+       background:#4020c0;
+       FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+       FONT-SIZE:8PT;
+       COLOR: white
+}
+
+td.todofoco
+{
+//     border: solid #0000FF;
+     background-color: none
+}
+//     background:#402000;
+
+
+// +----------------------+
+// | Scrolling Table Body |  (C) 2005 by Derek Anderson   [ http://kered.org | public at kered dot org ]
+// +----------------------+
+
+div.scrolling_table_body {
+	border: 1px solid black;
+	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 0px;
+}
+span.scrolling_table_body {
+	padding: 0px;
+}
+table.scrolling_table_body {
+}
+table.scrolling_table_body TD {
+	padding: 1px; 
+	/* the following must match tdPadding in resizescrolling_table_bodyHeader() */
+	padding-left: 6px; padding-right: 6px;
+}
+thead.scrolling_table_body {}
+thead.scrolling_table_body TR {
+	background: white;
+}
+thead.scrolling_table_body TD {
+	background: buttonface; font: menu; border: 1px outset white;
+	text-align: center;
+	cursor: default;
+	border-top: 1px solid buttonhighlight;
+	border-left: 1px solid buttonhighlight;
+	border-right: 1px solid buttonshadow;
+	border-bottom: 1px solid buttonshadow;
+}
+tbody.scrolling_table_body {}
+tbody.scrolling_table_body TR {
+	background: white;
+}
+tbody.scrolling_table_body TD {
+	color: windowtext; 
+}

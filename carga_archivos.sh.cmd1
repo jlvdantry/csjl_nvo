@@ -1,0 +1,8 @@
+{
+  if ($1!="")
+  {
+    print "mv " $3 " /home/gesdir/" $1".pdf" ;
+    print "scp -P 22 /home/gesdir/" $1".pdf root@10.250.103.116:/var/www/htdocs/contra/csjl_nvo/csjl_nvo/upload_ficheros/.";
+##    print "rsh -P 22 root\@10.250.103.116 wc /var/www/htdocs/contra/csjl_nvo/csjl_nvo/upload_ficheros/" $1".pdf | diff " $1".pdf";;
+  }
+}

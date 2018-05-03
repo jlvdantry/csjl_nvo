@@ -1,0 +1,314 @@
+input,select
+{
+	font-family: tahoma,verdana,arial;
+	font-size:8pt;
+	color:white;
+	background-color:#17364A;
+}
+
+input.img
+{
+       background:0;
+}
+
+textarea
+{
+	font-family: tahoma,verdana,arial;
+	font-size:8pt;
+	color:white;
+	background-color:#17364A;
+	text-align:center;
+}
+a
+{
+	font-family:arial; :;font-size:8PT; color:navy;
+}
+
+
+
+.readOnly
+{
+            BORDER-STYLE: outset;
+}
+.Toolbar
+{
+            BACKGROUND-COLOR:white;
+            BACKGROUND-IMAGE:URL(../IMAGES/LOGO.GIF);
+            BACKGROUND-POSITION: 3px 3px;
+    		BACKGROUND-REPEAT: no-repeat;
+            HEIGHT:45px;
+            PADDING-TOP:3PX;
+            PADDING-BOTTOM:3PX;
+            PADDING-RIGHT:10PX;
+            PADDING-LEFT:50PX;
+            BORDER:2px outset;
+}
+
+.DivPrint
+
+{
+    BACKGROUND-COLOR: transparent;
+    BORDER-TOP: 3px;
+    FONT-FAMILY: TAHOMA,VERDANA,ARIAL;
+    FONT-SIZE: 6pt;
+    HEIGHT: 50%;
+    POSITION: relative;
+    WIDTH: 100%;
+    INSET: 3px
+
+}
+
+.TableHeader
+
+{
+	BACKGROUND-COLOR:#CCCCCC;
+	BORDER-COLOR: #808080
+	FONT-WEIGHT:BOLD;
+	BORDER:1PX outset;
+}
+
+H1
+{
+	font-family: tahoma,verdana,arial;
+	font-size:20PT;
+	color: #444444;
+	background-color:#EEEEEE;
+	text-align: center;
+	font-style: arial;
+}
+H2
+{
+	font-family: tahoma,verdana,arial;
+	font-size:10PT;
+	color:#FF0000;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+H3
+{
+	FONT-SIZE=10PT;
+	FONT-FAMILY=VERDANA,ARIAL;
+}
+
+table
+{
+	width: 100%;
+	border:0;
+	cellspacing:1;
+	cellpadding:1;
+	text-align:center;
+	background-color:0;
+}
+
+caption
+{
+	font-family: tahoma,verdana,arial;
+    font-size:14PT;
+	color: #556D88;
+	background-color:transparent;
+	text-align: center;
+	font-style: arial;
+	padding: 5px;
+}
+
+th
+{
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	color: #444444;
+	background-color:0;
+	text-align: center;
+	font-style: arial;	
+	padding: 1px;
+	border: 0px solid white;
+}
+
+td
+{
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	color: #666666;
+	background-color:0;
+	padding: 1px;
+	border-right: 1px solid #888888;
+	border-bottom: 1px solid #888888;
+}
+
+body
+{
+	background-color:#DDDDDD;
+	background:url("img\fondo.gif");
+}
+
+.tablaCSS
+{	font-family: tahoma,verdana,arial;
+	/*position:absolute;top:23px;left:45px;
+	width:30%;*/
+	color:#5E7378;
+	background-color:#D7DEE0;
+	border: 0px solid white;
+	font-size:8PT;
+}
+
+
+.tabla2CSS
+{
+	table,td,th
+	{
+	font-family: tahoma,verdana,arial;
+	color:white;
+	height:27px;
+	background-color: #15445F;
+	border: 0px solid white;
+	font-size:8PT;
+	border-collapse:	collapse;
+	}
+}
+.th2CSS
+{
+	font-family: tahoma,verdana,arial;
+	color:white;
+	background: transparent url('img\fondo.jpg') repeat;
+	border: 0px solid white;
+	font-size:8PT;
+	text-align:center;
+}
+
+.tabla3CSS
+{
+	filter: alpha(opacity=80); opacity: .5
+	text-align:right;
+}
+
+.itMenu
+{	
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	VISIBILITY: hidden;
+	WIDTH:200;
+	text-align:center;
+	POSITION: absolute;  TOP: 57px; WIDTH: 120px;  HEIGHT: 16px;
+	background-color:#D7DEE0;
+}
+
+.cabMenu
+{
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	color:#5E7378;
+	background-color:#D7DEE0;
+	text-align:center;
+	POSITION: absolute;  TOP: 37px; WIDTH: 120px; HEIGHT: 10px;
+}
+
+.itMenuAct
+{
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	COLOR: white;
+	WIDTH:100;
+	text-align:center;
+}
+.itMenuDes
+{
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	COLOR: white;
+	color:#D7DEE0;
+	background-color:#17364A;
+	text-align:center;
+	HEIGHT: 17px;
+}
+.itlink
+{
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	color:#D7DEE0;
+}
+
+.sortheader
+{
+	font-family:arial; :;font-size:8PT; color:white;	
+}
+
+.tabla4CSS
+{
+	border-collapse:	collapse;
+	text-align:center;
+	background-color: #FFFFFF;
+}
+
+.avisosCSS
+{	font-family: tahoma,verdana,arial;
+	color:#5E7378;
+	text-align=right;
+	background-color:#D7DEE0;
+	border: 0px solid white;
+	font-size:8PT;
+}
+.avisostdCSS
+{
+	color:#5E7378;
+}
+.avisosthCSS
+{
+	background-color:#5E7378;
+}
+.avisosthbCSS
+{
+	background-color:0;
+}
+
+// +----------------------+
+// | Scrolling Table Body |  (C) 2005 by Derek Anderson   [ http://kered.org | public at kered dot org ]
+// +----------------------+
+
+div.scrolling_table_body {
+	border: 1px solid black;
+	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 0px;
+}
+span.scrolling_table_body {
+	padding: 0px;
+}
+table.scrolling_table_body {
+}
+table.scrolling_table_body TD {
+	padding: 1px; 
+	/* the following must match tdPadding in resizescrolling_table_bodyHeader() */
+	padding-left: 6px; padding-right: 6px;
+}
+thead.scrolling_table_body {}
+thead.scrolling_table_body TR {
+	background: white;
+}
+thead.scrolling_table_body TD {
+	background: buttonface; font: menu; border: 1px outset white;
+	text-align: center;
+	cursor: default;
+	border-top: 1px solid buttonhighlight;
+	border-left: 1px solid buttonhighlight;
+	border-right: 1px solid buttonshadow;
+	border-bottom: 1px solid buttonshadow;
+}
+tbody.scrolling_table_body {}
+tbody.scrolling_table_body TR {
+	background: white;
+}
+
+.regactual
+{
+	font-family: tahoma,verdana,arial;
+    font-size:8PT;
+	color:#17364A;
+	background-color:#D7DEE0;
+}
+
+.invisible
+{
+	border:0;
+	background:url("img\fondo.gif");
+}

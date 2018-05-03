@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://10.1.65.9/formato_lc/utilerias/comprabadorLineas/com_ws_secure_server_duplicadas.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://10.1.65.9/formato_lc/utilerias/comprabadorLineas/com_ws_secure_server_duplicadas.php">
+<types>
+<xsd:schema targetNamespace="http://10.1.65.9/formato_lc/utilerias/comprabadorLineas/com_ws_secure_server_duplicadas.php"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="tipo_registro">
+  <xsd:all>
+   <xsd:element name="lineacaptura" type="xsd:string"/>
+   <xsd:element name="fechapago" type="xsd:string"/>
+   <xsd:element name="importe" type="xsd:string"/>
+   <xsd:element name="banco" type="xsd:string"/>
+   <xsd:element name="sucursal" type="xsd:string"/>
+   <xsd:element name="error" type="xsd:string"/>
+   <xsd:element name="error_descripcion" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="tipo_pregunta">
+  <xsd:all>
+   <xsd:element name="lineacaptura" type="xsd:string"/>
+   <xsd:element name="usuario" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="tipo_respuesta">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:tipo_registro[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="arreglo_pregunta">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:tipo_pregunta[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="arreglo_respuesta">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:tipo_respuesta[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+</xsd:schema>
+</types>
+<message name="consultar_pagoRequest">
+  <part name="pregunta" type="tns:tipo_pregunta" /></message>
+<message name="consultar_pagoResponse">
+  <part name="respuesta" type="tns:tipo_respuesta" /></message>
+<portType name="ServicesPortType">
+  <operation name="consultar_pago">
+    <documentation>Consulta el pago de la linea de captura</documentation>
+    <input message="tns:consultar_pagoRequest"/>
+    <output message="tns:consultar_pagoResponse"/>
+  </operation>
+</portType>
+<binding name="ServicesBinding" type="tns:ServicesPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="consultar_pago">
+    <soap:operation soapAction="rpc" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://10.1.65.9/formato_lc/utilerias/comprabadorLineas/com_ws_secure_server_duplicadas.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://10.1.65.9/formato_lc/utilerias/comprabadorLineas/com_ws_secure_server_duplicadas.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="Services">
+  <port name="ServicesPort" binding="tns:ServicesBinding">
+    <soap:address location="http://10.1.65.9/formato_lc/utilerias/comprabadorLineas/com_ws_secure_server_duplicadas.php"/>
+  </port>
+</service>
+</definitions>

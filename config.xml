@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+id="http://www.example.com/widgets/HelloWidget"
+version="0.1" width="300" height="200">
+  <name>HelloWidget</name>
+  <description>A very basic widget that says, "Hello"</description>
+  <content src="index.html" />
+  <icon src="images/icon.png" />
+  <access network="false" />
+  <author>Nathan A. Good</author>
+  <license>This is my license</license>
+</widget>
