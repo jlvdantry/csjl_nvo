@@ -3,7 +3,9 @@
 ##psql forapi1.1  -U postgres  < autoriza_usuario.sql
 ##psql forapi1.1  -U postgres  < alta_menus_campos.sql
 ##psql forapi1.1  -U postgres  < alta_menus_pg_tables.sql
-psql forapi1.1  -U postgres  < alta_menus_pg_group.sql
+##psql forapi1.1  -U postgres  < alta_menus_pg_group.sql
+##psql forapi1.1  -U postgres  < estatus_usuario.sql
+psql forapi1.1  -U postgres  < debe_cambiarpwd.sql
 cat > $0.sql << fin
 /*
 CREATE SCHEMA forapi;
@@ -34,7 +36,6 @@ ALTER TABLE his_menus  SET SCHEMA forapi;
 ALTER function alta_cat_usuarios()  SET SCHEMA forapi;
 ALTER TABLE his_cambios_pwd  SET SCHEMA forapi;
 ALTER TABLE tablas  SET SCHEMA forapi;
-*/
 ALTER TABLE campos  SET SCHEMA forapi;
 ALTER function alta_menus()  SET SCHEMA forapi;
 ALTER function alta_cat_usuarios_pg_group()  SET SCHEMA forapi;
@@ -47,6 +48,13 @@ ALTER function cambia_password()  SET SCHEMA forapi;
 ALTER function cambio_menus_pg_tables()  SET SCHEMA forapi;
 ALTER function debe_cambiarpwd()  SET SCHEMA forapi;
 ALTER function cambia_menus()  SET SCHEMA forapi;
+ALTER function estatus_usuario(text)  SET SCHEMA forapi;
+*/
+--ALTER function debe_cambiarpwd(text,int4)  SET SCHEMA forapi;
+--ALTER function usuario_bloqueado(text)  SET SCHEMA forapi;
+ALTER function tiene_grupo(text)  SET SCHEMA forapi;
+ALTER function valida_res_des(text,text)  SET SCHEMA forapi;
+
 /*
 select * from forapi.menus where descripcion='accesosistema' limit 1;
 select * from forapi.menus_pg_tables where idmenu=85;

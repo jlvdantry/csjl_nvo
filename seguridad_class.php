@@ -103,13 +103,14 @@ class seguridad extends xmlhttp_class
        	  	}
        	  	
        	  $this->connection=$cd;	
-          $sql ="SELECT estatus_usuario('".$parametro1p."');";
+          $sql ="SELECT forapi.estatus_usuario('".$parametro1p."');";
 	   	  $sql_result = @pg_exec($this->connection,$sql);
        	  if (strlen(pg_last_error($this->connection))>0)
        	  {
        			echo "<error>Error al validausuario</error>";
+       			//echo "<error>Error al validausuario".pg_last_error($this->connection)."</error>";
                         $this->Enviaemail("error en validausuario usuario=".$parametro1p." sql=".$sql." error ".pg_last_error($this->connection));
-       			return;   // 20070327
+       			return;  
        	  }                                          
     	  $Row = pg_fetch_array($sql_result, 0); 
 		  if ($Row[0]!="")       		
@@ -118,29 +119,21 @@ class seguridad extends xmlhttp_class
              	return;			  
 		  }
 
-/*   aqui es donde se pone los dias de antiguedad que debe de tener el cambio de pwd */		  
-          $sql ="SELECT debe_cambiarpwd('".$parametro1p."',210);";
+          $sql ="SELECT forapi.debe_cambiarpwd('".$parametro1p."',210);";
 	   	  $sql_result = @pg_exec($this->connection,$sql);
        	  if (strlen(pg_last_error($this->connection))>0)
        	  {
-       			echo  "<error>Error al debe_cambiarpwd </error>";
+       			//echo  "<error>Error al debe_cambiarpwd </error>";
+       			echo  "<error>Error al debe_cambiarpwd ".pg_last_error($this->connection)."</error>";
                         $this->Enviaemail("Error al debe_cambiarpwd ".$sql." error ".pg_last_error($this->connection));
        			return ;
        	  }                                          
     	  $Row = pg_fetch_array($sql_result, 0); 
-//          echo "<error>Entro en validausuario pasa pg_fetch_array $Row[0] </error>"; return;
 		  if ($Row[0]!="")       		
 		  {
 	             	switch ($Row[0])
 	             	{
 		             	case "Usuario debe cambia pwd":
-/*
-          					session_register("parametro1");
-          					session_register("parametro2");
-          					session_register("servidor");
-          					session_register("bada");          					
-          					session_register("puerto");          					
-*/
           					$_SESSION["parametro1"]=$parametro1p;
           					$_SESSION["parametro2"]=$parametro2p;
           					$_SESSION["servidor"]=$this->servidort;
@@ -158,48 +151,25 @@ class seguridad extends xmlhttp_class
 	             	return;
 		  }		  
 		  		  
-/*
-          session_register("servidor");
-          session_register("bada");
-          session_register("parametro1");
-          session_register("parametro2");
-          session_register("puerto");
-          session_register("servidorf");
-          session_register("badaf");
-          session_register("parametro1f");
-          session_register("parametro2f");
-          session_register("servidori");
-          session_register("badai");
-          session_register("parametro1i");
-          session_register("parametro2i");
-          session_register("paragrupo");
-*/
- //            	  echo "<error>paso session_register</error>";
- //                 return;
           $_SESSION["parametro1"]=$parametro1p;
           $_SESSION["parametro2"]=$parametro2p;
           $_SESSION["servidor"]=$this->servidort; //20070822
           $_SESSION["bada"]=$this->badat; //20070822
           $_SESSION["puerto"]=$this->puerto; //20070822
 			echo "<otrahoja>opciones_antn.php</otrahoja>";		
-			##echo "<error>opciones_antn.php parametro1 sess".$_SESSION["parametro1"]." parametro1=".$parametro1p."</error>";		
 		}
 }		
 
 	if (isset($_POST['opcion']))
 	{
-		session_start();
 		include("conneccion.php");
 		$va = new seguridad();
 		$va->connection = $connection;
-##20071105		$va->argumentos = $_GET;
 		$va->argumentos = $_POST;		##20071105
 		$va->funcion = $_POST['opcion'];
 		$va->servidort = $wlhost;  //20070822
 		$va->badat= $wldbname;  //20070822
 		$va->puerto= $wlport;  //20070822
-		
-##		print_r($va->argumentos);
 		$va->procesa();		
 	}
 	
