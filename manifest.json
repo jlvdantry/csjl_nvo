@@ -7,7 +7,7 @@
   ],
   "start_url": "prueba_j.html",
   "display": "fullscreen",
-  "orientation": ["portrait","landscape-secondary"]
+  "orientation": ["portrait","landscape-secondary"],
   "version": "1.0",
   "developer": {
       "name"  : "Soluciones inteligentes"

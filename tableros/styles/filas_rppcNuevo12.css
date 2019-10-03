@@ -1,0 +1,188 @@
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+.fila {
+    font-family: serif;
+    font-size: 3.5em;
+    fill: white;
+}
+.turno {
+    font-family: serif;
+    font-size: 3.5em;
+    fill: white;
+}
+.llama_rect {
+   fill: #DF1874; 
+   rx  : 5;
+   stroke: #006600;
+}
+
+div.llamado, #svg {
+position:fixed;
+z-index:-1;
+width:50%;
+left:25%;
+top:25%;
+height:50%;
+}
+
+div.mensaje, img.mensajelogo {
+position:fixed;
+z-index:-1;
+width:98%;
+top:91%;
+height:8%;
+}
+
+div.centro, img.centrologo {
+position:fixed;
+z-index:-1;
+width:16%;
+left:54%;
+top:54%;
+height:40%;
+}
+
+div.div8, #svg_8 { /*izquierdo 1 */
+position: fixed;
+z-index: -1;
+width: 40%;
+height: 17%;
+left: 1%;
+top: 19%;
+}
+
+div.div7, #svg_7 { /*izquierdo 2 */
+position: fixed;
+z-index: -1;
+width: 40%;
+height: 17%;
+left: 1%;
+top: 37%;
+}
+div.div6, #svg_6 { /*izquierdo 3 */
+position: fixed;
+z-index: -1;
+width: 40%;
+height: 17%;
+left: 1%;
+top: 55%;
+}
+
+div.div5, #svg_5 {   /* izquierdo 4 */
+position:fixed;
+z-index:-1;
+width:40%;
+height:17%;
+top:73%;
+left: 1%
+} 
+
+div.div1, #svg_1 {   /* derecho arriba */
+position:fixed;
+z-index:-1;
+width:40%;
+height:30%;
+left:59%;
+top:22%;
+}
+
+div.div2, #svg_2 {  /* derecho abajo */
+position:fixed;
+z-index:-1;
+width:40%;
+height:30%;
+left:59%;
+top:57%;
+}
+
+div.div3, #svg_3 {  /* derecho abajo */
+position:fixed;
+z-index:-1;
+width:40%;
+height:17%;
+left:59%;
+top:55%;
+}
+
+div.div4, #svg_4 {  /* derecho abajo */
+position:fixed;
+z-index:-1;
+width:40%;
+height:17%;
+left:59%;
+top:73%;
+}
+
+
+div.modulo {  /* numero del modulo */
+    visibility: hidden;
+    display   : none;
+    border    : 0px;
+    margin    : 0px;
+    height    : 0px;
+    width     : 0px;
+}
+div.turnos {  /* cantidad de turnos a desplegar */
+    visibility: hidden;
+    display   : none;
+}
+
+div.desmodulo { /* Descripcion del modulo */
+  position:fixed;
+  z-index:-1;
+  width:98%;
+  height:17%;
+  left:1%;
+  top:1%;
+  color: black;
+  line-height: 2.1;
+/*  backgroundº: #DF1874; */
+    font-family: serif;
+    font-size: 2.5em;
+
+  background: linear-gradient(to top, #DF1874, rgb(252, 248, 248)); 
+  border-radius: 40px 40px 40px 40px; 
+  text-align: center;
+  vertical-align: middle;
+}
+
+#wlvideo1
+{
+    visibility: hidden;
+    display   : none;
+    border    : 0px;
+    margin    :0px;
+    height    : 0px;
+    width     : 0px;
+}
+
+#wlaudio1
+{
+    visibility: hidden;
+    display   : none;
+    border    : 0px;
+    margin    :0px;
+    height    : 0px;
+    width     : 0px;
+}
+
+
+#log { /* log del tablero */
+    visibility: hidden;
+    display   : none;
+    border    : 0px;
+    margin    :0px;
+    height    : 0px;
+    width     : 0px;
+}
+#titulos1 {
+    height: 15%;
+}
+
+#izquierdo1 {
+    height: 80%;
+}
+

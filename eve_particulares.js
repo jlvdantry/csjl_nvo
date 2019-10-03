@@ -28,6 +28,8 @@ function eve_particulares()
         return _desc;
   }
 
+  this.tra_anc = function () {
+  }
   this.daaltaturno = function ()
   {
        var folio=document.getElementByID('wl_idcita').value;
@@ -45,8 +47,6 @@ function eve_particulares()
                         {
                            if ((req.responseText.indexOf("<_turno_>") != -1) || (req.responseText.indexOf("<_idcita_>") != -1))
                            {
-                                var items = req.responseXML.getElementsByTagName("_nada_");
-                                mensaje=window.confirm(items[0].childNodes[0].nodeValue);
                                 var items = req.responseXML.getElementsByTagName("_turno_");
                                 try { document.getElementByID("wl_turno").value=items[0].childNodes[0].nodeValue; } catch (err) { };
                                 var items = req.responseXML.getElementsByTagName("_turnogrupo_");
@@ -57,6 +57,10 @@ function eve_particulares()
                                 try { document.getElementByID("wl_idcita").value=items[0].childNodes[0].nodeValue; } catch (err) { };
                                 var items = req.responseXML.getElementsByTagName("_folioconsecutivo_");
                                 try { document.getElementByID("wl_folioconsecutivo").value=items[0].childNodes[0].nodeValue; } catch (err) { };
+                                var items = req.responseXML.getElementsByTagName("_msg_");
+                                //this.llamaturnotab(items);
+                                var items = req.responseXML.getElementsByTagName("_nada_");
+                                mensaje=window.confirm(items[0].childNodes[0].nodeValue);
                                 this.buscar();
                                 return false;
                            }
@@ -68,7 +72,34 @@ function eve_particulares()
                         }else{
                                         alert('No encontro la respuesta'); return false;
                         }
+  }
 
+  this.llamaturnotab = function () {
+        var host = "wss://"+location.hostname+":9001"; // SET THIS TO YOUR SERVER
+        if (location.hostname=="187.141.41.182")
+        { host = "ws://187.141.41.183:9001"; }
+        try {
+                socket = new WebSocket(host);
+                var llamados=0;
+                var posicion=0;
+                //log('WebSocket - status '+socket.readyState);
+                socket.onopen    = function(msg) {
+                                                           msg = {
+                                                               type: 'llamar',
+                                                               turno: 'Turno '+ document.getElementByID("wl_turno").value,
+                                                               turnogrupo:  document.getElementByID("wl_turnogrupo").value,
+                                                               modulo: document.getElementByID("wl_idgrupo").value,
+                                                               desmodulo: document.getElementByID("wl_idgrupo").options[document.getElementByID("wl_idgrupo").value].innerHTML,
+                                                               fila: 'Fila '
+                                                                };
+                                                           socket.send(JSON.stringify(msg));
+                                                   };
+                socket.onmessage = function(msg) { };
+                socket.onclose   = function(msg) { };
+        }
+        catch(ex){
+                log(ex);
+        }
   }
 
   this.buscar = function()

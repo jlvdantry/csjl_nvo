@@ -7,6 +7,6 @@ $va->connection = $connection;
 ## 20071105  Se cambio el get por el post
 ## 20071105 $va->argumentos = $_GET;
 $va->argumentos = $_POST;
-$va->funcion = $opcion;
+$va->funcion = $_POST['opcion'];
 $va->procesa();	
 ?>

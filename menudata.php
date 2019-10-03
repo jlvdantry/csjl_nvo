@@ -86,14 +86,14 @@ class menudata
       $mensajes = new class_men();
       if ($this->descripcion!="")
       {
-          $sql="select * from menus where descripcion='".$this->descripcion."'";
+          $sql="select * from forapi.menus where descripcion='".$this->descripcion."'";
       }
 ##      echo "sql".$sql;
       if ($this->idmenu!="")
       {
           $sql="select * ".
-               ",(select count(*) from cat_usuarios_pg_group where groname='admon' and usename=current_user) as esadmon ".
-               " from menus where idmenu=".$this->idmenu;
+               ",(select count(*) from forapi.cat_usuarios_pg_group where groname='admon' and usename=current_user) as esadmon ".
+               " from forapi.menus where idmenu=".$this->idmenu;
       }
       $sql_result = pg_exec($this->connection,$sql)
                     or die("Couldn't make query damemetadata2. ".$sql );
@@ -104,33 +104,22 @@ class menudata
 ##      print_r ($this->camposm);
 
   $sql=" select a.*,pga.attname,pga.attrelid,pga.atttypid ".
-##20101125       " ,(select 't' from pg_index pgi where a.oid = pgi.indrelid ".
-##20070713  tronaba por regresaba mas de un registro, es especifico la tabla cuentas_contablesam       
-##20070713       "   and indisunique=true and (indkey[0]=a.attnum or indkey[1]=a.attnum or indkey[2]=a.attnum or indkey[3]=a.attnum) and a.attnum>0) as indice".            
-##20101125       "   and indisunique=true and (indkey[0]=a.attnum or indkey[1]=a.attnum or indkey[2]=a.attnum or indkey[3]=a.attnum) and a.attnum>0 group by 1) as indice". ##20070713
-##20101125 define la llave segun los campos especificados como index en menus_campos
        "	, a.esindex as indice	".
-	   " ,(select pgad.adsrc from pg_attrdef as pgad where a.attnum = pgad.adnum and a.oid = pgad.adrelid) as default           ".           
+	   " ,(select pgad.adsrc from pg_attrdef as pgad where a.attnum = pgad.adnum and a.oid = pgad.adrelid) as pdefault           ".           
 	   " ,(select pgt.typname from pg_type as pgt where pgt.oid = pga.atttypid ) as typname ".
            " ,(case when mh.orden is null then htmltable else mh.orden end) ordengrupo  ".
 	   " from (".
        " select mc.*, pgc.oid, pgc.relname ".
-		   " from menus_campos as mc".
+		   " from forapi.menus_campos as mc".
            " , pg_class as pgc".           
 	   " , pg_namespace pgn ".
            " where idmenu=".($this->camposm["menus_campos"]!=0 ? $this->camposm["menus_campos"] : $this->camposm["idmenu"]).
-##20061116   Comentarice lo siguiente ya que esto hace que sea muy lento el sql, esto pega en bd con mas de un esquema          
-##20061116           " and case when pgn.nspname not in('public','pg_catalog') then pgn.nspname || '.' || pgc.relname else pgc.relname end = '".$this->camposm["tabla"]."' ".
            " and pgc.relname  = '".$this->camposm["tabla"]."' ".
 	   " and pgc.relnamespace=pgn.oid ".
 	   " and pgn.nspname = '".$this->camposm["nspname"]."' ".  //20070818
-##           " and pgc.oid = '".$this->camposm["reltype"]."' ".
-##20070627     Inclui el campo htmltable
-##20070627           " order by orden ) as a".
            " order by htmltable,orden ) as a".           ##20070627
            " left outer join pg_attribute as pga on (a.oid = pga.attrelid and pga.attnum = cast(a.attnum as smallint))".
-           " left outer join menus_htmltable as mh on (a.htmltable = mh.idhtmltable)".
-##   20080210  en ocaciones no estaban sorteados los campos           
+           " left outer join forapi.menus_htmltable as mh on (a.htmltable = mh.idhtmltable)".
            " order by ordengrupo ,a.orden "; ## 20080210
            
       $sql_result = pg_exec($this->connection,$sql)
@@ -145,7 +134,7 @@ class menudata
 				{ $row["attname"]=strtolower($row["descripcion"]); }
 			$this->camposmc[$row["attname"]]=$row;     
 			// checa si la vista tiene una primary key y es una secuencia			
-			if ($row["indice"]=='t' && strpos($row["default"],"nextval")!==false) 
+			if ($row["indice"]=='t' && strpos($row["pdefault"],"nextval")!==false) 
 			{
 //				      $this->camposm["tiene_pk_serial"]==true;  // 	Se utiliza en las altas para checar que numero se
 				      											//  asigno en la alta currentval
@@ -223,14 +212,14 @@ class menudata
            " and pga.attnum = mce.attnum ";
 */
       $sql="select idevento,donde,descripcion, case when attname is null then ".
-           " (select lower(descripcion) from menus_campos as mc where mc.idmenu =a.idmenu and mc.attnum=a.attnum) else attname end ".
+           " (select lower(descripcion) from forapi.menus_campos as mc where mc.idmenu =a.idmenu and mc.attnum=a.attnum) else attname end ".
            " from ( ".
            " select mce.idevento,mce.donde,mce.descripcion ".
            " ,(select attname from pg_class as pgc, pg_attribute as pga where pgc.relname = '".$this->camposm["tabla"]."' ".
            "   and pgc.oid = pga.attrelid ".
            "   and pga.attnum = mce.attnum) as attname ".
            " ,idmenu,attnum".
-           " from menus_campos_eventos as mce".
+           " from forapi.menus_campos_eventos as mce".
            " where idmenu=".($this->camposm["menus_campos"]!=0 ? $this->camposm["menus_campos"] : $this->camposm["idmenu"]).
            " ) a ";
 
@@ -250,7 +239,7 @@ class menudata
 
 ##    menus eventos  	        
       $sql="select me.idevento,me.donde,me.descripcion,me.idmenu ".
-		   " from menus_eventos as me".
+		   " from forapi.menus_eventos as me".
 ##    20070425   esto no funciona para menus eventos si funciona para menus campos eventos		   
 ##    20070425           " where idmenu=".($this->camposm["menus_campos"]!=0 ? $this->camposm["menus_campos"] : $this->camposm["idmenu"]);
            " where idmenu=".$this->camposm["idmenu"];  ##20070425
@@ -270,7 +259,7 @@ class menudata
   	  
 ##    menus movtos
       $sql="select mm.idmovto,mm.imagen,mm.descripcion ".
-		   " from menus_movtos as mm ".
+		   " from forapi.menus_movtos as mm ".
            " where idmenu=".$this->camposm["idmenu"];
       $sql_result = pg_exec($this->connection,$sql)
                     or die("Couldn't make query movtos. ".$sql );
@@ -289,7 +278,7 @@ class menudata
   	  
 ##    menus subvistas  	  
       $sql="select msv.* ".
-		   " from menus_subvistas as msv".
+		   " from forapi.menus_subvistas as msv".
            " where idmenu=".$this->camposm["idmenu"].
            " order by orden ";
       $sql_result = pg_exec($this->connection,$sql)
@@ -307,8 +296,8 @@ class menudata
       
 ##    menus htmltable  20070627
       $sql="select mht.idhtmltable,mht.descripcion ".
-		   " from menus_htmltable as mht".
-           " where idhtmltable IN (select htmltable from menus_campos where idmenu=".$this->camposm["idmenu"]." group by 1)";
+		   " from forapi.menus_htmltable as mht".
+           " where idhtmltable IN (select htmltable from forapi.menus_campos where idmenu=".$this->camposm["idmenu"]." group by 1)";
 ##           " order by orden ";
       $sql_result = pg_exec($this->connection,$sql)
                     or die("Couldn't make query. ".$sql );

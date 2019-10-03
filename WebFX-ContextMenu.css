@@ -3,7 +3,7 @@
 				}
 
 .WebFX-ContextMenu-Body {
-							background-color: Snow;
+							background-color: #DF1874;
 							padding:	1px;
 							border: 0 outset;
 			}
@@ -11,7 +11,7 @@
 .WebFX-ContextMenu-Item {
                 			                cursor:	default;
 							font:	menu;
-							color:	MenuText;
+							color:	white;
 							padding: 2px 2px 2px 2px;
 
 		}

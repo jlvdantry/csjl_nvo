@@ -9,7 +9,7 @@
 	$soldatos->connection = $connection;
 	$soldatos->datos = array('MTA');
 	$soldatos->opcionesbin = array('','');
-	$soldatos->descripcion='Entrada Al Sistema';
+	$soldatos->descripcion='Bienvenido';
 	$soldatos->idmenu='';
 ##20071105	if(isset($_GET['filtro']))
 	if(isset($_POST['filtro']))
@@ -21,8 +21,8 @@
 //	echo "<br><br><br><br><br><br>";
 	$soldatos->despledatos();
 	$arraydes = array( 0 => "IE", 1 => "AC", 2=> "ZIP",3=> "CONECT");
-	$soldatos->descargas ($arraydes,$soldatos->menu["table_width"],$soldatos->menu["table_height"],$soldatos->menu["table_align"]);
+//	$soldatos->descargas ($arraydes,$soldatos->menu["table_width"],$soldatos->menu["table_height"],$soldatos->menu["table_align"]);
     echo "	<script language=\"JavaScript\">";
-	echo "	actualizaRelog ();	";
+//	echo "	actualizaRelog ();	";
 	echo "	</script>	";
 ?>

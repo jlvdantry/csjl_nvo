@@ -1,0 +1,422 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: menus_pg_group; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE menus_pg_group (
+    idmenu integer,
+    grosysid integer,
+    fecha_alta timestamp(0) with time zone DEFAULT ('now'::text)::timestamp(0) with time zone,
+    fecha_modifico timestamp(0) with time zone DEFAULT ('now'::text)::timestamp(0) with time zone,
+    usuario_alta character varying(20) DEFAULT getpgusername(),
+    usuario_modifico character varying(20) DEFAULT getpgusername(),
+    idmenupadre integer,
+    groname name,
+    orden integer DEFAULT 0,
+    espublico integer
+);
+
+
+ALTER TABLE public.menus_pg_group OWNER TO postgres;
+
+--
+-- Name: COLUMN menus_pg_group.groname; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN menus_pg_group.groname IS 'nombre del grupo al que pertenece el menu';
+
+
+--
+-- Name: COLUMN menus_pg_group.orden; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN menus_pg_group.orden IS 'Indica si la opcione es publica, esto es no se requiere esta autentificado en el servidor';
+
+
+--
+-- Name: ak1_menus_pg_group; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX ak1_menus_pg_group ON menus_pg_group USING btree (grosysid);
+
+
+--
+-- Name: ak2_menus_pg_group; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX ak2_menus_pg_group ON menus_pg_group USING btree (idmenu);
+
+
+--
+-- Name: xpkmenus_pg_group; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX xpkmenus_pg_group ON menus_pg_group USING btree (idmenu, grosysid);
+
+
+--
+-- Name: td_menus_pg_group; Type: TRIGGER; Schema: public; Owner: postgres
+--
+
+CREATE TRIGGER td_menus_pg_group BEFORE DELETE ON menus_pg_group FOR EACH ROW EXECUTE PROCEDURE baja_menus_pg_group();
+
+
+--
+-- Name: ti_menus_pg_group; Type: TRIGGER; Schema: public; Owner: postgres
+--
+
+CREATE TRIGGER ti_menus_pg_group BEFORE INSERT ON menus_pg_group FOR EACH ROW EXECUTE PROCEDURE alta_menus_pg_group();
+
+
+--
+-- Name: menus_pg_group; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON TABLE menus_pg_group FROM PUBLIC;
+REVOKE ALL ON TABLE menus_pg_group FROM postgres;
+GRANT ALL ON TABLE menus_pg_group TO postgres;
+GRANT SELECT ON TABLE menus_pg_group TO metmon WITH GRANT OPTION;
+GRANT ALL ON TABLE menus_pg_group TO marcomonroy WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO angeles WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO cid WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO leticia WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO carlos WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mgalindo WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO gjimen75 WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO "lgarduño" WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mpaz WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO gjimenez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mmarquez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO araceli WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO gabriela WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jgonzaga WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO amartinez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO josevm WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO maguilar WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO cchavez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO unieto WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jhon WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO vgallardo WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jesus WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO ogarcia WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO alandi WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO monica WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mruiz WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lgarduno WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO adriana WITH GRANT OPTION;
+GRANT ALL ON TABLE menus_pg_group TO enriqueestrada WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mauriciosm WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mjimenez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO beatrizp WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO quejascon WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO aolivares WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rangeles WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO acalixte WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rosa WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lgonzalez1 WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO iesus WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO alextorres WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mvazquez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO josel WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO miguel WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO quejasusr WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO enmosqueda WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO khraramirez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO hjimenez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO abejarano WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jon WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO luz WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mortiz WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mjluna WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jromero WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO aris WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lcabrera WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mreyes WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO aclarita WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO alejandra WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO cnavarro WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO ivan WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO per3 WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO maribel WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mramirez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO acervousr WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO marxcastro WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO clicona WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mcardenas WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO madejesus WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jaqueline WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO amapeco WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO cristina WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO francisco WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mcoca WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO operez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO isaac WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO malcantara WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO ovazquez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO martha1 WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO vamador WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO sleal WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO tsequera WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rverduzco WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO salcantara WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO alejandro WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO maggui WITH GRANT OPTION;
+GRANT ALL ON TABLE menus_pg_group TO grecar WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mvera WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO eduardo WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO miguelolvera WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO agus WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO fmartinez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO eramos WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO tere WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lgutierrez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lenin WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO scuevasreyes WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO marta WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO srangel WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lulu WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mangeles WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO dosorio WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO monica1 WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO gris_pernic WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO dgjel WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO fjcornejo WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO pako WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jared WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO leticia1 WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO alfonsodelao WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rocha WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO oscar WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lcastillo WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO eandujar WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO edgar WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mapaez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jcarrillo WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mmorales WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jzaragoza WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lbecerril WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO ccorres WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO federic WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO nibarra WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO salvador WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lgonzalez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rpcvazquez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO dandres WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO itzel WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO tromero WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO javo WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO abel WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO spadilla WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO aescobar WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO spalafox WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO agomez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rparra WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO nceron WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO gesgaceta WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mromero WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jladino WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mmartinez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mcastro WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO "amuñiz" WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO edgarosorio WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rmartinez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rey WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO enavarrete WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO arielm WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO aahuet WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jlujano WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO aagarcia WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mmendiola WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO libelula26 WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO cluengas WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO vparada WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO evargas WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rflores WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO montserrat WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO nrocha WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO alopez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rortega WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO msanchez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO apadilla WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO eli WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jorge WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO nietzsche WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO folguin WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jregalado WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO eibarra WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO cromero WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO fgomez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mcamacho WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO cnogueda WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mresendiz WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO david WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO harlem WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mcorona WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO nixta WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO luis WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO pdelarosa WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jgarcia WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mllerena WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO elizabeth WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO hchaidez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO egutierrez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO tmeza WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jguzman WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rgutierrez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jlv8 WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO janeth WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO fernandamiranda WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO gbenavides WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rpcastellanos WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO amnistia WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO ylgabriel WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jazmin1 WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO pilar WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO aescorza WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO universidad WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO veronica WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO rluna WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO vvizcaino WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO lcasillas WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO upineda WITH GRANT OPTION;
+GRANT ALL ON TABLE menus_pg_group TO kevinsolis WITH GRANT OPTION;
+GRANT ALL ON TABLE menus_pg_group TO alfredog WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO jcespindola WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO iglopez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO igonzalez WITH GRANT OPTION;
+GRANT ALL ON TABLE menus_pg_group TO igasa WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO vportoni WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO fabiolaanduaga WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO hiram WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO schavez WITH GRANT OPTION;
+GRANT SELECT ON TABLE menus_pg_group TO mpalacios WITH GRANT OPTION;
+SET SESSION AUTHORIZATION igasa;
+GRANT SELECT ON TABLE menus_pg_group TO upineda WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+GRANT SELECT ON TABLE menus_pg_group TO temporal WITH GRANT OPTION;
+GRANT ALL ON TABLE menus_pg_group TO jlv WITH GRANT OPTION;
+SET SESSION AUTHORIZATION alfredog;
+GRANT SELECT ON TABLE menus_pg_group TO operez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO agodinez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO lcolin WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO rarroyo WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO sfajardo WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO blopez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO nmorales WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO mmorales WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO imartinez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO maviles WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO agarcia WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT ALL ON TABLE menus_pg_group TO alfredog WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO armandopg WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO cmartinez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION alfredog;
+GRANT SELECT ON TABLE menus_pg_group TO cmartinez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+GRANT SELECT ON TABLE menus_pg_group TO cmartinez WITH GRANT OPTION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO fgomez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT ALL ON TABLE menus_pg_group TO kevinsolis WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION alfredog;
+GRANT SELECT ON TABLE menus_pg_group TO icruz WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO icruz WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO lhernandez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION kevinsolis;
+GRANT SELECT ON TABLE menus_pg_group TO agarcia WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION kevinsolis;
+GRANT SELECT ON TABLE menus_pg_group TO agodinez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO jcruz WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION alfredog;
+GRANT SELECT ON TABLE menus_pg_group TO aserrano WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO aserrano WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION alfredog;
+GRANT SELECT ON TABLE menus_pg_group TO maviles WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO srangel WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO lbojorquez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION alfredog;
+GRANT SELECT ON TABLE menus_pg_group TO mramirez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO ylgabriel WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO operez WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO temporal WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+GRANT SELECT ON TABLE menus_pg_group TO jlv11 WITH GRANT OPTION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO jlv11 WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION jlv;
+GRANT SELECT ON TABLE menus_pg_group TO jlv8 WITH GRANT OPTION;
+RESET SESSION AUTHORIZATION;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

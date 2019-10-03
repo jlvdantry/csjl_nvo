@@ -67,13 +67,13 @@ class seguridad extends xmlhttp_class
     	  		return; 
     		}				
     	
-			if ($this->argumentos["wl_usuario"]=="")
+			if ($this->argumentos["wl_usename"]=="")
     		{
     	  		echo "<error>No esta definido el usuario</error>";
     	  		return; 
     		}
 
-    		$parametro1p=$this->argumentos["wl_usuario"];
+    		$parametro1p=$this->argumentos["wl_usename"];
     		$parametro2p=$this->argumentos["wl_password"];
           	$cd = @pg_connect("host=$this->servidort dbname=$this->badat  user=$parametro1p  password=$parametro2p port=$this->puerto"); //20070822
 
@@ -108,7 +108,7 @@ class seguridad extends xmlhttp_class
        	  if (strlen(pg_last_error($this->connection))>0)
        	  {
        			echo "<error>Error al validausuario</error>";
-                        $this->Enviaemail("error en validausuario".$sql." error ".pg_last_error($this->connection));
+                        $this->Enviaemail("error en validausuario usuario=".$parametro1p." sql=".$sql." error ".pg_last_error($this->connection));
        			return;   // 20070327
        	  }                                          
     	  $Row = pg_fetch_array($sql_result, 0); 
@@ -128,17 +128,19 @@ class seguridad extends xmlhttp_class
        			return ;
        	  }                                          
     	  $Row = pg_fetch_array($sql_result, 0); 
+//          echo "<error>Entro en validausuario pasa pg_fetch_array $Row[0] </error>"; return;
 		  if ($Row[0]!="")       		
 		  {
 	             	switch ($Row[0])
 	             	{
 		             	case "Usuario debe cambia pwd":
-//							echo "<abresubvista>man_menus.php?idmenu=1025</abresubvista>";		
+/*
           					session_register("parametro1");
           					session_register("parametro2");
           					session_register("servidor");
           					session_register("bada");          					
           					session_register("puerto");          					
+*/
           					$_SESSION["parametro1"]=$parametro1p;
           					$_SESSION["parametro2"]=$parametro2p;
           					$_SESSION["servidor"]=$this->servidort;
@@ -156,6 +158,7 @@ class seguridad extends xmlhttp_class
 	             	return;
 		  }		  
 		  		  
+/*
           session_register("servidor");
           session_register("bada");
           session_register("parametro1");
@@ -170,6 +173,9 @@ class seguridad extends xmlhttp_class
           session_register("parametro1i");
           session_register("parametro2i");
           session_register("paragrupo");
+*/
+ //            	  echo "<error>paso session_register</error>";
+ //                 return;
           $_SESSION["parametro1"]=$parametro1p;
           $_SESSION["parametro2"]=$parametro2p;
           $_SESSION["servidor"]=$this->servidort; //20070822
@@ -180,7 +186,7 @@ class seguridad extends xmlhttp_class
 		}
 }		
 
-	if (isset($opcion))
+	if (isset($_POST['opcion']))
 	{
 		session_start();
 		include("conneccion.php");
@@ -188,7 +194,7 @@ class seguridad extends xmlhttp_class
 		$va->connection = $connection;
 ##20071105		$va->argumentos = $_GET;
 		$va->argumentos = $_POST;		##20071105
-		$va->funcion = $opcion;
+		$va->funcion = $_POST['opcion'];
 		$va->servidort = $wlhost;  //20070822
 		$va->badat= $wldbname;  //20070822
 		$va->puerto= $wlport;  //20070822

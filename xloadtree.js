@@ -167,6 +167,7 @@ function _startLoadXmlTree(sSrc, jsNode) {
     		}
 		}
 	xmlHttp.open("GET", sSrc, true);	// async
+        xmlHttp.send();
 	xmlHttp.onreadystatechange = function () {
 		if (xmlHttp.readyState == 4) {
 //			alert('error xml'+xmlHttp.responseXML+' estatus'+xmlHttp.status+' texto'+xmlHttp.responseText);

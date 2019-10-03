@@ -7,7 +7,7 @@ include "conneccion.php";
 ##            	              password='dantry12'")
 ##                	          or die("Couldn't make connection.");	
 $v = new menudata();
-$v->idmenu=2519;
+$v->idmenu=999;
 $v->filtro="nombre='NOMBRE'";
 $v->connection=$connection;
 $v->damemetadata();

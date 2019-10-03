@@ -41,7 +41,7 @@ class xmlhttp_class
       header("Content-type: text/xml");
       header("Pragma: public");
       header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-      echo "<?xml version='1.0' encoding='ISO-8859-1'?>\n";
+      echo "<?xml version='1.0' encoding='Latin-1'?>\n";
       echo "<rss version=\"2.0\">\n";
       echo "<channel>";
       echo "<respuesta>";
@@ -284,7 +284,7 @@ class xmlhttp_class
       $me->filtro=$this->argumentos['filtro'];
       $me->damemetadata();      
 	  $soldatos = new soldatos();
-	  $soldatos->idmenu=$idmenu;
+	  $soldatos->idmenu=$this->argumentos['idmenu'];
 ##	  echo '<error>argumentos';print_r($this->argumentos);'</error>';
       
 //20070223      se modifico para incluir el movimiento de copia      
@@ -313,17 +313,12 @@ class xmlhttp_class
 					if ($Row>=1)
 					{	      
 						echo '<consulta>Consulta efectuada '.$Row.' registros</consulta>';
-
                                                 if (strpos($me->camposm['noconfirmamovtos'],'s')===false && strpos($me->camposm['noconfirmamovtos'],'S')===false && strpos($me->camposm['noconfirmamovtos'],'B')===false)
                                                 {   } else { echo '<noconfirma>true</noconfirma>'; }
-/*
-                                                if (strpos($me->camposm['noconfirmamovtos'],'s')>=0 || strpos($me->camposm['noconfirmamovtos'],'S')>=0 && strpos($me->camposm['noconfirmamovtos'],'B')>=0)
-                                                { echo '<noconfirma>true</noconfirma>'; }
-*/
-						$wlrenglones=$soldatos->inicio_tab($sql_result).$soldatos->filas_ing($sql_result,$Row,$me)."</table>";
-						echo '<renglones>'.htmlspecialchars($wlrenglones).'</renglones>';												
-						echo '<wleventodespues>'.$this->argumentos['wleventodespues'].'</wleventodespues>';
 						echo '<iden>'.$Reg.'</iden>';  // en caso de una secuencia esta es el no de registro de identificacion
+						$wlrenglones=$soldatos->inicio_tab($sql_result).$soldatos->filas_ing($sql_result,$Row,$me)."</table>";
+						echo '<renglones>'.htmlspecialchars($wlrenglones,ENT_IGNORE,UTF-8).'</renglones>';
+						echo '<wleventodespues>'.$this->argumentos['wleventodespues'].'</wleventodespues>';
 					}
 					else { 
                                                 if (strpos($me->camposm['noconfirmamovtos'],'s')===false && strpos($me->camposm['noconfirmamovtos'],'S')===false && strpos($me->camposm['noconfirmamovtos'],'B')===false)
@@ -525,7 +520,7 @@ class xmlhttp_class
            		$sql_result = @pg_exec($this->connection,$sql);
 //                	    or die("Couldn't make query. ".$sql );
 //                        $wlerror=pg_last_error($this->connection) ;  // esto lo inclui para controlar errores por trigger
-			$this->hayerrorsql($this->connection,'Cambio x',$sql);
+			$this->hayerrorsql($this->connection,'Cambio x1',$sql);
 //			if ($wlerror!="") 
 //			{ echo '<error>'.$wlerror.'</error>'; }
 //			else
@@ -739,21 +734,10 @@ class xmlhttp_class
 ##	     	if ($pos===0 && strpos($camposs[$wlcampo]["default"],"nextval")===false && $val!=$wldatos[$wlcampo])
 	     	if ($pos===0 && strpos($camposs[$wlcampo]["default"],"nextval")===false && trim($val)!==trim($wldatos[$wlcampo]))
     	    	{   
-##  	 	echo "wlcamposs= ".$index." attnum=".$camposs[$wlcampo]["attnum"]." val=".$val." wldatos=".$wldatos[$wlcampo]."\n";            	         	    	    	
-##	    	    	echo "entro en pos=".$val;
             		 $this->lleva_comilla($camposs[$wlcampo]["typname"])===true ? 
-##20070602    Cuando el valor contenia una comilla este tronaba haci que hice la siguiente modificacion            		 
-##20070602           	 	$wltmp=substr($index,3)."='".$val."'" : 
-            	 	$wltmp=substr($index,3)."=".$this->esfechaNula($camposs[$wlcampo]["typname"],$val) :             	 	
-##20061108            	 	(strlen($val)==0 ? $wltmp="" : $wltmp=substr($index,3)."=".$val) ;  // si el campos es numerico y viene en espacio no lo actualiza
-##   cambie esta linea para que si un numerico su longitud es cero le ponda nulo
-##20070713   comentarice para que cuando la longitud venga en ceros no actualice nada hay que ver como se comportar 
-##20070713    esta modificacion
-##20070713     	 	(strlen($val)==0 ? $wltmp=substr($index,3)."= null" : $wltmp=substr($index,3)."=".$val) ;  // si el campos es numerico y viene en espacio no lo actualiza
+            	 	$wltmp=substr($index,3)."=".$this->esfechaNula($camposs[$wlcampo]["typname"],utf8_encode($val)) :     
             	 	(strlen($val)==0 ? $wltmp="" : $wltmp=substr($index,3)."=".$val) ;  ##20070713
-##            	 	echo "wltmp=".$wltmp." val2=".$val2." val=".$val." typname=".$camposs[$wlcampo]["typname"];            	 
             	 	strlen($val2)==0  ? $val2.=$wltmp : ($wltmp!="" ? $val2.=",".$wltmp : $val2.="");
-##            	 	echo "wltmp=".$wltmp." val2=".$val2." val=".$val." typname=".$camposs[$wlcampo]["typname"];
         		}
 		}
       }
@@ -835,15 +819,9 @@ class xmlhttp_class
    function procesa()
    {
       $this->inicio();
-//      if  ($_SESSION['parametro1']!="" || $this->funcion=="validausuario")
-//      {
          $arguments = array();
          $arguments = $this->decodeGetData($this->argumentos);
          call_user_func_array(array($this,$this->funcion),$arguments);
-//      } else
-//      { 
-//         echo "<finsession>".$this->funcion."</finsession>";
-//      }
      $this->termina();
    }
 	/**
@@ -1105,37 +1083,34 @@ class xmlhttp_class
 		// Borra txt
 		//if(file_exists($nombreArchivo)) {unlink($nombreArchivo);}
 	}
-    function Enviaemail($error)
+    function Enviaemail($error = 'sin asunto' )
     {
    $wlemail='jlvdantry@hotmail.com';
    $wlemailk='kevin.solis@outlook.com';
    $wlemaila='alfredoguerrero@hotmail.com';
    $mail = new PHPMailer;
-   ##echo "paso new";
    $mail->IsSMTP();                                      // Set mailer to use SMTP
-   ##$mail->Host = 'cj.df.gob.mx';  // Specify main and backup server
    $mail->Host = 'smtp.live.com';  // Specify main and backup server
    $mail->SMTPAuth = true;                               // Enable SMTP authentication
    ##$mail->SMTPDebug = true;
    $mail->Username = 'jlvdantry@hotmail.com';                            // SMTP username
    $mail->Password = '888aDantryR';                           // SMTP password
-   ##$mail->Username = 'no.reply';                            // SMTP username
-   ##$mail->Password = 'NoResponder';                           // SMTP password
-   $mail->Port = '25';                           // SMTP password
+   $mail->Port = '587';                           // SMTP password
    $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
-   $mail->From = 'jlvdantry@hotmail.com';
+   $mail->From = $wlemail;
    $mail->FromName = 'Jose Luis Vasquez Barbosa';
    $mail->AddAddress($wlemail);               // Name is optional
-   $mail->AddAddress($wlemailk);               // Name is optional
-   $mail->AddAddress($wlemaila);               // Name is optional
-   $mail->AddReplyTo('no.reply@cj.df.gob.mx', 'Information');
+   //$mail->AddAddress($wlemailk);               // Name is optional
+   //$mail->AddAddress($wlemaila);               // Name is optional
+   $mail->AddReplyTo($wlemail, 'Information');
    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
    $mail->IsHTML(true);                                  // Set email format to HTML
    $mail->Subject = 'Error en el aplicativo de ventanilla xml';
    $mail->Body    = $error."<br>IP: ".(isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'Localhost');
    if(!$mail->Send() ) { 
-     echo "no envio";
-     exit; }
+     echo "<enviomail>No ".$mail->ErrorInfo."</enviomail>";
+     return; 
+   }
    }
 
 }

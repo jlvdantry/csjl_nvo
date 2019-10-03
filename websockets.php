@@ -1,186 +1,261 @@
 <?php
 
 //require_once('./daemonize.php');
-require_once('users.php');
+require_once('./users.php');
 
 abstract class WebSocketServer {
 
   protected $userClass = 'WebSocketUser'; // redefine this if you want a custom user class.  The custom user class should inherit from WebSocketUser.
   protected $maxBufferSize;
   protected $master;
+  protected $listenAddress;
+  protected $listenPort;
   protected $sockets                              = array();
   protected $users                                = array();
-  public $interactive                          = true;
+  protected $heldMessages                         = array();
+  protected $interactive                          = true;
   protected $headerOriginRequired                 = false;
   protected $headerSecWebSocketProtocolRequired   = false;
   protected $headerSecWebSocketExtensionsRequired = false;
 
   function __construct($addr, $port, $bufferLength = 2048) {
     $this->maxBufferSize = $bufferLength;
-    $this->master = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)  or die("Failed: socket_create()");
-    socket_set_option($this->master, SOL_SOCKET, SO_REUSEADDR, 1) or die("Failed: socket_option()");
-    socket_bind($this->master, $addr, $port)                      or die("Failed: socket_bind()");
-    socket_listen($this->master,20)                               or die("Failed: socket_listen()");
-    $this->sockets['m'] = $this->master;
+    $this->listenAddress = $addr;
+    $this->listenPort = $port;
+
+    $this->setupConnection();
     $this->stdout("Server started\nListening on: $addr:$port\nMaster socket: ".$this->master);
   }
 
-  abstract protected function process($user,$message); // Called immediately when the data is recieved.
+  abstract protected function process($user,$message); // Called immediately when the data is recieved. 
   abstract protected function connected($user);        // Called after the handshake response is sent to the client.
   abstract protected function closed($user);           // Called after the connection is closed.
 
+  /**
+   * @return void
+   */
+  protected function setupConnection() {
+    $errno = $errstr = null;
+
+    $this->master = stream_socket_server(
+        'tcp://' . $this->listenAddress . ':' . $this->listenPort,
+        $errno,
+        $errstr,
+        STREAM_SERVER_BIND | STREAM_SERVER_LISTEN
+    );
+    // TODO: (long before merge to master) error checking
+  }
+
+  /**
+   * @param WebSocketUser $user
+   *
+   * @return void
+   */
   protected function connecting($user) {
     // Override to handle a connecting user, after the instance of the User is created, but before
     // the handshake has completed.
+    $this->stdout("conectando");
   }
 
-  protected function send($user,$message) {
-    $this->stdout("> $user->socket $message");
-    $message = $this->frame($message,$user);
-    $result = @socket_write($user->socket, $message, strlen($message));
-  }
   /**
-   * Main processing loop
+   * @param WebSocketUser $user
+   * @param string $message
+   *
+   * return void
    */
-  public function run() {
-    $this->stdout("entro en run");
-    while(true) {
-      if (empty($this->sockets)) {
-        $this->sockets['m'] = $this->master;
-      }
-      $read = $this->sockets;
-      $write = $except = null;
-      $this->stdout("va a leer \n");
-      @socket_select($read,$write,$except,null);
-      foreach ($read as $socket) {
-        $this->stdout("foreach ".$socket."\n");
-        if ($socket == $this->master) {
-          $client = socket_accept($socket);
-          if ($client < 0) {
-            $this->stderr("Failed: socket_accept()");
-            continue;
-          }
-          else {
-            $this->connect($client);
-            $this->stdout("Cliente connected. " . $client);
+  protected function send($user, $message) {
+    if ($user->handshake) {
+      $message = $this->frame($message,$user);
+      $result = @fwrite($user->socket, $message, strlen($message));
+    }
+    else {
+      // User has not yet performed their handshake.  Store for sending later.
+      $holdingMessage = array('user' => $user, 'message' => $message);
+      $this->heldMessages[] = $holdingMessage;
+    }
+  }
+
+  /**
+   * @return void
+   */
+  protected function tick() {
+    // Override this for any process that should happen periodically.  Will happen at least once
+    // per second, but possibly more often.
+  }
+
+  /**
+   * @return void
+   */
+  protected function _tick() {
+    // Core maintenance processes, such as retrying failed messages.
+    foreach ($this->heldMessages as $key => $hm) {
+      $found = false;
+      foreach ($this->users as $currentUser) {
+        if ($hm['user']->socket == $currentUser->socket) {
+          $found = true;
+          if ($currentUser->handshake) {
+            unset($this->heldMessages[$key]);
+            $this->send($currentUser, $hm['message']);
           }
         }
+      }
+      if (!$found) {
+        // If they're no longer in the list of connected users, drop the message.
+        unset($this->heldMessages[$key]);
+      }
+    }
+  }
+
+  /**
+   * Main processing loop
+   *
+   * @return void
+   */
+  public function run() {
+    //$this->stdout("Entro en run. ");
+    while(true) {
+      //$this->stdout("While true. ");
+      $read = $this->sockets;
+      $read[] = $this->master;
+      $write = $except = null;
+      $this->_tick();
+      $this->tick();
+
+      stream_select($read, $write, $except, 1);
+      foreach ($read as $socket) {
+        //$this->stdout("RUN foreach. ".$socket);
+        if ($socket == $this->master) {
+          //$this->stdout("socket==this->master".$this->master);
+          if ($newConnection = stream_socket_accept($this->master, 0)) {
+            //$this->stdout("entro en if newConnection = stream_socket_accept");
+            $this->connect($newConnection);
+            $this->stdout("Client connected. " . $newConnection);
+          }
+          //$this->stdout("despues if socket==this->master");
+          break; // Breaks out of foreach.
+        }
+
+        //$this->stdout("RUN this->maxBufferSize=".$this->maxBufferSize."\n");
+        stream_set_timeout($socket, 2);
+        $buffer='';
+//        while(!feof($socket))
+//            $buffer .= fread($socket, 4096);
+        //$buffer = fread($socket, $this->maxBufferSize);
+        $buffer = fread($socket, "4096");
+        //$info = stream_get_meta_data($socket);
+        //print_r($info);
+        $numBytes = strlen($buffer);
+        if ($numBytes==1) {  $buffer .= fread($socket, "4096"); }
+        $numBytes = strlen($buffer);
+        //$this->stdout("RUN numero de bites $numBytes USER=".$user->id." BUFFER=".$buffer." hex=".$this->strtohex($buffer)."\n");
+        //$this->stdout("RUN numero de bites $numBytes USER=".$user->id." BUFFER=".$buffer."\n");
+        if ($numBytes == 0) {
+          $this->disconnect($socket);
+          //$this->stderr("Client disconnected. TCP connection lost: " . $socket);
+        }
         else {
-          $numBytes = @socket_recv($socket,$buffer,$this->maxBufferSize,0);
-          $this->stdout("Bytes recibidos. " . $numBytes. " ".$buffer);
-          if ($numBytes === false) {
-            throw new Exception('Socket error: ' . socket_strerror(socket_last_error($socket)));
-          }
-          elseif ($numBytes == 0) {
-            $this->disconnect($socket);
-            $this->stdout("Client disconnected. TCP connection lost: " . $socket);
-          }
-          else {
-            $user = $this->getUserBySocket($socket);
-            if (!$user->handshake) {
-              $tmp = str_replace("\r", '', $buffer);
-              if (strpos($tmp, "\n\n") === false ) {
-                continue; // If the client has not finished sending the header, then wait before sending our upgrade response.
-              }
-              $this->doHandshake($user,$buffer);
+          $user = $this->getUserBySocket($socket);
+          if (!$user->handshake) {
+            $tmp = str_replace("\r", '', $buffer);
+            if (strpos($tmp, "\n\n") === false) {
+              //$this->stdout("Continuo user=".$user->id);
+              continue; // If the client has not finished sending the header, then wait before sending our upgrade response.
             }
-            else {
-              if (($message = $this->deframe($buffer, $user)) !== FALSE) {
-                if($user->hasSentClose) {
-                  $this->disconnect($user->socket);
-                  $this->stdout("Client disconnected. Sent close: " . $socket);
-                }
-                else {
-                  $this->process($user, $message); // todo: Re-check this.  Should already be UTF-8.
-                }
-              }
-              else {
-                do {
-                  $numByte = @socket_recv($socket,$buffer,$this->maxBufferSize,MSG_PEEK);
-                  if ($numByte > 0) {
-                    $numByte = @socket_recv($socket,$buffer,$this->maxBufferSize,0);
-                    if (($message = $this->deframe($buffer, $user)) !== FALSE) {
-                      if($user->hasSentClose) {
-                        $this->disconnect($user->socket);
-                        $this->stdout("Client disconnected. Sent close: " . $socket);
-                      }
-                      else {
-                       $this->process($user,$message);
-                      }
-                    }
-                  }
-                } while($numByte > 0);
-              }
-            }
+            $this->doHandshake($user, $buffer);
+          } else {
+            //split packet into frame and send it to deframe
+            //$this->stdout("ya hizo el handshake y recibio numbytes $numBytes usuario $user->id DATOS=".$buffer);
+            $this->split_packet($numBytes, $buffer, $user);
           }
         }
       }
     }
   }
 
+  /**
+   * @param resource $socket
+   */
   protected function connect($socket) {
-    $user = new $this->userClass(uniqid('u'), $socket);
-    $this->stdout("Entro en connect" . $user->id);
+    $user = new $this->userClass(uniqid('u'), $socket); // Todo: Check PHP 7 compatibility.  I believe that the parse order will break this.
+    $this->stdout("id del usuario creado".$user->id);
     $this->users[$user->id] = $user;
     $this->sockets[$user->id] = $socket;
     $this->connecting($user);
   }
 
-  protected function disconnect($socket, $triggerClosed = true) {
+  /**
+   * @param resource $socket
+   * @param bool|true $triggerClosed
+   * @param int|null $sockErrNo
+   *
+   * @return void
+   */
+  protected function disconnect($socket, $triggerClosed = true, $sockErrNo = null) {
     $disconnectedUser = $this->getUserBySocket($socket);
-
+    $this->stdout("se desconecto el socket".$disconnectedUser->id);
+    
     if ($disconnectedUser !== null) {
       unset($this->users[$disconnectedUser->id]);
-
+        
       if (array_key_exists($disconnectedUser->id, $this->sockets)) {
         unset($this->sockets[$disconnectedUser->id]);
       }
-
+      
       if ($triggerClosed) {
         $this->closed($disconnectedUser);
-        socket_close($disconnectedUser->socket);
+        fclose($disconnectedUser->socket);
       }
       else {
         $message = $this->frame('', $disconnectedUser, 'close');
-        @socket_write($disconnectedUser->socket, $message, strlen($message));
+        @fwrite($disconnectedUser->socket, $message, strlen($message));
       }
     }
   }
 
+  /**
+   * @param WebSocketUser $user
+   * @param string $buffer
+   *
+   * @return void
+   */
   protected function doHandshake($user, $buffer) {
+    //$this->stdout("entro en doHandshake ");
     $magicGUID = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
     $headers = array();
     $lines = explode("\n",$buffer);
     foreach ($lines as $line) {
-      $this-stdoout("line=".$line."\n");
+      //echo "line=".$line."\n";
       if (strpos($line,":") !== false) {
         $header = explode(":",$line,2);
         $headers[strtolower(trim($header[0]))] = trim($header[1]);
       }
+      //elseif (stripos($line,"get ") !== false) { // la g la recibe en otra leida y se rompe el get
       elseif (stripos($line,"et ") !== false) {
-        preg_match("/GET (.*) HTTP/i", $buffer, $reqResource);
+        //preg_match("/GET (.*) HTTP/i", $buffer, $reqResource);
+        preg_match("/ET (.*) HTTP/i", $buffer, $reqResource);
         $headers['get'] = trim($reqResource[1]);
       }
     }
+    //$this->stdout("paso foreach en doHandshake ");
     if (isset($headers['get'])) {
       $user->requestedResource = $headers['get'];
-    }
+    } 
     else {
       // todo: fail the connection
-      $handshakeResponse = "HTTP/1.1 405 Method Not Allowed\r\n\r\n";
+      $handshakeResponse = "HTTP/1.1 405 Method Not Allowed\r\n\r\n";     
     }
     if (!isset($headers['host']) || !$this->checkHost($headers['host'])) {
       $handshakeResponse = "HTTP/1.1 400 Bad Request";
     }
     if (!isset($headers['upgrade']) || strtolower($headers['upgrade']) != 'websocket') {
       $handshakeResponse = "HTTP/1.1 400 Bad Request";
-    }
+    } 
     if (!isset($headers['connection']) || strpos(strtolower($headers['connection']), 'upgrade') === FALSE) {
       $handshakeResponse = "HTTP/1.1 400 Bad Request";
     }
     if (!isset($headers['sec-websocket-key'])) {
       $handshakeResponse = "HTTP/1.1 400 Bad Request";
-    }
+    } 
     else {
 
     }
@@ -199,8 +274,10 @@ abstract class WebSocketServer {
 
     // Done verifying the _required_ headers and optionally required headers.
 
+    //$this->stdout('Paso las validaciones:');
     if (isset($handshakeResponse)) {
-      socket_write($user->socket,$handshakeResponse,strlen($handshakeResponse));
+      $this->stdout('Respuesta erronea:'+ $handshakeResponse);
+      fwrite($user->socket, $handshakeResponse, strlen($handshakeResponse));
       $this->disconnect($user->socket);
       return;
     }
@@ -212,47 +289,83 @@ abstract class WebSocketServer {
 
     $rawToken = "";
     for ($i = 0; $i < 20; $i++) {
-      $rawToken .= chr(hexdec(substr($webSocketKeyHash,$i*2, 2)));
+      $rawToken .= chr(hexdec(substr($webSocketKeyHash, $i*2, 2)));
     }
     $handshakeToken = base64_encode($rawToken) . "\r\n";
+    //$this->stdout('saludo respondido:'.base64_decode($handshakeToken));
 
     $subProtocol = (isset($headers['sec-websocket-protocol'])) ? $this->processProtocol($headers['sec-websocket-protocol']) : "";
     $extensions = (isset($headers['sec-websocket-extensions'])) ? $this->processExtensions($headers['sec-websocket-extensions']) : "";
 
     $handshakeResponse = "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: $handshakeToken$subProtocol$extensions\r\n";
-    socket_write($user->socket,$handshakeResponse,strlen($handshakeResponse));
+    fwrite($user->socket, $handshakeResponse, strlen($handshakeResponse));
     $this->connected($user);
   }
 
+  /**
+   * @param string $hostName
+   *
+   * @return bool
+   */
   protected function checkHost($hostName) {
     return true; // Override and return false if the host is not one that you would expect.
                  // Ex: You only want to accept hosts from the my-domain.com domain,
                  // but you receive a host from malicious-site.com instead.
   }
 
+  /**
+   * @param string $origin
+   *
+   * @return bool
+   */
   protected function checkOrigin($origin) {
     return true; // Override and return false if the origin is not one that you would expect.
   }
 
+  /**
+   * @param string $protocol
+   *
+   * @return bool
+   */
   protected function checkWebsocProtocol($protocol) {
     return true; // Override and return false if a protocol is not found that you would expect.
   }
 
+  /**
+   * @param string $extensions
+   *
+   * @return bool
+   */
   protected function checkWebsocExtensions($extensions) {
     return true; // Override and return false if an extension is not found that you would expect.
   }
 
+  /**
+   * @param string $protocol
+   *
+   * @return string
+   */
   protected function processProtocol($protocol) {
-    return ""; // return either "Sec-WebSocket-Protocol: SelectedProtocolFromClientList\r\n" or return an empty string.
+    return ""; // return either "Sec-WebSocket-Protocol: SelectedProtocolFromClientList\r\n" or return an empty string.  
            // The carriage return/newline combo must appear at the end of a non-empty string, and must not
-           // appear at the beginning of the string nor in an otherwise empty string, or it will be considered part of
+           // appear at the beginning of the string nor in an otherwise empty string, or it will be considered part of 
            // the response body, which will trigger an error in the client as it will not be formatted correctly.
   }
 
+  /**
+   * @param string $extensions
+   *
+   * @return string
+   */
   protected function processExtensions($extensions) {
     return ""; // return either "Sec-WebSocket-Extensions: SelectedExtensions\r\n" or return an empty string.
   }
 
+  /**
+   * @param resource $socket
+   *
+   * @return WebSocketUser
+   */
   protected function getUserBySocket($socket) {
     foreach ($this->users as $user) {
       if ($user->socket == $socket) {
@@ -262,23 +375,36 @@ abstract class WebSocketServer {
     return null;
   }
 
+  /**
+   * @param string $message
+   *
+   * @return void
+   */
   public function stdout($message) {
     if ($this->interactive) {
-      echo "$message\n";
-    } else {
-            $dt = date("Y-m-d H:i:s ");
-            $dia = date("Ymd");
-            error_log("$dt $message id=".session_id()."\n",3,"/tmp/tablero".$dia.".log");
+      echo $message . PHP_EOL;
     }
-
   }
 
+  /**
+   * @param string $message
+   *
+   * @return void
+   */
   public function stderr($message) {
     if ($this->interactive) {
-      echo "$message\n";
+      echo $message . PHP_EOL;
     }
   }
 
+  /**
+   * @param string $message
+   * @param WebSocketUser $user
+   * @param string $messageType
+   * @param bool|false $messageContinues
+   *
+   * @return string
+   */
   protected function frame($message, $user, $messageType='text', $messageContinues=false) {
     switch ($messageType) {
       case 'continuous':
@@ -302,7 +428,7 @@ abstract class WebSocketServer {
     }
     if ($messageContinues) {
       $user->sendingContinuous = true;
-    }
+    } 
     else {
       $b1 += 128;
       $user->sendingContinuous = false;
@@ -312,14 +438,14 @@ abstract class WebSocketServer {
     $lengthField = "";
     if ($length < 126) {
       $b2 = $length;
-    }
+    } 
     elseif ($length <= 65536) {
       $b2 = 126;
       $hexLength = dechex($length);
       //$this->stdout("Hex Length: $hexLength");
       if (strlen($hexLength)%2 == 1) {
         $hexLength = '0' . $hexLength;
-      }
+      } 
       $n = strlen($hexLength) - 2;
 
       for ($i = $n; $i >= 0; $i=$i-2) {
@@ -328,13 +454,13 @@ abstract class WebSocketServer {
       while (strlen($lengthField) < 2) {
         $lengthField = chr(0) . $lengthField;
       }
-    }
+    } 
     else {
       $b2 = 127;
       $hexLength = dechex($length);
       if (strlen($hexLength)%2 == 1) {
         $hexLength = '0' . $hexLength;
-      }
+      } 
       $n = strlen($hexLength) - 2;
 
       for ($i = $n; $i >= 0; $i=$i-2) {
@@ -347,10 +473,85 @@ abstract class WebSocketServer {
 
     return chr($b1) . chr($b2) . $lengthField . $message;
   }
+  
+  /**
+   * Check packet if we have more than one frame and process each frame individually
+   *
+   * @param int $length
+   * @param string $packet
+   * @param WebSocketUser $user
+   *
+   * @return void
+   */
+  protected function split_packet($length, $packet, $user) {
+    //add PartialPacket and calculate the new $length
+    if ($user->handlingPartialPacket) {
+      //$this->stdout('entro en handlingPartialPacket');
+      $packet = $user->partialBuffer . $packet;
+      $user->handlingPartialPacket = false;
+      $length = strlen($packet);
+    }
+    $fullpacket = $packet;
+    $frame_pos = 0;
+    $frame_id = 1;
 
-  protected function deframe($message, &$user) {
-    //echo $this->strtohex($message);
-    $headers = $this->extractHeaders($message);
+    //$this->stdout('split_packet frame_pos '.$frame_pos.' length '.$length);
+    while ($frame_pos < $length) {
+      $headers = $this->extractHeaders($packet);
+      $headers_size = $this->calcoffset($headers);
+      $framesize = $headers['length'] + $headers_size;
+      
+      //split frame from packet and process it
+      $frame = substr($fullpacket, $frame_pos, $framesize);
+      $message = $this->deframe($frame, $user,$headers);
+      //$this->stdout('split_packet 1 FRAME='.$frame.' MESSAGE='.$message.' headers_size='.$headers_size.' framesize='.$framesize.' fullpacket='.$fullpacket);
+
+      if (($message) !== FALSE) {
+        //$this->stdout('split_packet 2 FRAME='.$frame.' MESSAGE='.$message.' headers_size='.$headers_size.' framesize='.$framesize);
+        if ($user->hasSentClose) {
+          $this->disconnect($user->socket);
+        } else {
+          if (preg_match('//u', $message)) {
+            //$this->stdout("Is UTF-8\n".$message); 
+            $this->process($user, $message);
+          } else {
+            $this->stderr("not UTF-8\n");
+          }
+        }
+      } 
+      //get the new position also modify packet data
+      $frame_pos += $framesize;
+      $packet = substr($fullpacket, $frame_pos);
+      $frame_id++;
+      //$this->stdout('split_packet 3 FRAME_POS='.$frame_pos.' PACKET='.$packet.' FRAME_ID='.$frame_id);
+    }
+  }
+
+  /**
+   * @param string $headers
+   *
+   * @return int
+   */
+  protected function calcoffset($headers) {
+    $offset = 2;
+    if ($headers['hasmask']) {
+      $offset += 4;
+    }
+    if ($headers['length'] > 65535) {
+      $offset += 8;
+    } elseif ($headers['length'] > 125) {
+      $offset += 2;
+    }
+    return $offset;
+  }
+
+  /**
+   * @param string $message
+   * @param WebSocketUser $user
+   * @return bool|int|string
+   */
+  protected function deframe($message, &$user, $headers) {
+    //echo 'DEFRAME='.$this->strtohex($message)." opcode=".$headers['opcode']."\n";
     $pongReply = false;
     $willClose = false;
     switch($headers['opcode']) {
@@ -359,7 +560,6 @@ abstract class WebSocketServer {
       case 2:
         break;
       case 8:
-        // todo: close the connection
         $user->hasSentClose = true;
         return "";
       case 9:
@@ -367,41 +567,41 @@ abstract class WebSocketServer {
       case 10:
         break;
       default:
-        //$this->disconnect($user); // todo: fail connection
-        $willClose = true;
+        /* lo comentarice porque me llega un opcode 3
+        $willClose = true; */
         break;
     }
 
-    if ($user->handlingPartialPacket) {
-      $message = $user->partialBuffer . $message;
-      $user->handlingPartialPacket = false;
-      return $this->deframe($message, $user);
-    }
-
     if ($this->checkRSVBits($headers,$user)) {
+      //$this->stdout('DEFRAME= Se fue por checkRSVBits');
       return false;
     }
 
     if ($willClose) {
       // todo: fail the connection
+      //$this->stdout('DEFRAME=Se fue por willclose\n');
       return false;
     }
 
     $payload = $user->partialMessage . $this->extractPayload($message,$headers);
+    //$this->stdout('DEFRAME payload='.$this->strtohex($payload));
 
     if ($pongReply) {
       $reply = $this->frame($payload,$user,'pong');
-      socket_write($user->socket,$reply,strlen($reply));
+      fwrite($user->socket, $reply, strlen($reply));
       return false;
     }
+
+    //$this->stdout('DEFRAME mbstring='.extension_loaded('mbstring'));
     if (extension_loaded('mbstring')) {
       if ($headers['length'] > mb_strlen($this->applyMask($headers,$payload))) {
         $user->handlingPartialPacket = true;
         $user->partialBuffer = $message;
         return false;
       }
-    }
+    } 
     else {
+      //$this->stdout('DEFRAME headers[length]='.$headers['length'].' Mask='.$this->applyMask($headers,$payload));
       if ($headers['length'] > strlen($this->applyMask($headers,$payload))) {
         $user->handlingPartialPacket = true;
         $user->partialBuffer = $message;
@@ -409,6 +609,7 @@ abstract class WebSocketServer {
       }
     }
 
+    //$this->stdout('DEFRAME va a plicar mascara');
     $payload = $this->applyMask($headers,$payload);
 
     if ($headers['fin']) {
@@ -416,10 +617,17 @@ abstract class WebSocketServer {
       return $payload;
     }
     $user->partialMessage = $payload;
+
     return false;
   }
 
+  /**
+   * @param string $message
+   *
+   * @return array
+   */
   protected function extractHeaders($message) {
+    //$this->stdout('Entro en extractHeaders message='.$this->strtohex($message));
     $header = array('fin'     => $message[0] & chr(128),
             'rsv1'    => $message[0] & chr(64),
             'rsv2'    => $message[0] & chr(32),
@@ -429,26 +637,28 @@ abstract class WebSocketServer {
             'length'  => 0,
             'mask'    => "");
     $header['length'] = (ord($message[1]) >= 128) ? ord($message[1]) - 128 : ord($message[1]);
+    //$this->stdout('Entro en extractHeaders header[length] '.$header['length'].' ord(message[1])='.ord($message[1]).' message[1]='.$this->strtohex($message[1]));
+
     if ($header['length'] == 126) {
       if ($header['hasmask']) {
         $header['mask'] = $message[4] . $message[5] . $message[6] . $message[7];
       }
-      $header['length'] = ord($message[2]) * 256
+      $header['length'] = ord($message[2]) * 256 
                 + ord($message[3]);
-    }
+    } 
     elseif ($header['length'] == 127) {
       if ($header['hasmask']) {
         $header['mask'] = $message[10] . $message[11] . $message[12] . $message[13];
       }
-      $header['length'] = ord($message[2]) * 65536 * 65536 * 65536 * 256
+      $header['length'] = ord($message[2]) * 65536 * 65536 * 65536 * 256 
                 + ord($message[3]) * 65536 * 65536 * 65536
                 + ord($message[4]) * 65536 * 65536 * 256
                 + ord($message[5]) * 65536 * 65536
                 + ord($message[6]) * 65536 * 256
-                + ord($message[7]) * 65536
+                + ord($message[7]) * 65536 
                 + ord($message[8]) * 256
                 + ord($message[9]);
-    }
+    } 
     elseif ($header['hasmask']) {
       $header['mask'] = $message[2] . $message[3] . $message[4] . $message[5];
     }
@@ -457,25 +667,38 @@ abstract class WebSocketServer {
     return $header;
   }
 
-  protected function extractPayload($message,$headers) {
+  /**
+   * @param string $message
+   * @param array $headers
+   *
+   * @return string
+   */
+  protected function extractPayload($message, $headers) {
     $offset = 2;
     if ($headers['hasmask']) {
       $offset += 4;
     }
     if ($headers['length'] > 65535) {
       $offset += 8;
-    }
+    } 
     elseif ($headers['length'] > 125) {
       $offset += 2;
     }
+    $this->stdout('extractPayload offset='.$offset);
     return substr($message,$offset);
   }
 
-  protected function applyMask($headers,$payload) {
+  /**
+   * @param array $headers
+   * @param string $payload
+   *
+   * @return string
+   */
+  protected function applyMask($headers, $payload) {
     $effectiveMask = "";
     if ($headers['hasmask']) {
       $mask = $headers['mask'];
-    }
+    } 
     else {
       return $payload;
     }
@@ -488,7 +711,14 @@ abstract class WebSocketServer {
     }
     return $effectiveMask ^ $payload;
   }
-  protected function checkRSVBits($headers,$user) { // override this method if you are using an extension where the RSV bits are used.
+
+  /**
+   * @param array $headers
+   * @param WebSocketUser $user
+   *
+   * @return bool
+   */
+  protected function checkRSVBits($headers, $user) { // override this method if you are using an extension where the RSV bits are used.
     if (ord($headers['rsv1']) + ord($headers['rsv2']) + ord($headers['rsv3']) > 0) {
       //$this->disconnect($user); // todo: fail connection
       return true;
@@ -496,6 +726,11 @@ abstract class WebSocketServer {
     return false;
   }
 
+  /**
+   * @param string $str
+   *
+   * @return string
+   */
   protected function strtohex($str) {
     $strout = "";
     for ($i = 0; $i < strlen($str); $i++) {
@@ -517,12 +752,15 @@ abstract class WebSocketServer {
     return $strout . "\n";
   }
 
+  /**
+   * @param array $headers
+   */
   protected function printHeaders($headers) {
     echo "Array\n(\n";
     foreach ($headers as $key => $value) {
       if ($key == 'length' || $key == 'opcode') {
         echo "\t[$key] => $value\n\n";
-      }
+      } 
       else {
         echo "\t[$key] => ".$this->strtohex($value)."\n";
 
@@ -532,4 +770,3 @@ abstract class WebSocketServer {
     echo ")\n";
   }
 }
-

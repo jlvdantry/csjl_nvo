@@ -485,7 +485,7 @@ class soldatos
     *  @param int $s_table  indica si pone scrroll en la tabla 0=si 1=no
     *  @param int $s_table_height  Altura del scroll
     */
-  function inicio_tab($s_table,$s_table_height)
+  function inicio_tab($s_table=0,$s_table_height=0)
   {
 //  20070523  ya no funciona lo del height del scroll por la nueva funcion	  
 //  20070523	  	if ($s_table==0)
@@ -496,7 +496,7 @@ class soldatos
 //  20070523		else
 //  20070523		{
     		return "<table id='tabdinamica' class='scrolling_table_body'  style='visibility:hidden' ".
-    		($this->menu["imprime"]=="1" ? " name=noimprime " : "").    	    		
+//    		($this->menu["imprime"]=="1" ? " name=noimprime " : "").    	    		
     		">\n";			
 //  20070523		}
   }
@@ -608,7 +608,7 @@ class soldatos
   {
     echo "</body>";
     echo "      <script language=\"JavaScript\">";
-        echo "  actualizaRelog ();      ";
+        //echo "  actualizaRelog ();      ";
         echo "  </script>       ";
     echo "</html>";
   } 
@@ -1555,17 +1555,17 @@ class soldatos
         	                          .(strpos($this->movto_mantto,"I")!==false ? "I" : "")
         	                          ."\",\"\",\"\",\"".
         	                          // evento antes de dar de alta
-        	                          (($this->menue[3][2][donde]==1) ? $this->menue[3][2][descripcion] : "").
+        	                          (($this->menue[3][2]['donde']==1) ? $this->menue[3][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues de dar de alta
-        	                          (($this->menue[4][2][donde]==1) ? $this->menue[4][2][descripcion] : "").        	                          
+        	                          (($this->menue[4][2]['donde']==1) ? $this->menue[4][2]['descripcion'] : "").        	                          
         	                          "\",\"".
 //20071112     se incluyo los evento que se efectuar en el cliente        	                          
         	                          // evento antes de dar de alta en el cliente    //20071112
-        	                          (($this->menue[3][1][donde]==0) ? $this->menue[3][1][descripcion] : "").  //20071112
+        	                          (($this->menue[3][1]['donde']==0) ? $this->menue[3][1]['descripcion'] : "").  //20071112
         	                          "\",\"". //20071112
         	                          // evento despues de dar de alta en el cliente   //20071112
-        	                          (($this->menue[4][1][donde]==0) ? $this->menue[4][1][descripcion] : "").   //20071112
+        	                          (($this->menue[4][1]['donde']==0) ? $this->menue[4][1]['descripcion'] : "").   //20071112
                                           // confirma el movimiento a efectuar
                                           "\",\"".$this->menu["noconfirmamovtos"]."\"".
                                           ");return false'></input></td>\n";
@@ -1585,16 +1585,16 @@ class soldatos
         	                          .(strpos($this->movto_mantto,"B")!==false ? "B" : "")        	                                  	                          
         	                          ."\",\"\",\"\",\"".
         	                          // evento antes 
-        	                          (($this->menue[9][2][donde]==1) ? $this->menue[9][2][descripcion] : "").
+        	                          (($this->menue[9][2]['donde']==1) ? $this->menue[9][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues 
-        	                          (($this->menue[10][2][donde]==1) ? $this->menue[10][2][descripcion] : "").
+        	                          (($this->menue[10][2]['donde']==1) ? $this->menue[10][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues    //20071113
-        	                          (($this->menue[9][1][donde]==0) ? $this->menue[9][1][descripcion] : ""). //20071113
+        	                          (($this->menue[9][1]['donde']==0) ? $this->menue[9][1]['descripcion'] : ""). //20071113
         	                          "\",\"". //20071113
         	                          // evento despues  //20071113
-        	                          (($this->menue[10][1][donde]==0) ? $this->menue[10][1][descripcion] : ""). //20071113
+        	                          (($this->menue[10][1]['donde']==0) ? $this->menue[10][1]['descripcion'] : ""). //20071113
                                           // confirma el movimiento a efectuar
                                           "\",\"".$this->menu["noconfirmamovtos"]."\"".
                                           ");return false'></input></td>\n";
@@ -1632,16 +1632,16 @@ class soldatos
         	"onclick='mantto_tabla(\"".$this->idmenu.
         	                          "\",\"f\",\"\",\"\",\"".
         	                          // evento antes 
-        	                          (($this->menue[9][2][donde]==1) ? $this->menue[9][2][descripcion] : "").
+        	                          (($this->menue[9][2]['donde']==1) ? $this->menue[9][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues 
-        	                          (($this->menue[10][2][donde]==1) ? $this->menue[10][2][descripcion] : "").
+        	                          (($this->menue[10][2]['donde']==1) ? $this->menue[10][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues    //20071113
-        	                          (($this->menue[9][1][donde]==0) ? $this->menue[9][1][descripcion] : ""). //20071113
+        	                          (($this->menue[9][1]['donde']==0) ? $this->menue[9][1]['descripcion'] : ""). //20071113
         	                          "\",\"". //20071113
         	                          // evento despues  //20071113
-        	                          (($this->menue[10][1][donde]==0) ? $this->menue[10][1][descripcion] : ""). //20071113
+        	                          (($this->menue[10][1]['donde']==0) ? $this->menue[10][1]['descripcion'] : ""). //20071113
                                           // confirma el movimiento a efectuar
                                           "\",\"".$this->menu["noconfirmamovtos"]."\"".
                                           ");return false' value='Archivo txt'></input></td>\n";
@@ -1653,16 +1653,16 @@ class soldatos
                 "onclick='mantto_tabla(\"".$this->idmenu.
                                           "\",\"ex\",\"\",\"\",\"".
                                           // evento antes
-                                          (($this->menue[9][2][donde]==1) ? $this->menue[9][2][descripcion] : "").
+                                          (($this->menue[9][2]['donde']==1) ? $this->menue[9][2]['descripcion'] : "").
                                           "\",\"".
                                           // evento despues
-                                          (($this->menue[10][2][donde]==1) ? $this->menue[10][2][descripcion] : "").
+                                          (($this->menue[10][2]['donde']==1) ? $this->menue[10][2]['descripcion'] : "").
                                           "\",\"".
                                           // evento despues    //20071113
-                                          (($this->menue[9][1][donde]==0) ? $this->menue[9][1][descripcion] : ""). //20071113
+                                          (($this->menue[9][1]['donde']==0) ? $this->menue[9][1]['descripcion'] : ""). //20071113
                                           "\",\"". //20071113
                                           // evento despues  //20071113
-                                          (($this->menue[10][1][donde]==0) ? $this->menue[10][1][descripcion] : ""). //20071113
+                                          (($this->menue[10][1]['donde']==0) ? $this->menue[10][1]['descripcion'] : ""). //20071113
                                           // confirma el movimiento a efectuar
                                           "\",\"".$this->menu["noconfirmamovtos"]."\"".
                                           ");return false' value='Archivo Excel'></input></td>\n";
@@ -1674,16 +1674,16 @@ class soldatos
                 "onclick='mantto_tabla(\"".$this->idmenu.
                                           "\",\"ea\",\"\",\"\",\"".
                                           // evento antes
-                                          (($this->menue[9][2][donde]==1) ? $this->menue[9][2][descripcion] : "").
+                                          (($this->menue[9][2]['donde']==1) ? $this->menue[9][2]['descripcion'] : "").
                                           "\",\"".
                                           // evento despues
-                                          (($this->menue[10][2][donde]==1) ? $this->menue[10][2][descripcion] : "").
+                                          (($this->menue[10][2]['donde']==1) ? $this->menue[10][2]['descripcion'] : "").
                                           "\",\"".
                                           // evento despues    //20071113
-                                          (($this->menue[9][1][donde]==0) ? $this->menue[9][1][descripcion] : ""). //20071113
+                                          (($this->menue[9][1]['donde']==0) ? $this->menue[9][1]['descripcion'] : ""). //20071113
                                           "\",\"". //20071113
                                           // evento despues  //20071113
-                                          (($this->menue[10][1][donde]==0) ? $this->menue[10][1][descripcion] : ""). //20071113
+                                          (($this->menue[10][1]['donde']==0) ? $this->menue[10][1]['descripcion'] : ""). //20071113
                                           // confirma el movimiento a efectuar
                                           "\",\"".$this->menu["noconfirmamovtos"]."\"".
                                           ");return false' value='Archivo Excel con Documentos'></input></td>\n";
@@ -1703,7 +1703,7 @@ class soldatos
 						              "</td>\n"; 										
 
         	}        	            	
-        if (strpos($meda->camposm[movtos],"n")!==false) 
+        if (strpos($meda->camposm['movtos'],"n")!==false) 
         	{
 	     	echo "<td id='navegacionar' class='botones' > ".
 	     	($this->menum['n']['idmovto']=='n' && $this->menum['n']["descripcion"]!="" ? "<input type=button id='iinicio' value='".$this->menum['n']["descripcion"]."' title='Registro Inicial'  " : "<input type=image id='iCambio' src='img/quitato2s.gif' title='RegistroInicial' value='RegistroInicial' ").
@@ -1731,7 +1731,6 @@ class soldatos
     */
   function filas_ing($sql_result,$num,$md) 
   {
-//     $this->titulos_tab($sql_result);	  
 	if ($md=="")	//20070623
 	{//20070623
      $md = new menudata();
@@ -1745,16 +1744,16 @@ class soldatos
      if ($num!=0)
      {
 	     $Row1 = pg_fetch_array($sql_result, 0);
-		 $tt .= "<tbody class='scrolling_table_body'>\n";
+		 $tt = $tt."<tbody class='scrolling_table_body'>\n";
     	 for ($z=0; $z < $num ;$z++)
      	{
 	    	$wlllave="";
         	$Row = pg_fetch_array($sql_result, $z);
         	$wl=$this->armarenglon($sql_result,$Row,$z,$md);
- 			$tt .= $wl;       
-          	next($Row1);
+ 			$tt = $tt.$wl;       
+          	//next($Row1);
         }
-		$tt .= "</tbody>\n";        
+		$tt = $tt."</tbody>\n";        
       }
 	return $tt;		
   } 
@@ -1817,26 +1816,26 @@ class soldatos
 								$wl=$wl."<td  ".$this->armaid_td($z,$j)."><a href=## onclick='muestra_cambio(\"formpr\","
 						        	      .$z.",".$i.",\"wlllave\",".$meda->camposm['idmenu'].
         	                        	  // evento antes de dar cambio
-        	                          	",\"".(($meda->camposme[7][2][donde]==1) ? $meda->camposme[7][2][descripcion] : "").
+        	                          	",\"".(($meda->camposme[7][2]['donde']==1) ? $meda->camposme[7][2]['descripcion'] : "").
         	                          	"\",\"".
         	                          	// evento despues de dar cambio
-        	                          	(($meda->camposme[8][2][donde]==1) ? $meda->camposme[8][2][descripcion] : "").
+        	                          	(($meda->camposme[8][2]['donde']==1) ? $meda->camposme[8][2]['descripcion'] : "").
         	                          	"\",\"".  //20071113
         	                          	// evento despues de dar cambio  //20071113
-        	                          	(($meda->camposme[7][1][donde]==0) ? $meda->camposme[7][1][descripcion] : "").//20071113
+        	                          	(($meda->camposme[7][1]['donde']==0) ? $meda->camposme[7][1]['descripcion'] : "").//20071113
         	                          	"\",\"".//20071113
         	                          	// evento despues de dar cambio//20071113
-        	                          	(($meda->camposme[8][1][donde]==0) ? $meda->camposme[8][1][descripcion] : "").//20071113
+        	                          	(($meda->camposme[8][1]['donde']==0) ? $meda->camposme[8][1]['descripcion'] : "").//20071113
 						              	"\",\"u1\");abre_subvista(\"man_menus.php\",\"idmenu=".
 						              	$meda->camposmc[pg_fieldname($sql_result, $j)]['idsubvista'].
 						              	"&filtro=".pg_fieldname($sql_result, $j)."=".
 						              	$Row[pg_fieldname($sql_result, $j)]."\",\"".
 ##						              "&filtro=\"wlllave\",\"".
 							              //  evento antes de abrir subvista
-							              (($meda->camposme[1][2][donde]==1) ? $meda->camposme[1][2][descripcion] : "").
+							              (($meda->camposme[1][2]['donde']==1) ? $meda->camposme[1][2]['descripcion'] : "").
 							              "\",\"".
 							              //  despues de abrir subvista
-							              (($meda->camposme[10][2][donde]=1)  ? $meda->camposme[10][2][descripcion] : "").
+							              (($meda->camposme[10][2]['donde']=1)  ? $meda->camposme[10][2]['descripcion'] : "").
 							              "\",".
                                                                       $meda->camposmc[pg_fieldname($sql_result, $j)]['idsubvista'].   /// con este dato se identifica el id de la ventana
                                                                   ",".$meda->camposmc[pg_fieldname($sql_result, $j)]['dialogwidth'].
@@ -1859,43 +1858,43 @@ class soldatos
           
 //20070703        	$wlini="<tr id=tr".($z).">";
         	$wlini="<tr id=tr".($z)."  oncontextmenu='contextForTR(this);return false;' >"; //20070703       	        	
-        	if (strpos($meda->camposm[movtos],"d")!==false) 
+        	if (strpos($meda->camposm['movtos'],"d")!==false) 
         	{
             	 $wlini=$wlini."<td name=noimprime ><input class='img' type=image title='Eliminar registro' src='img/delete.gif' ".
 //20070630  lo modifique para que antes de dar de baja los muestre en los campos de captura
 //20070630                   "onclick='mantto_tabla(\"".$meda->camposm['idmenu']."\",\"d\",\"".$wlllave."\",".($z).",\"".
                    "onclick='daunClick(\"cam".$z."\");mantto_tabla(\"".$meda->camposm['idmenu']."\",\"d\",\"".$wlllave."\",".($z).",\"".                   
         	                          // evento antes de dar de baja
-        	                          (($meda->camposme[5][2][donde]==1) ? $meda->camposme[5][2][descripcion] : "").
+        	                          (($meda->camposme[5][2]['donde']==1) ? $meda->camposme[5][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues de dar de baja
-        	                          (($meda->camposme[6][2][donde]==1) ? $meda->camposme[6][2][descripcion] : "").
+        	                          (($meda->camposme[6][2]['donde']==1) ? $meda->camposme[6][2]['descripcion'] : "").
         	                          "\",\"". //20071113
         	                          // evento antes de dar de baja  //20071113
-        	                          (($meda->camposme[5][1][donde]==0) ? $meda->camposme[5][1][descripcion] : "").//20071113
+        	                          (($meda->camposme[5][1]['donde']==0) ? $meda->camposme[5][1]['descripcion'] : "").//20071113
         	                          "\",\"". //20071113
         	                          // evento despues de dar de baja  //20071113
-        	                          (($meda->camposme[6][1][donde]==0) ? $meda->camposme[6][1][descripcion] : "").//20071113
+        	                          (($meda->camposme[6][1]['donde']==0) ? $meda->camposme[6][1]['descripcion'] : "").//20071113
                                          // confirma el movimiento a efectuar
                                           "\",\"".$this->menu["noconfirmamovtos"]."\"".
                                                            ");return false'></input></td>\n";
         	}
 
-        	if (strpos($meda->camposm[movtos],"cc")!==false) 
+        	if (strpos($meda->camposm['movtos'],"cc")!==false) 
         	{
             	 $wlini=$wlini."<td name=noimprime ><input class='img' type=image title='Copia registro' src='img/copy.gif' ".
                    "onclick='mantto_tabla(\"".$meda->camposm['idmenu']."\",\"cc\",\"".$wlllave."\",".($z).",\"".
         	                          // evento antes de dar de baja
-        	                          (($meda->camposme[5][2][donde]==1) ? $meda->camposme[5][2][descripcion] : "").
+        	                          (($meda->camposme[5][2]['donde']==1) ? $meda->camposme[5][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues de dar de baja
-        	                          (($meda->camposme[6][2][donde]==1) ? $meda->camposme[6][2][descripcion] : "").
+        	                          (($meda->camposme[6][2]['donde']==1) ? $meda->camposme[6][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues de dar de baja
-        	                          (($meda->camposme[5][1][donde]==0) ? $meda->camposme[5][1][descripcion] : "").
+        	                          (($meda->camposme[5][1]['donde']==0) ? $meda->camposme[5][1]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues de dar de baja
-        	                          (($meda->camposme[6][1][donde]==0) ? $meda->camposme[6][1][descripcion] : "").
+        	                          (($meda->camposme[6][1]['donde']==0) ? $meda->camposme[6][1]['descripcion'] : "").
                                           // confirma el movimiento a efectuar
                                           "\",\"".$this->menu["noconfirmamovtos"]."\"".
                                                            ");return false'></input></td>\n";
@@ -1903,42 +1902,42 @@ class soldatos
 
 //20070611   lo modifique para que cuando sea solo select "s" se pudiese tambien seleccionar el registro
 //20070611   ya que habia ocaciones que no se podiar dar update al registro y no se podia seleccionar
-//20070611     if (strpos($meda->camposm[movtos],"u")!==false) 
-            if (strpos($meda->camposm[movtos],"u")!==false || strpos($meda->camposm[movtos],"s")!==false)      
+//20070611     if (strpos($meda->camposm['movtos'],"u")!==false) 
+            if (strpos($meda->camposm['movtos'],"u")!==false || strpos($meda->camposm['movtos'],"s")!==false)      
         	{
             	 $wlini=$wlini."<td name=noimprime ><input type=Image name='botcam' id=cam".$z." title='Seleccionar renglon' src='img/icon_enabled_checkbox_unchecked.gif' ".	        	
                 	  "onclick='muestra_cambio(\"formpr\",".$z.",".$i.",\"".$wlllave."\",".$meda->camposm['idmenu'].",\"".
         	                          // evento antes de dar cambio
-        	                          (($meda->camposme[7][2][donde]==1) ? $meda->camposme[7][2][descripcion] : "").
+        	                          (($meda->camposme[7][2]['donde']==1) ? $meda->camposme[7][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues de dar cambio
-        	                          (($meda->camposme[8][2][donde]==1) ? $meda->camposme[8][2][descripcion] : "").
+        	                          (($meda->camposme[8][2]['donde']==1) ? $meda->camposme[8][2]['descripcion'] : "").
         	                          "\",\"".//20071113
         	                          // evento despues de dar cambio  //20071113
-        	                          (($meda->camposme[7][1][donde]==0) ? $meda->camposme[7][1][descripcion] : ""). //20071113
+        	                          (($meda->camposme[7][1]['donde']==0) ? $meda->camposme[7][1]['descripcion'] : ""). //20071113
         	                          "\",\"".//20071113
         	                          // evento despues de dar cambio//20071113
-        	                          (($meda->camposme[8][1][donde]==0) ? $meda->camposme[8][1][descripcion] : ""). //20071113
+        	                          (($meda->camposme[8][1]['donde']==0) ? $meda->camposme[8][1]['descripcion'] : ""). //20071113
                                                           "\",\"u\"".
                                           ",\"".$this->menu["noconfirmamovtos"]."\"".
                                           "); return false;' ></input></td>\n";
         	}
         	
-            if (strpos($meda->camposm[movtos],"B")!==false)      
+            if (strpos($meda->camposm['movtos'],"B")!==false)      
         	{
             	 $wlini=$wlini."<td name=noimprime ><input  type=Image name='botcam' id=cam".$z." title='Seleccionar renglon' src='img/icon_enabled_checkbox_unchecked.gif' ".	        	
                 	  "onclick='muestra_cambio(\"formpr\",".$z.",".$i.",\"".$wlllave."\",".$meda->camposm['idmenu'].",\"".
         	                          // evento antes de dar cambio
-        	                          (($meda->camposme[7][2][donde]==1) ? $meda->camposme[7][2][descripcion] : "").
+        	                          (($meda->camposme[7][2]['donde']==1) ? $meda->camposme[7][2]['descripcion'] : "").
         	                          "\",\"".
         	                          // evento despues de dar cambio
-        	                          (($meda->camposme[8][2][donde]==1) ? $meda->camposme[8][2][descripcion] : "").
+        	                          (($meda->camposme[8][2]['donde']==1) ? $meda->camposme[8][2]['descripcion'] : "").
         	                          "\",\"".//20071113
         	                          // evento despues de dar cambio  //20071113
-        	                          (($meda->camposme[7][1][donde]==0) ? $meda->camposme[7][1][descripcion] : ""). //20071113
+        	                          (($meda->camposme[7][1]['donde']==0) ? $meda->camposme[7][1]['descripcion'] : ""). //20071113
         	                          "\",\"".//20071113
         	                          // evento despues de dar cambio//20071113
-        	                          (($meda->camposme[8][1][donde]==0) ? $meda->camposme[8][1][descripcion] : ""). //20071113
+        	                          (($meda->camposme[8][1]['donde']==0) ? $meda->camposme[8][1]['descripcion'] : ""). //20071113
                   					  "\",\"B\"); return false;' ></input></td>\n";	        
         	}
         	
@@ -2016,10 +2015,10 @@ class soldatos
 //20070630			      " onclick='muestra_cambio(\"formpr\",".
 //20070630							          $z.",".$i.",\"".$wlllave."\",".$meda->camposm['idmenu'].
 //20070630        	                          ",\"".
-//20070630        	                          (($meda->camposme[7][donde]==1) ? $meda->camposme[7][descripcion] : "").
+//20070630        	                          (($meda->camposme[7]['donde']==1) ? $meda->camposme[7]['descripcion'] : "").
 //20070630        	                          "\",\"".
 //20070630        	                          // evento despues de dar cambio
-//20070630        	                          (($meda->camposme[8][donde]==1) ? $meda->camposme[8][descripcion] : "").
+//20070630        	                          (($meda->camposme[8]['donde']==1) ? $meda->camposme[8]['descripcion'] : "").
 //20070630						              "\",\"s\");abre_subvista(\"man_menus.php\",\"idmenu=".
                    			"onclick='daunClick(\"cam".$z."\");".
 						              "abre_subvista(\"man_menus.php\",\"idmenu=".

@@ -278,17 +278,15 @@ class reingenieria extends xmlhttp_class
 	   return $wlsize;
    }
 }
-	if (isset($opcion))
+	if (isset($_POST['opcion']))
 	{
 		session_start();
 		include("conneccion.php");
 		require_once("reingenieria_class.php");
 		$va = new reingenieria();
 		$va->connection = $connection;
-##20071105      se cambio a post
-##20071105		$va->argumentos = $_GET;
-		$va->argumentos = $_POST; ##20071105
-		$va->funcion = $opcion;		
+		$va->argumentos = $_POST; 
+		$va->funcion = $_POST['opcion'];		
 		$va->procesa();		
 	}
 ?>

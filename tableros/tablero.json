@@ -1,0 +1,34 @@
+{
+  "name": "TABLEROS",
+  "short_name": "tableros",
+  "icons": [
+    {
+      "src": "img/INFORMACION192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/INFORMACION512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "htab_1_8_2.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "Description": "Muestra los turnos que son llamados",
+  "scope": "/",
+  "version": "1.0",
+  "developer": {
+      "name"  : "Soluciones inteligentes"
+  },
+  "theme_color": "#242424",
+  "background_color": "#df1874",
+  "dir" : "ltr",
+  "related_applications": [
+	  {
+	    "platform": "play",
+	    "id": "com.google.samples.apps.iosched"
+	  }
+  ]
+}

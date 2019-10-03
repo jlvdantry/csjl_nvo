@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"";
 echo "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">";
 echo "<head>\n";
@@ -33,7 +34,6 @@ echo "    else if (e.contentDocument && e.contentDocument.body.offsetHeight) //s
 echo "        e.style.height = e.contentDocument.body.offsetHeight ;\n";
 echo "}\n";
 echo "	</script>	\n";
-
 
 class opciones_antn 
 {
@@ -77,14 +77,15 @@ class opciones_antn
    {	 
 		   $sql=
 			"	select distinct m.descripcion, m.php, m.idmenupadre as a, m.idmenu".
-                        "       ,(select count (*) from menus as mm where mm.idmenupadre=m.idmenu) as hijos	".
-                        "       ,case when m.idmenupadre=0 then m.descripcion else (select descripcion from menus as mm where mm.idmenu=m.idmenupadre) end as orden ".
+                        "       ,(select count (*) from forapi.menus as mm where mm.idmenupadre=m.idmenu) as hijos	".
+                        "       ,case when m.idmenupadre=0 then m.descripcion else (select descripcion from forapi.menus as mm where mm.idmenu=m.idmenupadre) end as orden ".
+                        "       ,usename ".
 			"	from	cat_usuarios_pg_group as cupg	".
-			"	left join menus_pg_group as mpg on mpg.groname=cupg.groname	".
-			"	left join menus as m on m.idmenu=mpg.idmenu	".
+			"	left join forapi.menus_pg_group as mpg on (mpg.groname=cupg.groname or mpg.grosysid=cupg.grosysid)	".
+			"	left join forapi.menus as m on m.idmenu=mpg.idmenu	".
 			"	where	usename=current_user	".
 			"	and	m.descripcion<>'accesosistema'	".
-			"	and not ((php='' or php is null) and (select count (*) from menus as mm where mm.idmenupadre=m.idmenu)=0) 	".
+			"	and not ((php='' or php is null) and (select count (*) from forapi.menus as mm where mm.idmenupadre=m.idmenu)=0) 	".
 			"	order by 6,5 desc";
 			//echo $sql."<br>";
     	   $sql_result = pg_exec($this->connection,$sql);
@@ -158,23 +159,23 @@ class opciones_antn
 
        ## echo "top.document.getElementById('fs').rows='';\n";	
 ##	echo "top.document.getElementById('fs').cols='20%,*';\n";	
-	echo "webFXTreeConfig.rootIcon		= \"images/xp/folder.png\";";
-	echo "webFXTreeConfig.openRootIcon	= \"images/xp/openfolder.png\";";
-	echo "webFXTreeConfig.folderIcon		= \"images/xp/folder.png\";";
-	echo "webFXTreeConfig.openFolderIcon	= \"images/xp/openfolder.png\";";
-	echo "webFXTreeConfig.fileIcon		= \"images/xp/file.png\";";
-	echo "webFXTreeConfig.lMinusIcon		= \"images/xp/Lminus.png\";";
-	echo "webFXTreeConfig.lPlusIcon		= \"images/xp/Lplus.png\";";
-	echo "webFXTreeConfig.tMinusIcon		= \"images/xp/Tminus.png\";";
-	echo "webFXTreeConfig.tPlusIcon		= \"images/xp/Tplus.png\";";
-	echo "webFXTreeConfig.iIcon			= \"images/xp/I.png\";";
-	echo "webFXTreeConfig.lIcon			= \"images/xp/L.png\";";
-	echo "webFXTreeConfig.tIcon			= \"images/xp/T.png\"; " ;  
-	echo "var tree = new WebFXLoadTree(\"Bienvenido ".$wlusuario."\", \"nuevo_menus.php\");";
-	echo "document.write(tree);";
-    echo "</script>";
+	echo "webFXTreeConfig.rootIcon		= \"images/xp/folder.png\";\n";
+	echo "webFXTreeConfig.openRootIcon	= \"images/xp/openfolder.png\";\n";
+	echo "webFXTreeConfig.folderIcon		= \"images/xp/folder.png\";\n";
+	echo "webFXTreeConfig.openFolderIcon	= \"images/xp/openfolder.png\";\n";
+	echo "webFXTreeConfig.fileIcon		= \"images/xp/file.png\";\n";
+	echo "webFXTreeConfig.lMinusIcon		= \"images/xp/Lminus.png\";\n";
+	echo "webFXTreeConfig.lPlusIcon		= \"images/xp/Lplus.png\";\n";
+	echo "webFXTreeConfig.tMinusIcon		= \"images/xp/Tminus.png\";\n";
+	echo "webFXTreeConfig.tPlusIcon		= \"images/xp/Tplus.png\";\n";
+	echo "webFXTreeConfig.iIcon			= \"images/xp/I.png\";\n";
+	echo "webFXTreeConfig.lIcon			= \"images/xp/L.png\";\n";
+	echo "webFXTreeConfig.tIcon			= \"images/xp/T.png\";\n" ;  
+	echo "var tree = new WebFXLoadTree(\"Bienvenido ".$wlusuario."\", \"nuevo_menus.php\");\n";
+	echo "document.write(tree);\n";
+    echo "</script>\n";
     
-    echo "<form id=forma></form>";
+    echo "<form id=forma></form>\n";
     echo "</body>";
     echo "</html>";
         		
@@ -279,7 +280,7 @@ class opciones_antn
 		for ($i=0; $i < $num ; $i++)
 		{
 			$row = pg_fetch_array($sql_result, $i);
-			if ($row['idmenupadre']==0 && $row['php']=='')
+			if ($row['a']==0 && $row['php']=='')
 			{
 			$descripcion=$row['descripcion'];
 			echo "<th id='".$row['idmenu']."' onclick='this.className=\"tableon\";menu_over(this,\"cat".$row['idmenu']."\");' onmouseover='this.className=\"tableon\";menu_over(this,\"cat".$row['idmenu']."\");' onmouseout='this.className=\"\";'>\n";
@@ -287,17 +288,17 @@ class opciones_antn
 			}
 			if ($row['a']==0 && trim($row['php'])!='')
 			{
-			$descripcion=$row['descripcion'];
-			echo "<th id='0' onmouseover='this.className=\"tableon\";menu_over(this,\"cat".$row['idmenu']."\");' onmouseout='this.className=\"\";'>\n";
-			echo "<a>&nbsp;".$descripcion."</a></th>\n";
-			}
+			   $descripcion=$row['descripcion'];
+			   echo "<th id='0' onmouseover='this.className=\"tableon\";menu_over(this,\"cat".$row['idmenu']."\");' onmouseout='this.className=\"\";'>\n";
+			   echo "<a>&nbsp;".$descripcion."</a></th>\n";
+		        }	
 
 		}
 		echo "	</tr>	";
 		echo "</table>\n";
 		$num = pg_numrows($sql_result);
 		echo "<script language='javascript'>\n";
-		echo "	 var menu_data_ = {\n";
+		echo "	 var menu_data = {\n";
 			for ($i=0; $i < $num ; $i++)
 			{
 				$row = pg_fetch_array($sql_result, $i);

@@ -1,8 +1,10 @@
 <?php
+##error_reporting(E_ALL);
+##ini_set('display_errors', 1);
 class WebsocketClient
 {
         private $_Socket = null;
-        private $local = "http://mypc";
+        private $local = "https://solin.com";
         public  $conectado = false;
         public function __construct($host, $port)
         {
@@ -14,23 +16,40 @@ class WebsocketClient
                 $this->_disconnect();
         }
 
-        private function _connect($host, $port)
+        private function _connect($host, $port, $cert)
         {
+        $host1=$host.":".$port;
         $head = "GET / HTTP/1.1"."\r\n".
-        "Upgrade: WebSocket"."\r\n".
+        "Upgrade: websocket"."\r\n".
         "Connection: Upgrade"."\r\n".
         "Origin: $this->local"."\r\n".
-        "Host: $host"."\r\n".
-        "Sec-WebSocket-Key: asdasdaas76da7sd6asd6as7d"."\r\n".
-        "sec-websocket-version: 13\r\n".
-        "Content-Length: 0\r\n\r\n";
-        $this->_Socket = fsockopen($host, $port, $errno, $errstr, 2);
+        "Host: localhost:9001"."\r\n".
+        "Sec-WebSocket-Key: ookA6DFrcn7q2JOVHpoyrQ=="."\r\n".
+        "sec-websocket-Version: 13\r\n".
+        "Content-Length: 100\r\n\r\n";
+        ##$this->_Socket = fsockopen($host, $port, $errno, $errstr, 2);
+        $context = stream_context_create();
+        stream_context_set_option($context, "ssl", "peer_name", 'solin.com');
+        stream_context_set_option($context, "ssl", "verify_peer", false);
+        stream_context_set_option($context, "ssl", "allow_self_signed", true);
+        stream_context_set_option($context, "ssl", "local_cert", "solin.pem");
+        stream_context_set_option($context, "ssl", "disable_compression", true);
+        stream_context_set_option($context, "ssl", "SNI_enabled", true);
+        stream_context_set_option($context, "ssl", "ciphers", 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-RSA-RC4-SHA:ECDHE-ECDSA-RC4-SHA:AES128:AES256:RC4-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!PSK');
+
+        $this->_Socket = stream_socket_client($host1, $errno, $errstr, 30,STREAM_CLIENT_CONNECT, $context);
+        if ($this->_Socket === false) {
+            $this->log("No se conecto");
+        }
+
         $this->log("cliente socket errno".$errno." errstr=".$errstr);
         if ($errstr=="")
         {
-            $this->log("cliente socket se fue por cierto");
-            fwrite($this->_Socket, $head ) or die('error:'.$errno.':'.$errstr);
+            $this->log("cliente socket se fue por cierto=".$head);
+            fwrite($this->_Socket, $head );
+            $this->log("cliente socket paso fwrite");
             $headers = fread($this->_Socket, 2000);
+            $this->log("cliente socket paso fread");
             $this->conectado=true;
         } else {
             $this->log("cliente socket se fue por falso");
@@ -182,10 +201,7 @@ private function hybi10Encode($payload, $type = 'text', $masked = true) {
         {
             $dt = date("Y-m-d H:i:s ");
             $dia = date("Ymd");
-            ##echo $str;
-            ##echo "<_fecha_>".$dt."</_fecha_>";
-            ##error_log("$dt $str id=".session_id()."\n",3,"/tmp/turnos$dia.log");
-            error_log("$dt $str id=".session_id()."\n",3,"turnos".$dia.".log");
+            error_log("$dt $str session_id=".session_id()."\n",3,"turnos".$dia.".log");
         }
 
 }

@@ -29,6 +29,10 @@ function quitaf(str) {
    x=x.substring(0,x.length-2);
   return x; 
 } 
+
+function tra_anc() {
+       console.log('entro');
+}
    
 /*
    funcion para quitar el enter en los campos texto y de un click en el primer boton

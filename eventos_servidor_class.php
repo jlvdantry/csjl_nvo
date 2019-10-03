@@ -15,10 +15,25 @@ class eventos_servidor_class extends xmlhttp_class
 {	
         function llamaturnows($str)
         {
-              $this->log("entro en llamaturnows ".$str);
-              $WebSocketClient = new WebsocketClient('localhost', 9001);
+          try {
+                $this->log("entro en llamaturnows ".$str);
+                $options = array(
+                        'ssl' => array(
+                                'peer_name' => 'solin.com',
+                                'verify_peer' => false,
+                                'local_cert' => '/root/certs/solin.pem',
+                                /* 'local_pk' => '/root/certs/solin.key', */
+                                'disable_compression' => true,
+                                /* 'passphrase' => 'comet', */
+                                'SNI_enabled' => true,
+                                'allow_self_signed' => true,
+                                'ciphers' => 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-RSA-RC4-SHA:ECDHE-ECDSA-RC4-SHA:AES128:AES256:RC4-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!PSK',
+                        )
+                );
+
+              $WebSocketClient = new WebsocketClient('tls://localhost', 9001,$options);
               $this->log("paso WebsocketClient conectado".$WebSocketClient->conectado);
-              if ($WebSocketClient->conectado)
+              if ($WebSocketClient->conectado==true)
               {
                  $WebSocketClient->sendData(json_encode($str));
                  $this->log("termino llamaturno".$str);
@@ -27,6 +42,7 @@ class eventos_servidor_class extends xmlhttp_class
               }
               $this->log("paso llamaturnows va a regresar falso");
               return false;
+              } catch(Exception $err) { echo "<error>".$err->getMessage()."</error>"; return false; }
         }
 
 /*
@@ -81,9 +97,12 @@ class eventos_servidor_class extends xmlhttp_class
                   "<_idgrupo_>".$Row["idgrupo"]."</_idgrupo_>";
                  $msg=array("type"=>"llamar","turno"=>"Turno ".$Row["turno"],"turnogrupo"=>"Turno ".$Row["turnogrupo"],"modulo"=>$Row["idgrupo"]
                                  ,"desmodulo"=>$Row["desgrupo"],"fila"=>"Fila ".$Row["fila"],"id"=>$Row["idcita"]);
-                 if ($this->llamaturnows($msg))
-                 { echo $str; }
-                 else { $str.="<tablero>El tablero no esta habilitado</tablero>"; echo $str; }
+                 $this->llamaturnows($msg);
+                 //if ($this->llamaturnows($msg))
+                 //{ echo $str; }
+                 //else { $str.="<tablero>El tablero no esta habilitado</tablero>"; echo $str; }
+                 //$str=$str."<_msg_>".json_encode($msg)."</_msg_>";
+                 echo $str;
                  return;
               }
               if ($Row["idcita"]!="" && $Row["idcita"]!="0" )
@@ -94,9 +113,12 @@ class eventos_servidor_class extends xmlhttp_class
                  echo $str;
                  $msg=array("type"=>"llamar","cita"=>"Cita ".$Row["idcita"],"turnogrupo"=>"Cita ".$Row["idcita"],"modulo"=>$Row["idgrupo"]
                                  ,"desmodulo"=>$Row["desgrupo"],"fila"=>"Fila ".$Row["fila"],"id"=>$Row["idcita"]);
-                 if ($this->llamaturnows($msg))
-                 { echo $str; }
-                 else { $str.="<tablero>El tablero no esta habilitado</tablero>"; echo $str; }
+                 $this->llamaturnows($msg);
+                 //if ($this->llamaturnows($msg))
+                 //{ echo $str; }
+                 //else { $str.="<tablero>El tablero no esta habilitado</tablero>"; echo $str; }
+                 //$str=$str."<_msg_>".json_encode($msg)."</_msg_>";
+                 echo $str;
                  return;
               }
 
@@ -1060,7 +1082,7 @@ class eventos_servidor_class extends xmlhttp_class
     		echo "<error>El height no esta definido o esta en ceros</error>";				   
     		return;
 		}		
-	    $sql=" update menus_subvistas set dialogwidth=".$this->argumentos["wldialogWidth"].", dialogheight=".$this->argumentos["wldialogHeight"].
+	    $sql=" update forapi.menus_subvistas set dialogwidth=".$this->argumentos["wldialogWidth"].", dialogheight=".$this->argumentos["wldialogHeight"].
  	         " where idsubvista=".$this->argumentos["idmenu"];
 	    $sql_result = @pg_exec($this->connection,$sql);
         if (strlen(pg_last_error($this->connection))>0)

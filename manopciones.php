@@ -10,7 +10,7 @@ echo " <LINK REL=StyleSheet HREF=\"estilo_siscor_gre.css\" TYPE=\"text/css\" MED
 <?
 function  existegrupo($wldescripcion, $wlidmenu, $connection, $wlopcion)
 {
-   $sql = "select count(*) from menus where idmenu='".$wlidmenu."'";
+   $sql = "select count(*) from forapi.menus where idmenu='".$wlidmenu."'";
    $sql_result = pg_exec($connection,$sql) or die("Couldn't make query existegrupo. ".$sql );
    $Row = pg_fetch_array($sql_result, 0);
     if ($Row[0]==0) { menerror("La opcion no existe");die(); }
@@ -19,9 +19,9 @@ function  existegrupo($wldescripcion, $wlidmenu, $connection, $wlopcion)
 function consulta($wldescripcion,$connection)
 {
    if ($wldescripcion == "") {
-      $sql = " select idmenu,descripcion,php,idmenupadre from menus  order by descripcion"; }
+      $sql = " select idmenu,descripcion,php,idmenupadre from forapi.menus  order by descripcion"; }
    else
-      { $sql = " select idmenu,descripcion,php,idmenupadre from menus  where descripcion like '".$wldescripcion."%' order by descripcion "; };
+      { $sql = " select idmenu,descripcion,php,idmenupadre from forapi.menus  where descripcion like '".$wldescripcion."%' order by descripcion "; };
    $sql_result = pg_exec($connection,$sql) or die("Couldn't make query consulta. ".$sql );
    $num = pg_numrows($sql_result);
    if ( $num == 0 ) {menerror("No hay opciones ");die(); };
@@ -106,11 +106,11 @@ function consultatabla($wltablename,$wlidmenu,$connection)
 {
    if ( $wltablename=="" ) { $sql = " select relname as tablename from pg_class where substr(relname,1,3)<>'pg_' ".
                                     " and relkind in ('r', 'S', 'v') ".
-                                    " and trim(relname) not in (select trim(tablename) from menus_pg_tables where ".
+                                    " and trim(relname) not in (select trim(tablename) from forapi.menus_pg_tables where ".
                                     " idmenu=".$wlidmenu.") order by 1"; }
    else {  $sql = " select relname as tablename from pg_class where relname like '".$wltablename."%'".
                   " and relkind in ('r', 'S', 'v') ".
-                  " and trim(relname) not in (select trim(tablename) from menus_pg_tables where ".
+                  " and trim(relname) not in (select trim(tablename) from forapi.menus_pg_tables where ".
                   " idmenu=".$wlidmenu.") ".
                   " and substr(relname,1,3)<>'pg_' ".
                   " order by 1 "; }
@@ -136,8 +136,8 @@ function consultatabla($wltablename,$wlidmenu,$connection)
 
 function consultatablaasig($wltablename,$wlidmenu,$connection)
 {
-   if ( $wltablename=="" ) { $sql = " select * from menus_pg_tables where idmenu=".$wlidmenu." order by tablename"; }
-   else {  $sql = " select * from menus_pg_tables where tablename like '".$wltablename.
+   if ( $wltablename=="" ) { $sql = " select * from forapi.menus_pg_tables where idmenu=".$wlidmenu." order by tablename"; }
+   else {  $sql = " select * from forapi.menus_pg_tables where tablename like '".$wltablename.
                   "%' and idmenu=".$wlidmenu." order by tablename "; }
    $sql_result = pg_exec($connection,$sql) or die("Couldn't make query consultatablaasig. ".$sql );
    $num = pg_numrows($sql_result);
@@ -220,7 +220,7 @@ function consultahistab($wltablename,$wlidmenu,$connection)
 function conhis($wldescripcion,$wlidmenu,$connection)
 {
    $sql = " select m.descripcion,g.groname,hmg.fecha_alta,hmg.usuario_alta,hmg.cve_movto from ".
-          " his_menus_pg_group hmg, menus m, pg_group g where hmg.idmenu = m.idmenu ".
+          " his_menus_pg_group hmg, forapi.menus m, pg_group g where hmg.idmenu = m.idmenu ".
           " and hmg.grosysid = g.grosysid and hmg.idmenu = ".$wlidmenu." order by fecha_alta desc ";
    $sql_result = pg_exec($connection,$sql) or die("Couldn't make query conhis. ".$sql );
    $num = pg_numrows($sql_result);
@@ -282,7 +282,7 @@ function conhisusu($wldescripcion,$connection)
 function manttogrupopc($wldescripcion,$wlidmenu,$connection)
 {
               $sql = " select grosysid as idmenu,groname as descripcion from pg_group  where grosysid not in ".
-                     "(select grosysid from menus_pg_group where idmenu=".$wlidmenu.")";
+                     "(select grosysid from forapi.menus_pg_group where idmenu=".$wlidmenu.")";
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query. ".$sql );
               $num = pg_numrows($sql_result);
                   echo "  <table> ";
@@ -316,7 +316,7 @@ function manttogrupopc($wldescripcion,$wlidmenu,$connection)
                        "onclick='document.forms[0].wlopcion.value=\"conhis\"'></input>\n";
                   echo "</th>";
                   $sql = " select grosysid as idmenu,groname as descripcion from pg_group  where grosysid in ".
-                     "(select grosysid from menus_pg_group where idmenu=".$wlidmenu.")";
+                     "(select grosysid from forapi.menus_pg_group where idmenu=".$wlidmenu.")";
                   $sql_result = pg_exec($connection,$sql) or die("Couldn't make query. ".$sql );
                   $num = pg_numrows($sql_result);
                   echo "<th width=40%> \n";
@@ -354,7 +354,7 @@ function manttogruusu($wldescripcion,$wlidmenu,$wltablename,$connection)
            $sql = " select pgn.nspname || '.' || relname as tablename from pg_class, pg_namespace as pgn  where ".
                   " relkind in ('r', 'S', 'v') ".
                   " and pgn.oid=pg_class.relnamespace ".
-                  " and pgn.nspname || '.' || trim(relname) not in (select trim(tablename) from menus_pg_tables where ".
+                  " and pgn.nspname || '.' || trim(relname) not in (select trim(tablename) from forapi.menus_pg_tables where ".
                   " idmenu=".$wlidmenu.") ".
                   " and substr(relname,1,3)<>'pg_' ".
                   " order by 1 "; 
@@ -390,7 +390,7 @@ function manttogruusu($wldescripcion,$wlidmenu,$wltablename,$connection)
                        "onclick='parent.history.back();return false'></input>\n";
                   echo "<input type=submit value='Consulta Historico' name=matriz ".
                        "onclick='document.forms[0].wlopcion.value=\"consultahistab\"'></input>\n";
-                  $sql = " select * from menus_pg_tables where ". 
+                  $sql = " select * from forapi.menus_pg_tables where ". 
                        " idmenu=".$wlidmenu." order by tablename "; 
                   $sql_result = pg_exec($connection,$sql) or die("Couldn't make query. ".$sql );
                   $num = pg_numrows($sql_result);
@@ -635,12 +635,12 @@ echo "</script>\n";
               break;
 
            case "alta":
-              $sql = "select count(*) from menus where descripcion='".$descripcion."'";
+              $sql = "select count(*) from forapi.menus where descripcion='".$descripcion."'";
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query. " );
               $Row = pg_fetch_array($sql_result, 0);
               if ($Row[0]>=1) { menerror("La opcion ya existe"); }
               else
-                 { $sql = " insert into menus (descripcion,php,idmenupadre) values ('".$descripcion."','".$php."',".$idmenupadre.")" ;
+                 { $sql = " insert into forapi.menus (descripcion,php,idmenupadre) values ('".$descripcion."','".$php."',".$idmenupadre.")" ;
                                     $sql_result = pg_exec($connection,$sql) or die("Couldn't make query.".$sql );
                    menok("La opcion se dio de alta"); 
                  }
@@ -649,11 +649,11 @@ echo "</script>\n";
 
            case "baja":
               existegrupo($wldescripcion, $idmenu, $connection, $wlopcion);
-              $sql = " select count(*) from menus_pg_group where idmenu=".$idmenu ;
+              $sql = " select count(*) from forapi.menus_pg_group where idmenu=".$idmenu ;
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql."opcion".$wlopcion );
               $Row = pg_fetch_array($sql_result, 0);
               if ($Row[0]>=1) { menerror("La opcion tiene asignados grupos");die(); }
-              $sql = " delete from menus where idmenu =".$idmenu;
+              $sql = " delete from forapi.menus where idmenu =".$idmenu;
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql );
               menok("La opcion se dio de baja"); 
               consulta($wldescripcion,$connection);
@@ -662,16 +662,16 @@ echo "</script>\n";
            case "cambio":
               existegrupo($wldescripcion, $idmenu, $connection, $wlopcion);
               if ($descripcion!="") {
-                 $sql = " update  menus set descripcion='".$descripcion."' where idmenu =".$idmenu;
+                 $sql = " update  forapi.menus set descripcion='".$descripcion."' where idmenu =".$idmenu;
                  $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql );
                                      }
               if ($php!="") {
-                 $sql = " update  menus set php='".$php."' where idmenu =".$idmenu;
+                 $sql = " update  forapi.menus set php='".$php."' where idmenu =".$idmenu;
                  $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql );
                                      }
 
               if ($idmenupadre!="") {
-                 $sql = " update  menus set idmenupadre='".$idmenupadre."' where idmenu =".$idmenu;
+                 $sql = " update  forapi.menus set idmenupadre='".$idmenupadre."' where idmenu =".$idmenu;
                  $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql );
                                      }
               menok("La opcion se actualizo"); 
@@ -711,7 +711,7 @@ echo "</script>\n";
 
 
            case "altatabla":
-              $sql = " insert into menus_pg_tables (idmenu,tablename,tselect,tinsert,tupdate,tdelete,tall) ".
+              $sql = " insert into forapi.menus_pg_tables (idmenu,tablename,tselect,tinsert,tupdate,tdelete,tall) ".
                    " values (".$idmenu.",'".$wltablename."','".$wltselect."','".$wltinsert."','".$wltupdate."','".$wltdelete.
                      "','".$wltall."')";
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql."opcion".$wlopcion );
@@ -720,12 +720,12 @@ echo "</script>\n";
               break;
 
            case "asignatodastablas":
-              $sql = " insert into menus_pg_tables (idmenu,tablename,tselect,tinsert,tupdate,tdelete,tall) ".
+              $sql = " insert into forapi.menus_pg_tables (idmenu,tablename,tselect,tinsert,tupdate,tdelete,tall) ".
                      " select ".$idmenu.",relname as tablename,'".
                      $wltselect."','".$wltinsert."','".$wltupdate."','".$wltdelete."','".
                      $wltall."' from pg_class where ".
                      " relkind in ('r', 'S', 'v') ".
-                     " and trim(relname) not in (select trim(tablename) from menus_pg_tables where ".
+                     " and trim(relname) not in (select trim(tablename) from forapi.menus_pg_tables where ".
                      " idmenu=".$idmenu.") ".
                      " and substr(relname,1,3)<>'pg_' ";
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql."opcion".$wlopcion );
@@ -734,7 +734,7 @@ echo "</script>\n";
               break;
 
            case "cambiotabla":
-              $sql = " update menus_pg_tables set ".
+              $sql = " update forapi.menus_pg_tables set ".
                      " tselect='".$wltselect."',tinsert='".$wltinsert."',tupdate='".$wltupdate.
                      "',tdelete='".$wltdelete."',tall='".$wltall."' ".
                      " where tablename='".$wltablaaquitar."' and idmenu=".$idmenu;
@@ -744,14 +744,14 @@ echo "</script>\n";
               break;
 
            case "bajatabla":
-              $sql = " delete from menus_pg_tables  where idmenu=".$idmenu." and tablename='".$wltablaaquitar."'";
+              $sql = " delete from forapi.menus_pg_tables  where idmenu=".$idmenu." and tablename='".$wltablaaquitar."'";
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql."opcion".$wlopcion );
               menok("La tabla se dio de baja de  la opcion"); 
               manttogruusu($descripcion,$idmenu,$wltablaquitar,$connection);
               break;
 
            case "bajatodastablas":
-              $sql = " delete from menus_pg_tables  where idmenu=".$idmenu;
+              $sql = " delete from forapi.menus_pg_tables  where idmenu=".$idmenu;
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql."opcion".$wlopcion );
               menok("Todas las tablas se dieron de baja de la opcion"); 
               manttogruusu($descripcion,$idmenu,$wltablaquitar,$connection);
@@ -771,7 +771,7 @@ echo "</script>\n";
 
            case "am1":
 ##              solgrupo($wldescripcion,$wlphp,$wlidmenu);
-              $sql = " insert into menus_pg_group (idmenu,grosysid) values (".$idmenu.",".$wldescripcionmenu.")";
+              $sql = " insert into forapi.menus_pg_group (idmenu,grosysid) values (".$idmenu.",".$wldescripcionmenu.")";
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql."opcion".$wlopcion );
               menok("El grupo se asigno a la opcion"); manttogrupopc($descripcion,$idmenu,$connection); die();
               break;
@@ -785,9 +785,9 @@ echo "</script>\n";
               break;
 
            case "amt":
-              $sql = " insert into menus_pg_group (idmenu,grosysid) ".
+              $sql = " insert into forapi.menus_pg_group (idmenu,grosysid) ".
                      " select ".$idmenu.", grosysid ".
-                     " from pg_group  where grosysid not in (select grosysid from menus_pg_group where idmenu=".$idmenu.")";
+                     " from pg_group  where grosysid not in (select grosysid from forapi.menus_pg_group where idmenu=".$idmenu.")";
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql."opcion".$wlopcion );
               menok("Todos los grupos se asignaron a la opcion ".$wldescripcion); manttogrupopc($descripcion,$idmenu,$connection); die();
               break;
@@ -803,7 +803,7 @@ echo "</script>\n";
               break;
 
            case "qm1":
-              $sql = " delete from menus_pg_group where idmenu = ".$idmenu." and grosysid=".$wlmenuaquitar;
+              $sql = " delete from forapi.menus_pg_group where idmenu = ".$idmenu." and grosysid=".$wlmenuaquitar;
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql."opcion".$wlopcion );
               menok("El grupo se quito de la opcion"); manttogrupopc($descripcion,$idmenu,$connection); die();
               break;
@@ -817,7 +817,7 @@ echo "</script>\n";
               break;
 
            case "qmt":
-              $sql = " delete from menus_pg_group where idmenu=".$idmenu;
+              $sql = " delete from forapi.menus_pg_group where idmenu=".$idmenu;
               $sql_result = pg_exec($connection,$sql) or die("Couldn't make query".$sql."opcion".$wlopcion );
               menok("Todos los grupos se quitaron de la opcion"); manttogrupopc($descripcion,$idmenu,$connection); die();
               break;

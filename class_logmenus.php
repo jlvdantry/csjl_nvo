@@ -10,17 +10,17 @@ class logmenus
            $this->connection=$connection;
    }
 
-   function registra($idmenu,$sqlenviado,$mensaje)
+   function registra($idmenu,$sqlenviado,$mensaje = "")
    {
         if ($mensaje=="") { $mensaje=0; }
-        $sql=" select idmenu from menus_seguimiento where idmenu=".$idmenu;
+        $sql=" select idmenu from forapi.menus_seguimiento where idmenu=".$idmenu;
         $sql_result = pg_exec($this->connection,$sql)
                     or die("No se pudo hacer el sql en registra".$sql);
         $num = pg_numrows($sql_result);
         if ( $num != 0 )
         {
                      $quebro=$this->getBrowser();
-                        $sql="insert into menus_log (idmenu,sql,ip,esmovil,browser,idmensaje) values ".
+                        $sql="insert into forapi.menus_log (idmenu,sql,ip,esmovil,browser,idmensaje) values ".
                      " (".$idmenu.",'".str_replace("'","''",$sqlenviado)."',' ".$this->getRealUserIp()."',".$this->isMobile().",".$quebro['name'].",$mensaje)";
                     $sql_result = pg_exec($this->connection,$sql)
                     or die("No se pudo hacer el sql en registra menu_log".$sql);

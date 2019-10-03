@@ -1,13 +1,12 @@
 <?php
 require_once('websockets.php');
 class echoServer extends WebSocketServer {
-  //protected $maxBufferSize = 1048576; //1MB... overkill for an echo server, but potentially plausible for other applications.
   protected function process ($user, $message) {
   try {
-    $this->stdout('mensaje recibido user='.$user->id);
-    $this->stdout('mensaje ='.$message);
-    $this->stdout('type ='.gettype($message));
-      $msg = json_decode($message);
+       $this->stdout('mensaje recibido user='.$user->id);
+       $this->stdout('mensaje ='.$message);
+       $this->stdout('type ='.gettype($message));
+       $msg = json_decode($message);
       if ($msg->type=="tablero")
       {
           echo "recibio tablero el modulo es ".$msg->modulo."\n";
@@ -35,6 +34,37 @@ class echoServer extends WebSocketServer {
         $this->send($e->getMessage());
     }
   }
+
+  protected function setupConnection() {
+                $errno = $errstr = null;
+                $options = array(
+                        'ssl' => array(
+                                'peer_name' => 'solin.com',
+                                'verify_peer' => false,
+                                'local_cert' => '/root/certs/solin.pem',
+                                /* 'local_pk' => '/root/certs/solin.key', */
+                                'disable_compression' => true,
+                                /* 'passphrase' => 'comet', */
+                                'SNI_enabled' => true,
+                                'allow_self_signed' => true,
+                                'ciphers' => 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-RSA-RC4-SHA:ECDHE-ECDSA-RC4-SHA:AES128:AES256:RC4-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!PSK',
+                        )
+                );
+                $this->stdout("entro en setupConnection");
+                $context = stream_context_create($options);
+                $this->master = stream_socket_server(
+                        'tls://' . $this->listenAddress . ':' . $this->listenPort,
+                        $errno,
+                        $errstr,
+                        STREAM_SERVER_BIND | STREAM_SERVER_LISTEN,
+                        $context
+                );
+                $this->stdout("errno=".$errno." errstr=".$errstr);
+                if (!$this->master) {
+                   echo "$errstr ($errno)<br />\n";
+                }
+ }
+
 
   protected function dametablero($msg1) {
     foreach ($this->users as $user1) {
@@ -65,11 +95,10 @@ class echoServer extends WebSocketServer {
   }
 }
 
-##$echo = new echoServer("0.0.0.0","9001");
 $echo = new echoServer("0.0.0.0","9001");
 
 try {
-  $echo->interactive=false;
+##  $echo->interactive=false;
   $echo->run();
 }
 catch (Exception $e) {

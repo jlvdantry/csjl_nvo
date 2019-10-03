@@ -1,0 +1,122 @@
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+.fila {
+    font-family: serif;
+    font-size: 1em;
+    fill: white;
+}
+.turno {
+    font-family: serif;
+    font-size: 1em;
+    fill: white;
+}
+.llama_rect {
+   fill: #DF1874; 
+   rx  : 5;
+   stroke: #006600;
+}
+
+div.llamado, #svg {
+position:fixed;
+z-index:-1;
+width:50%;
+left:25%;
+top:25%;
+height:50%;
+}
+
+div.mensaje {
+position:fixed;
+z-index:-1;
+width:98%;
+top:91%;
+height:8%;
+}
+
+div.centro, img.centrologo {
+position:fixed;
+z-index:-1;
+width:40%;
+left:30%;
+top:28%;
+height:40%;
+}
+
+img.mensajelogo {
+position:relative;
+z-index:-1;
+left:0%;
+top:0%;
+width:100%;
+height:100%;
+}
+
+div.div1, #svg_1 { /*izquierdo arriba */
+position: fixed;
+z-index: -1;
+width: 30%;
+height: 34%;
+left: 1%;
+top: 6%;
+}
+
+div.div0, #svg_0 {   /* izquierdo abajo */
+position:fixed;
+z-index:-1;
+width:30%;
+height:34%;
+top:56%;
+left: 1%
+} 
+
+div.div2, #svg_2 {   /* derecho arriba */
+position:fixed;
+z-index:-1;
+width:30%;
+height:34%;
+left:69%;
+top:6%;
+}
+
+div.div3, #svg_3 {  /* derecho abajo */
+position:fixed;
+z-index:-1;
+width:30%;
+height:34%;
+left:69%;
+top:56%;
+}
+
+div.modulo {
+    visibility: hidden;
+    display   : none;
+}
+
+div.desmodulo {
+  position:fixed;
+  z-index:-1;
+  width:96%;
+  height:5%;
+  left:0%;
+  top:0%;
+  color: black;
+  background: linear-gradient(to top, #DF1874, rgb(252, 248, 248));
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+#log {
+    visibility: hidden;
+    display   : none;
+}
+#titulos {
+    height: 20%;
+}
+
+#izquierdo {
+    height: 80%;
+}
+
