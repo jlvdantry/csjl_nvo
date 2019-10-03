@@ -66,7 +66,7 @@ select idmenu,descripcion,fuente,tabla,fuente_nspname from forapi.menus_campos w
 --select * from forapi.menus_pg_tables where tablename like '%menu%';
 --update forapi.menus_pg_tables set nspname='forapi' where tablename like 'menu%';
 
---update forapi.menus_campos set fuente_nspname='forapi' where fuente like '%menu%' ;
+update forapi.menus_campos set fuente_nspname='forapi' where fuente = 'campos' ;
 --- mando error en la funcion cambia_menus
 --update forapi.menus set nspname='forapi' where tabla='menus' and nspname='public' ;
 --update forapi.menus set nspname='forapi' where tabla='menus_campos' and nspname='public' ;
@@ -77,8 +77,10 @@ select idmenu,descripcion,fuente,tabla,fuente_nspname from forapi.menus_campos w
 --update forapi.menus set nspname='forapi' where tabla='menus_movtos' and nspname='public' ;
 --update forapi.menus set nspname='forapi' where tabla='menus_htmltable' and nspname='public' ;
 --update forapi.menus set nspname='forapi' where tabla='menus_archivos' and nspname='public' ;
-update forapi.menus set nspname='forapi' where tabla='cat_usuarios' and nspname='public' ;
-update forapi.menus set nspname='forapi' where tabla='cat_usuarios_pg_group' and nspname='public' ;
+--update forapi.menus set nspname='forapi' where tabla='cat_usuarios' and nspname='public' ;
+--update forapi.menus set nspname='forapi' where tabla='cat_usuarios_pg_group' and nspname='public' ;
+--update forapi.menus set nspname='forapi' where tabla='tablas' and nspname='public' ;
+--update forapi.menus set nspname='forapi' where tabla='tablas' ;
 --select autoriza_usuario('jlv');
 fin
 psql forapi1.1  -U postgres  < $0.sql
