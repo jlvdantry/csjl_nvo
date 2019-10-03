@@ -31,39 +31,33 @@ class reingenieria extends xmlhttp_class
       $men = new class_men();
 	  $this->tabla=$this->argumentos['wl_relname'];      
 	  $this->nspname=$this->argumentos['wl_nspname'];      	  
-      $sql=" insert into menus(descripcion,tabla,reltype,php,nspname) ".
+      $sql=" insert into forapi.menus(descripcion,tabla,reltype,php,nspname) ".
 		   " select relname,relname,reltype,'man_menus.php',nspname".
-           " from tablas ".
+           " from forapi.tablas ".
            " where relname = '".$this->tabla."' ".
            " and nspname = '".$this->nspname."'";
       $sql_result = pg_exec($this->connection,$sql)
                     or die("No se pudo ejecutar el sql1 en menus");
                     //or die("No se pudo ejecutar el sql1 en menus: ".$sql." ".pg_last_error($this->connection));
-      $sql=" select currval('menus_idmenu_seq');";
+      $sql=" select currval('forapi.menus_idmenu_seq');";
       $sql_result = pg_exec($this->connection,$sql)
                     or die("No se pudo ejecutar el sql2 en menus");
                     //or die("No se pudo ejecutar el sql2 en menus: ".$sql." ".pg_last_error($this->connection));
 	  $row=pg_fetch_array($sql_result, 0);                    
       $wlidmenu=$row["currval"];
-###      echo "<error>idmenu=".print_r($row)."</error>";	  
-##      echo "<error>idmenu=".$wlidmenu."</error>";	  
-##      return;	  	   	
       $sql= "select * ".
-		   " from campos ".           
-##20070713  se modifico para que no incluyera los campos del sistema si acaso el oid		   
-##20070713           " where relname = '".$this->tabla."' ";
+		   " from forapi.campos ".           
            " where relname = '".$this->tabla."' ".
            " and nspname = '".$this->nspname."'".   //20070818           
            " and attnum > 0 ";                      
       $sql_result = pg_exec($this->connection,$sql)
                     or die("No se pudo ejecutar el sql3 en menus");
-                    //or die("No se pudo ejecutar el sql3 en menus: ".$sql." ".pg_last_error($this->connection));
       $num = pg_numrows($sql_result);
       if ( $num == 0 ) {$men->menerror("No tiene campos la tabla  ".$this->tabla); die();};          
 	  for ($z=0; $z < $num ;$z++)
       {
 			$row=pg_fetch_array($sql_result, $z);      
-			$sql="insert into menus_campos(idmenu ,descripcion,attnum,orden,obligatorio,readonly,esindex,tipayuda,size,tabla,nspname,male) values (\n".
+			$sql="insert into forapi.menus_campos(idmenu ,descripcion,attnum,orden,obligatorio,readonly,esindex,tipayuda,size,tabla,nspname,male) values (\n".
                   $wlidmenu.
                   ",'".$row["attname"]."'".
                   ",'".$row["attnum"]."'".                  
@@ -78,17 +72,13 @@ class reingenieria extends xmlhttp_class
                   ",'".$row["atttypmod"]."'".                  
                   ");\n";
       		$sql_resulti = pg_exec($this->connection,$sql)
-            		        or die("No se pudo ejecutar el sql4 en menus");
-            		        //or die("No se pudo ejecutar el sql4 en menus: ".$sql." ".pg_last_error($this->connection));
+            		        //or die("No se pudo ejecutar el sql4 en menus");
+            		        or die("No se pudo ejecutar el sql4 en menus: ".$sql." ".pg_last_error($this->connection));
 	  }	
-##20070713	  Lo modifique para que toma el group admon por la descripcion
-##20070713	  $sql="insert into menus_pg_group(idmenu ,grosysid) values (\n".
-##20070713           $wlidmenu.",101".	  
-##20070713                  ");\n";
-	  $sql="insert into menus_pg_group(idmenu ,grosysid) select ".$wlidmenu.",grosysid from pg_group where groname='admon'";
+	  $sql="insert into forapi.menus_pg_group(idmenu ,grosysid) select ".$wlidmenu.",grosysid from pg_group where groname='admon'";
       $sql_resulti = pg_exec($this->connection,$sql)
-      				or die("No se pudo ejecutar el sql5 en menus");
-      				//or die("No se pudo ejecutar el sql5 en menus: ".$sql." ".pg_last_error($this->connection));
+      				//or die("No se pudo ejecutar el sql5 en menus");
+                                or die("No se pudo ejecutar el sql5 en menus: ".$sql." ".pg_last_error($this->connection));
        		        
       echo "<error>Inserto en la base la tabla ".$this->tabla."</error>";	  
    }
@@ -97,7 +87,7 @@ class reingenieria extends xmlhttp_class
    {
 	  $this->tabla=$this->argumentos['wl_relname'];
       $men = new class_men();
-      $sql=" select 'insert into menus(".
+      $sql=" select 'insert into forapi.menus(".
   		   " idmenu ".
   		   ",descripcion ".
   		   ",objeto ".
@@ -151,7 +141,7 @@ class reingenieria extends xmlhttp_class
   		   " || ',' || coalesce(s_table,0) \n".
   		   " || ',' || coalesce(s_table_height,0) \n".
       	   " || ');\n'".		   
-           " from menus where idmenu>998";
+           " from forapi.menus where idmenu>998";
       $sql_result = pg_exec($this->connection,$sql)
                     or die("No se pudo ejecutar el sql de insertar en menus".$sql);
       $num = pg_numrows($sql_result);
@@ -167,7 +157,7 @@ class reingenieria extends xmlhttp_class
 
 ##  		$sql="select * from menus_campos ";
 
-      $sql=" select 'insert into menus_campos(".
+      $sql=" select 'insert into forapi.menus_campos(".
 ##  		   "  idcampo 		     ".
   		   " idmenu 		      ".
   		   ", reltype  		    ".
@@ -202,7 +192,7 @@ class reingenieria extends xmlhttp_class
       	   " )\n values (' ".
 ##		   " || 'coalesce((select c.attnum from campos c where c.reltype = (select t.reltype from tablas as t where t.relname=''' || me.tabla || ''')'".
 ##		   " || ' and c.attname = ''' || (select t.attname from campos as t where t.relname=me.tabla and t.attnum=mc.attnum) || '''),-2)'".
-		   " || '\n(select idmenu from menus c where idmenu>998 and c.descripcion = ''' || me.descripcion || ''')'".
+		   " || '\n(select idmenu from forapi.menus c where idmenu>998 and c.descripcion = ''' || me.descripcion || ''')'".
 ##		   " || '\n,(select c.attnum from campos c where c.reltype = (select t.reltype from tablas as t where t.relname=''' || me.tabla || '''))'".
   		   " || '\n,(select t.reltype from tablas as t where t.relname=''' || me.tabla || ''')' \n".
 		   " || '\n,coalesce((select c.attnum from campos c where c.reltype = (select t.reltype from tablas as t where t.relname=''' || me.tabla || ''')'".
@@ -235,7 +225,7 @@ class reingenieria extends xmlhttp_class
 ##  		   " || ',' || '''' || coalesce(mc.usuario_modifico,'') || '''' \n".
   		   " || ',' || coalesce(mc.espassword,0) \n".
       	   " || ');\n'".		   
-           " from menus_campos mc, menus me ".
+           " from forapi.menus_campos mc, forapi.menus me ".
            " where mc.idmenu=me.idmenu  and mc.idmenu>998 order by me.descripcion ";
            
            

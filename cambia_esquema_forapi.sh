@@ -1,5 +1,9 @@
-psql forapi1.1  -U postgres  < cambia_menus.sql
+##psql forapi1.1  -U postgres  < cambia_menus.sql
+##psql forapi1.1  -U postgres  < alta_menus.sql
 ##psql forapi1.1  -U postgres  < autoriza_usuario.sql
+##psql forapi1.1  -U postgres  < alta_menus_campos.sql
+##psql forapi1.1  -U postgres  < alta_menus_pg_tables.sql
+psql forapi1.1  -U postgres  < alta_menus_pg_group.sql
 cat > $0.sql << fin
 /*
 CREATE SCHEMA forapi;
@@ -28,8 +32,11 @@ ALTER TABLE his_menus_pg_group  SET SCHEMA forapi;
 ALTER TABLE his_menus_pg_tables  SET SCHEMA forapi;
 ALTER TABLE his_menus  SET SCHEMA forapi;
 ALTER function alta_cat_usuarios()  SET SCHEMA forapi;
-*/
 ALTER TABLE his_cambios_pwd  SET SCHEMA forapi;
+ALTER TABLE tablas  SET SCHEMA forapi;
+*/
+ALTER TABLE campos  SET SCHEMA forapi;
+ALTER function alta_menus()  SET SCHEMA forapi;
 ALTER function alta_cat_usuarios_pg_group()  SET SCHEMA forapi;
 ALTER function alta_menus_pg_group()  SET SCHEMA forapi;
 ALTER function alta_menus_pg_tables()  SET SCHEMA forapi;
