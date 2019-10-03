@@ -8,13 +8,13 @@ function lee_menus($connection,$parametro1)
            "select descripcion,php,case when idmenupadre is null then 0 else idmenupadre end as a, idmenu, hijos from ( ".
            " SELECT me.descripcion,me.php,".
            " (select me1.idmenu ".
-           "         from forapi.menus as me1, forapi.menus_pg_group as me_pgg1, cat_usuarios_pg_group as cu_pgg1 ".
+           "         from forapi.menus as me1, forapi.menus_pg_group as me_pgg1, forapi.cat_usuarios_pg_group as cu_pgg1 ".
            "         where me1.idmenu=me_pgg1.idmenu and me_pgg1.grosysid=cu_pgg1.grosysid and cu_pgg1.usename='".$parametro1."'".
            "         and me1.descripcion<>'accesosistema'". 
            "         and me1.idmenu=me.idmenupadre group by 1) as idmenupadre".
            " , me.idmenu ".
 		   " ,(select count(*) from forapi.menus mss where me.idmenu=mss.idmenupadre and mss.idmenupadre<>mss.idmenu ". "   and mss.descripcion<>'accesosistema') as hijos ".
-           " from forapi.menus as me, forapi.menus_pg_group as me_pgg, cat_usuarios_pg_group as cu_pgg ".
+           " from forapi.menus as me, forapi.menus_pg_group as me_pgg, forapi.cat_usuarios_pg_group as cu_pgg ".
            " where me.idmenu=me_pgg.idmenu and me_pgg.grosysid=cu_pgg.grosysid and cu_pgg.usename='".$parametro1."'".
            "       and me.descripcion<>'accesosistema' ".
            "  group by 1,2,3,4  order by 1) as orale ".

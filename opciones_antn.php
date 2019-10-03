@@ -43,7 +43,7 @@ class opciones_antn
    var $connection="";  
    function muestra_menus()
    {
-            $sql="select id_tipomenu,current_user,menu from cat_usuarios where usename=current_user";
+            $sql="select id_tipomenu,current_user,menu from forapi.cat_usuarios where usename=current_user";
             $sql_result = @pg_exec($this->connection,$sql);
         	if (strlen(pg_last_error($this->connection))>0)
         	{
@@ -80,7 +80,7 @@ class opciones_antn
                         "       ,(select count (*) from forapi.menus as mm where mm.idmenupadre=m.idmenu) as hijos	".
                         "       ,case when m.idmenupadre=0 then m.descripcion else (select descripcion from forapi.menus as mm where mm.idmenu=m.idmenupadre) end as orden ".
                         "       ,usename ".
-			"	from	cat_usuarios_pg_group as cupg	".
+			"	from	forapi.cat_usuarios_pg_group as cupg	".
 			"	left join forapi.menus_pg_group as mpg on (mpg.groname=cupg.groname or mpg.grosysid=cupg.grosysid)	".
 			"	left join forapi.menus as m on m.idmenu=mpg.idmenu	".
 			"	where	usename=current_user	".
