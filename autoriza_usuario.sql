@@ -1,3 +1,19 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = forapi, pg_catalog;
+
+--
+-- Name: autoriza_usuario(text); Type: FUNCTION; Schema: forapi; Owner: postgres
+--
+
 CREATE or replace FUNCTION autoriza_usuario(text) RETURNS character varying
     LANGUAGE plpgsql
     AS $_$DECLARE
@@ -20,12 +36,12 @@ CREATE or replace FUNCTION autoriza_usuario(text) RETURNS character varying
 --     execute wlsentencia;                                          -- 2007-03-23 
 --     2007-07-20  jlv lo modifique para que si la tabla viene en espacion no haga el grant
             raise notice ' entro  % ', $1  ;
-     select count(*) into wlcuantos from cat_usuarios_pg_group
+     select count(*) into wlcuantos from forapi.cat_usuarios_pg_group
             where trim(usename)=trim($1);
      if wlcuantos=0 then
         return 'No existe grupo asignado al usuario';
      end if;
-     update cat_usuarios set estatus=1 where trim(usename)=trim($1);
+     update forapi.cat_usuarios set estatus=1 where trim(usename)=trim($1);
 --     for mireg  in select   mpgt.*,me.descripcion 
      for mireg  in select 
         case when (strpos(mpgt.tablename,'.')=0 and strpos(mpgt.tablename,'pg_')!=1)
@@ -36,7 +52,7 @@ CREATE or replace FUNCTION autoriza_usuario(text) RETURNS character varying
                    , sum(case when mpgt.tinsert='1' then 1 else 0 end) as tinsert
                    , sum(case when mpgt.tupdate='1' then 1 else 0 end) as tupdate
                    , sum(case when mpgt.tdelete='1' then 1 else 0 end) as tdelete
-                   from cat_usuarios_pg_group as cupg
+                   from forapi.cat_usuarios_pg_group as cupg
 		   , forapi.menus_pg_tables as mpgt
                             ,forapi.menus as me
                    where trim(cupg.usename)=trim($1) 
@@ -177,7 +193,7 @@ CREATE or replace FUNCTION autoriza_usuario(text) RETURNS character varying
 --            esquemas que no son publicos
      for mireg  in select
                    mpgt.nspname 
-                   from cat_usuarios_pg_group as cupg
+                   from forapi.cat_usuarios_pg_group as cupg
                    , forapi.menus_pg_tables as mpgt
                             ,forapi.menus as me
                    where trim(cupg.usename)=trim($1)
@@ -209,4 +225,9 @@ CREATE or replace FUNCTION autoriza_usuario(text) RETURNS character varying
 end;$_$;
 
 
-ALTER FUNCTION public.autoriza_usuario(text) OWNER TO postgres;
+ALTER FUNCTION forapi.autoriza_usuario(text) OWNER TO postgres;
+
+--
+-- PostgreSQL database dump complete
+--
+
