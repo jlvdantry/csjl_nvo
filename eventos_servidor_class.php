@@ -1710,7 +1710,7 @@ class eventos_servidor_class extends xmlhttp_class
     		return;
 	}
 		
-	    $sql=" select autoriza_usuario('".$this->argumentos["wl_usename"]."')";
+	    $sql=" select forapi.autoriza_usuario('".$this->argumentos["wl_usename"]."')";
 	    //echo "<error>$sql</error>	";
 	    $sql_result = @pg_exec($this->connection,$sql);
         if (strlen(pg_last_error($this->connection))>0)
