@@ -29,9 +29,9 @@ CREATE or replace FUNCTION alta_menus() RETURNS trigger
                 end if;
         end if;
 	select count (*) into wlnum from forapi.menus_pg_tables where tablename=new.tabla and nspname=new.nspname;
-        raise notice 'registros % tabla % nspname % ', wlnum, new.tabla, new.nspname;
+        --raise notice 'registros % tabla % nspname % ', wlnum, new.tabla, new.nspname;
 	if wlnum=0 then
-        raise notice 'entro a insertar % tabla % nspname % ', wlnum, new.tabla, new.nspname;
+        --raise notice 'entro a insertar % tabla % nspname % ', wlnum, new.tabla, new.nspname;
         insert into forapi.menus_pg_tables (idmenu,tablename,tselect,tinsert,tupdate,tdelete,tall,tgrant,nspname)
                values (new.idmenu,new.tabla
                               ,case when strpos(new.movtos,'s')>0 or strpos(new.movtos,'S')>0 then 1 else 0 end

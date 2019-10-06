@@ -14,7 +14,7 @@ SET search_path = forapi, pg_catalog;
 -- Name: alta_menus_pg_tables(); Type: FUNCTION; Schema: forapi; Owner: postgres
 --
 
-CREATE or replace FUNCTION alta_menus_pg_tables() RETURNS trigger
+CREATE FUNCTION alta_menus_pg_tables() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
     DECLARE

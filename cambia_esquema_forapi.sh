@@ -1,5 +1,7 @@
 ##psql forapi1.1  -U postgres  < cambia_menus.sql
 ##psql forapi1.1  -U postgres  < alta_menus.sql
+##psql forapi1.1  -U postgres  < baja_menus.sql
+##psql forapi1.1  -U postgres  < baja_menus_pg_tables.sql
 ##psql forapi1.1  -U postgres  < autoriza_usuario.sql
 ##psql forapi1.1  -U postgres  < alta_menus_campos.sql
 ##psql forapi1.1  -U postgres  < alta_menus_pg_tables.sql
@@ -8,7 +10,9 @@
 ##psql forapi1.1  -U postgres  < debe_cambiarpwd.sql
 ##psql forapi1.1  -U postgres  < autoriza_usuario.sql
 ##psql forapi1.1  -U postgres  < alta_cat_usuarios_pg_group.sql
-psql forapi1.1  -U postgres  < cambio_cat_usuarios.sql
+##psql forapi1.1  -U postgres  < cambio_cat_usuarios.sql
+##psql forapi1.1  -U postgres  < gen_menu_sqlp.sql
+psql forapi1.1  -U postgres  < baja_menus_pg_group.sql
 cat > $0.sql << fin
 /*
 CREATE SCHEMA forapi;
@@ -32,7 +36,6 @@ ALTER sequence menus_pg_group_orden_seq SET SCHEMA forapi;
 ALTER TABLE his_cat_usuarios  SET SCHEMA forapi;
 ALTER TABLE cat_usuarios  SET SCHEMA forapi;
 ALTER TABLE cat_usuarios_pg_group  SET SCHEMA forapi;
-ALTER TABLE his_cat_usuarios_pg_group  SET SCHEMA forapi;
 ALTER TABLE his_menus_pg_group  SET SCHEMA forapi;
 ALTER TABLE his_menus_pg_tables  SET SCHEMA forapi;
 ALTER TABLE his_menus  SET SCHEMA forapi;
@@ -92,6 +95,17 @@ select idmenu,descripcion,fuente,tabla,fuente_nspname from forapi.menus_campos w
 --update forapi.menus set nspname='forapi' where tabla='tablas' ;
 --select autoriza_usuario('jlv');
 --update forapi.menus set nspname='forapi' where tabla='cat_usuarios_pg_group';
+--ALTER function gen_menu_sqlp(int4)  SET SCHEMA forapi;
+--ALTER type menus_sql  SET SCHEMA forapi;
+--ALTER sequence his_menus_pg_group_seq SET SCHEMA forapi;
+--ALTER sequence his_menus_pg_tables_seq SET SCHEMA forapi;
+--alter table forapi.his_menus_pg_tables alter idcambio set DEFAULT nextval(('forapi.his_menus_pg_group_seq'::text)::regclass);
+--alter table forapi.his_menus_pg_group alter idcambio set  DEFAULT nextval(('forapi.his_menus_pg_group_seq'::text)::regclass);
+--ALTER function baja_cat_usuarios()  SET SCHEMA forapi;
+--ALTER function baja_menus_pg_group()  SET SCHEMA forapi;
+--ALTER function alta_menus_campos()  SET SCHEMA forapi;
+--ALTER function public.cambio_cat_usuarios()  SET SCHEMA forapi;
+--ALTER function public.up_usuario_fecha()  SET SCHEMA forapi;
 fin
 psql forapi1.1  -U postgres  < $0.sql
 rm $0.sql
