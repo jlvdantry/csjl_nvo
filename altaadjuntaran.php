@@ -5,10 +5,10 @@
 
 function altaadjuntara($connection,$ficheroin)
 {
- $sql =" insert into menus_archivos (descripcion) values ('".$ficheroin."');";
+ $sql =" insert into forapi.menus_archivos (descripcion) values ('".$ficheroin."');";
  $sql_result = pg_exec($connection,$sql);
  if (strlen(pg_last_error($connection))>0) { die ("Error al ejecutar qry 1 ".$sql." ".pg_last_error($connection)); }
- $sql =" select currval(pg_get_serial_sequence('menus_archivos', 'idarchivo'));";
+ $sql =" select currval(pg_get_serial_sequence('forapi.menus_archivos', 'idarchivo'));";
  $sql_result = pg_exec($connection,$sql);
  if (strlen(pg_last_error($connection))>0) { die ("Error al ejecutar qry 2 ".$sql." ".pg_last_error($connection)); }
  $Row = pg_fetch_array($sql_result, 0);
@@ -97,8 +97,7 @@ echo "</script>";
         {
                 $error="El tamaño del archivo es mayor a 1000000 caracteres ";
         }
-        $newname = ereg_replace("[^-.~[:alnum:]]", "",
-        $_FILES['ficheroin']['name']);
+        $newname = preg_replace("[^-.~[:alnum:]]", "", $_FILES['ficheroin']['name']);
         $wlext=strtolower(substr($_FILES['ficheroin']['name'], strrpos($_FILES['ficheroin']['name'], '.') + 1));
         if (($wlext!="xls" && $wlext!="xlsx" && $wlext!="doc" && $wlext!="docx" && $wlext!="txt" && $wlext!="jpg" && $wlext!="pdf") && $error=="")
                 $wlext=strtolower(substr($_FILES['ficheroin']['name'], strrpos($_FILES['ficheroin']['name'], '.') + 1));
