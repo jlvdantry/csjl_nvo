@@ -869,7 +869,7 @@ class eventos_servidor_class extends xmlhttp_class
     	  return; 
     	}				
     	
-		if ($this->argumentos["wl_tecleedenuevopassword"]=="")
+		if ($this->argumentos["wl_tecleedenuevoelpassword"]=="")
     	{
     	  echo "<error>El pwd retecleado no esta definido</error>";
     	  return; 
@@ -880,7 +880,7 @@ class eventos_servidor_class extends xmlhttp_class
     	  echo "<error>No esta definido el usuario</error>";
     	  return; 
     	}
-    	$wlrespuesta=$this->checa_nuevopwd($this->argumentos["wl_usename"],$this->argumentos["wl_tecleedenuevopassword"],$this->argumentos["wl_password"]);
+    	$wlrespuesta=$this->checa_nuevopwd($this->argumentos["wl_usename"],$this->argumentos["wl_tecleedenuevoelpassword"],$this->argumentos["wl_password"]);
     	if ($wlrespuesta!="")
     	{
     		echo $wlrespuesta;
