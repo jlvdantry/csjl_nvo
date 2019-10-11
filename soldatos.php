@@ -920,7 +920,7 @@ class soldatos
      			$num = pg_numrows($sql_result);
 				// 20070622 lo modifique para que cuando venga valor default de un campo select este lo muestre
 				if ($num!=1 || ($obligatorio!=='t'))
-	   			 $DefaultSelect="<option selected value >".(($wltdf==3) ? $wltdd : "Selecciona una Opción" )."</option>\n"; // 20070622
+	   			 $DefaultSelect="<option selected value >".(($wltdf==3) ? $wltdd : utf8_encode("Selecciona una Opción") )."</option>\n"; // 20070622
      			for ($i=0; $i < $num ;$i++)
      			{
          			$Row = pg_fetch_array($sql_result, $i);
